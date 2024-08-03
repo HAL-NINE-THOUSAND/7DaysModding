@@ -4,18 +4,65 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c49ce2d-759b-4202-924b-bfa87a90867a" name="Changes" comment="node base" />
+    <list default="true" id="7c49ce2d-759b-4202-924b-bfa87a90867a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.7DaysModding/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.7DaysModding/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/New folder/Examples.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/New folder/Examples/Editor.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/New folder/Examples/FloatCalculation.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/New folder/Examples/FrameworkExtends.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/New folder/Examples/GraphCanvas.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/New folder/Examples/Nodes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/New folder/Examples/Runtime.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/New folder/Examples/Saves.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/New folder/LICENSE.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/New folder/Node_Editor_Framework.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/New folder/Node_Editor_Framework/Editor.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/New folder/Node_Editor_Framework/Runtime.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/New folder/Node_Editor_Framework/Runtime/Framework.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/New folder/Node_Editor_Framework/Runtime/Framework/Core.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/New folder/Node_Editor_Framework/Runtime/Framework/CoreExtensions.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/New folder/Node_Editor_Framework/Runtime/Framework/Interface.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/New folder/Node_Editor_Framework/Runtime/Framework/NodeEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/New folder/Node_Editor_Framework/Runtime/Framework/SaveSystem.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/New folder/Node_Editor_Framework/Runtime/Resources.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/New folder/Node_Editor_Framework/Runtime/Resources/DefaultSkin.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/New folder/Node_Editor_Framework/Runtime/Resources/Shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/New folder/Node_Editor_Framework/Runtime/Resources/Textures.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/New folder/Node_Editor_Framework/Runtime/Seneral.NodeEditorFramework.Runtime.asmdef.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/New folder/Node_Editor_Framework/Runtime/Utilities.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/New folder/Node_Editor_Framework/Standard.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/New folder/Node_Editor_Framework/Standard/CalculationBase.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/New folder/Node_Editor_Framework/Standard/IOFormats.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/New folder/Node_Editor_Framework/Standard/Interface.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/New folder/Node_Editor_Framework/Standard/Seneral.NodeEditorFramework.Standard.asmdef.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/New folder/README.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/New folder/UndoPro.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/New folder/UndoPro/nope.txt" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="2001016+HAL-NINE-THOUSAND@users.noreply.github.com" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="MIXED" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3ea01e77be99618395f448b16bd7cc2bd4248bd9e5d8474964b2d97f39c5d74/System.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Framework/Core/ConnectionKnob.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Framework/Core/ConnectionPort.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Framework/Interface/NodeEditorInputControls.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
@@ -25,27 +72,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Attach to Unity Editor.Attach to Unity Editor.executor": "Debug",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Rebasing master",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Attach to Unity Editor.Attach to Unity Editor.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\D\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
-      "C:\\Users\\D\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
-      "C:\\Users\\D\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\D\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\D\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\D\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="$PROJECT_DIR$/build\7DaysModding.exe" />
@@ -83,7 +131,7 @@
     </configuration>
     <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
-      <option name="listenPortForConnections" value="true" />
+      <option name="listenPortForConnections" value="false" />
       <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
@@ -105,7 +153,10 @@
       <workItem from="1722455041487" duration="1687000" />
       <workItem from="1722493872877" duration="3485000" />
       <workItem from="1722529609573" duration="3713000" />
-      <workItem from="1722691924474" duration="340000" />
+      <workItem from="1722691924474" duration="645000" />
+      <workItem from="1722694787923" duration="170000" />
+      <workItem from="1722694997725" duration="54000" />
+      <workItem from="1722695067937" duration="20000" />
     </task>
     <task id="LOCAL-00001" summary="node base">
       <option name="closed" value="true" />
@@ -115,7 +166,15 @@
       <option name="project" value="LOCAL" />
       <updated>1722692065795</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="base">
+      <option name="closed" value="true" />
+      <created>1722692556350</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1722692556350</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -143,7 +202,8 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="node base" />
-    <option name="LAST_COMMIT_MESSAGE" value="node base" />
+    <MESSAGE value="base" />
+    <option name="LAST_COMMIT_MESSAGE" value="base" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -151,14 +211,7 @@
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/New folder/Examples/Runtime/RTNodeEditor.cs</url>
           <line>24</line>
-          <properties documentPath="D:\Unity\7DaysModding\Assets\New folder\Examples\Runtime\RTNodeEditor.cs" containingFunctionPresentation="Method 'Start'">
-            <startOffsets>
-              <option value="681" />
-            </startOffsets>
-            <endOffsets>
-              <option value="696" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="D:\Unity\7DaysModding\Assets\New folder\Examples\Runtime\RTNodeEditor.cs" containingFunctionPresentation="Method 'Start'" />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
