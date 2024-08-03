@@ -5,6 +5,7 @@ namespace NodeEditorFramework.Standard
 {
 	/// <summary>
 	/// Example of displaying the Node Editor at runtime including GUI
+	/// Original author: https://github.com/Seneral/Node_Editor_Framework
 	/// </summary>
 	public class RTNodeEditor : MonoBehaviour 
 	{

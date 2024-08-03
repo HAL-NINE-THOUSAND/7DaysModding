@@ -4,40 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c49ce2d-759b-4202-924b-bfa87a90867a" name="Changes" comment="">
+    <list default="true" id="7c49ce2d-759b-4202-924b-bfa87a90867a" name="Changes" comment="new base">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.7DaysModding/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.7DaysModding/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/New folder/Examples.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/New folder/Examples/Editor.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/New folder/Examples/FloatCalculation.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/New folder/Examples/FrameworkExtends.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/New folder/Examples/GraphCanvas.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/New folder/Examples/Nodes.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/New folder/Examples/Runtime.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/New folder/Examples/Saves.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/New folder/LICENSE.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/New folder/Node_Editor_Framework.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/New folder/Node_Editor_Framework/Editor.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/New folder/Node_Editor_Framework/Runtime.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/New folder/Node_Editor_Framework/Runtime/Framework.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/New folder/Node_Editor_Framework/Runtime/Framework/Core.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/New folder/Node_Editor_Framework/Runtime/Framework/CoreExtensions.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/New folder/Node_Editor_Framework/Runtime/Framework/Interface.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/New folder/Node_Editor_Framework/Runtime/Framework/NodeEditor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/New folder/Node_Editor_Framework/Runtime/Framework/SaveSystem.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/New folder/Node_Editor_Framework/Runtime/Resources.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/New folder/Node_Editor_Framework/Runtime/Resources/DefaultSkin.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/New folder/Node_Editor_Framework/Runtime/Resources/Shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/New folder/Node_Editor_Framework/Runtime/Resources/Textures.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/New folder/Node_Editor_Framework/Runtime/Seneral.NodeEditorFramework.Runtime.asmdef.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/New folder/Node_Editor_Framework/Runtime/Utilities.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/New folder/Node_Editor_Framework/Standard.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/New folder/Node_Editor_Framework/Standard/CalculationBase.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/New folder/Node_Editor_Framework/Standard/IOFormats.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/New folder/Node_Editor_Framework/Standard/Interface.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/New folder/Node_Editor_Framework/Standard/Seneral.NodeEditorFramework.Standard.asmdef.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/New folder/README.md.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/New folder/UndoPro.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/New folder/UndoPro/nope.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Examples/Runtime/RTNodeEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditor/Examples/Runtime/RTNodeEditor.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,9 +24,10 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3ea01e77be99618395f448b16bd7cc2bd4248bd9e5d8474964b2d97f39c5d74/System.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity/7DaysModding/Assets/NodeEditor/Examples/Runtime/RTNodeEditor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Framework/Core/ConnectionKnob.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Framework/Core/ConnectionPort.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Framework/Interface/NodeEditorInputControls.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Framework/Core/ConnectionPort.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Framework/Interface/NodeEditorInputControls.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
@@ -96,7 +66,7 @@
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="$PROJECT_DIR$/build\7DaysModding.exe" />
+      <option name="EXE_PATH" value="$PROJECT_DIR$/build/7DaysModding.exe" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="D:\Unity\7DaysModding\build" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -157,6 +127,7 @@
       <workItem from="1722694787923" duration="170000" />
       <workItem from="1722694997725" duration="54000" />
       <workItem from="1722695067937" duration="20000" />
+      <workItem from="1722695937620" duration="811000" />
     </task>
     <task id="LOCAL-00001" summary="node base">
       <option name="closed" value="true" />
@@ -174,7 +145,23 @@
       <option name="project" value="LOCAL" />
       <updated>1722692556350</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="new non-borked base?">
+      <option name="closed" value="true" />
+      <created>1722695954139</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1722695954139</updated>
+    </task>
+    <task id="LOCAL-00004" summary="new base">
+      <option name="closed" value="true" />
+      <created>1722695978985</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1722695978985</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -203,7 +190,9 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="node base" />
     <MESSAGE value="base" />
-    <option name="LAST_COMMIT_MESSAGE" value="base" />
+    <MESSAGE value="new non-borked base?" />
+    <MESSAGE value="new base" />
+    <option name="LAST_COMMIT_MESSAGE" value="new base" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
