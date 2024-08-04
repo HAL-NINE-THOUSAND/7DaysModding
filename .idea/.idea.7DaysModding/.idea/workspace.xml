@@ -4,9 +4,199 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c49ce2d-759b-4202-924b-bfa87a90867a" name="Changes" comment="new base">
+    <list default="true" id="7c49ce2d-759b-4202-924b-bfa87a90867a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/TestNodes.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/TestNodes/MyTestNode.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/TestNodes/MyTestNode.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/Connection.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/Connection.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/Port.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/Port.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.7DaysModding/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.7DaysModding/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Examples/Runtime/RTNodeEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditor/Examples/Runtime/RTNodeEditor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MainScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Examples.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Examples/Editor.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/Editor.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Examples/Editor/RTCanvasCalculatorEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/Editor/RTCanvasCalculatorEditor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Examples/Editor/RTCanvasCalculatorEditor.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/Editor/RTCanvasCalculatorEditor.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Examples/FloatCalculation.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/FloatCalculation.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Examples/FloatCalculation/CalcNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/FloatCalculation/CalcNode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Examples/FloatCalculation/CalcNode.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/FloatCalculation/CalcNode.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Examples/FloatCalculation/DisplayNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/FloatCalculation/DisplayNode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Examples/FloatCalculation/DisplayNode.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/FloatCalculation/DisplayNode.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Examples/FloatCalculation/FloatCalculation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/FloatCalculation/FloatCalculation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Examples/FloatCalculation/FloatCalculation.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/FloatCalculation/FloatCalculation.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Examples/FloatCalculation/InputNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/FloatCalculation/InputNode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Examples/FloatCalculation/InputNode.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/FloatCalculation/InputNode.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Examples/FrameworkExtends.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/FrameworkExtends.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Examples/FrameworkExtends/ExtendedRTNodeEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/FrameworkExtends/ExtendedRTNodeEditor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Examples/FrameworkExtends/ExtendedRTNodeEditor.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/FrameworkExtends/ExtendedRTNodeEditor.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Examples/FrameworkExtends/ExtendsRuntimeAssembly.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/FrameworkExtends/ExtendsRuntimeAssembly.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Examples/FrameworkExtends/ExtendsRuntimeAssembly/ExtendNodeEditorState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/FrameworkExtends/ExtendsRuntimeAssembly/ExtendNodeEditorState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Examples/FrameworkExtends/ExtendsRuntimeAssembly/ExtendNodeEditorState.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/FrameworkExtends/ExtendsRuntimeAssembly/ExtendNodeEditorState.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Examples/FrameworkExtends/ExtendsRuntimeAssembly/NEFRuntimeAssemblyReference.asmref" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/FrameworkExtends/ExtendsRuntimeAssembly/NEFRuntimeAssemblyReference.asmref" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Examples/FrameworkExtends/ExtendsRuntimeAssembly/NEFRuntimeAssemblyReference.asmref.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/FrameworkExtends/ExtendsRuntimeAssembly/NEFRuntimeAssemblyReference.asmref.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Examples/FrameworkExtends/ExtendsUsage.md" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/FrameworkExtends/ExtendsUsage.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Examples/FrameworkExtends/ExtendsUsage.md.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/FrameworkExtends/ExtendsUsage.md.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Examples/GraphCanvas.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/GraphCanvas.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Examples/GraphCanvas/GraphCanvasType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/GraphCanvas/GraphCanvasType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Examples/GraphCanvas/GraphCanvasType.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/GraphCanvas/GraphCanvasType.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Examples/GraphCanvas/GraphTraversal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/GraphCanvas/GraphTraversal.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Examples/GraphCanvas/GraphTraversal.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/GraphCanvas/GraphTraversal.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Examples/GraphCanvas/RootGraphNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/GraphCanvas/RootGraphNode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Examples/GraphCanvas/RootGraphNode.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/GraphCanvas/RootGraphNode.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Examples/Nodes.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/Nodes.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Examples/Nodes/AllAroundNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/Nodes/AllAroundNode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Examples/Nodes/AllAroundNode.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/Nodes/AllAroundNode.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Examples/Nodes/ExampleNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/Nodes/ExampleNode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Examples/Nodes/ExampleNode.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/Nodes/ExampleNode.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Examples/Nodes/FlowNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/Nodes/FlowNode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Examples/Nodes/FlowNode.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/Nodes/FlowNode.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Examples/Nodes/ResizingNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/Nodes/ResizingNode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Examples/Nodes/ResizingNode.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/Nodes/ResizingNode.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Examples/Runtime.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/Runtime.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Examples/Runtime/RTCanvasCalculator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/Runtime/RTCanvasCalculator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Examples/Runtime/RTCanvasCalculator.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/Runtime/RTCanvasCalculator.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Examples/Runtime/RTNodeEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/Runtime/RTNodeEditor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Examples/Runtime/RTNodeEditor.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/Runtime/RTNodeEditor.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Examples/Saves.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/Saves.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Examples/Saves/Calculation Canvas.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/Saves/Calculation Canvas.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Examples/Saves/Calculation Canvas.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/Saves/Calculation Canvas.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Examples/Saves/Graph Canvas.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/Saves/Graph Canvas.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Examples/Saves/Graph Canvas.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/Saves/Graph Canvas.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Editor.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Editor.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Editor/CanvasInspector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Editor/CanvasInspector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Editor/CanvasInspector.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Editor/CanvasInspector.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Editor/NodeEditorWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Editor/NodeEditorWindow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Editor/NodeEditorWindow.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Editor/NodeEditorWindow.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Editor/NodeInspector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Editor/NodeInspector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Editor/NodeInspector.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Editor/NodeInspector.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Editor/Seneral.NodeEditorFramework.Editor.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Editor/Seneral.NodeEditorFramework.Editor.asmdef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Editor/Seneral.NodeEditorFramework.Editor.asmdef.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Editor/Seneral.NodeEditorFramework.Editor.asmdef.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Framework.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Framework/Core.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Framework/Core/ConnectionKnob.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/ConnectionKnob.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Framework/Core/ConnectionKnob.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/ConnectionKnob.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Framework/Core/ConnectionPort.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/ConnectionPort.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Framework/Core/ConnectionPort.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/ConnectionPort.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Framework/Core/ConnectionPortManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/ConnectionPortManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Framework/Core/ConnectionPortManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/ConnectionPortManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Framework/Core/Node.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/Node.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Framework/Core/Node.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/Node.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Framework/Core/NodeCanvas.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/NodeCanvas.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Framework/Core/NodeCanvas.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/NodeCanvas.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Framework/Core/NodeCanvasTraversal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/NodeCanvasTraversal.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Framework/Core/NodeCanvasTraversal.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/NodeCanvasTraversal.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Framework/Core/NodeEditorState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/NodeEditorState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Framework/Core/NodeEditorState.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/NodeEditorState.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Framework/Core/NodeGroup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/NodeGroup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Framework/Core/NodeGroup.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/NodeGroup.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Framework/Core/ValueConnectionKnob.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/ValueConnectionKnob.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Framework/Core/ValueConnectionKnob.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/ValueConnectionKnob.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Framework/CoreExtensions.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/CoreExtensions.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Framework/CoreExtensions/ConnectionPortStyles.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/CoreExtensions/ConnectionPortStyles.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Framework/CoreExtensions/ConnectionPortStyles.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/CoreExtensions/ConnectionPortStyles.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Framework/CoreExtensions/NodeCanvasTypes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/CoreExtensions/NodeCanvasTypes.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Framework/CoreExtensions/NodeCanvasTypes.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/CoreExtensions/NodeCanvasTypes.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Framework/CoreExtensions/NodeTypes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/CoreExtensions/NodeTypes.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Framework/CoreExtensions/NodeTypes.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/CoreExtensions/NodeTypes.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Framework/Interface.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Interface.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Framework/Interface/NodeEditorCallbackReceiver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Interface/NodeEditorCallbackReceiver.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Framework/Interface/NodeEditorCallbackReceiver.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Interface/NodeEditorCallbackReceiver.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Framework/Interface/NodeEditorGUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Interface/NodeEditorGUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Framework/Interface/NodeEditorGUI.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Interface/NodeEditorGUI.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Framework/Interface/NodeEditorInputControls.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Interface/NodeEditorInputControls.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Framework/Interface/NodeEditorInputControls.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Interface/NodeEditorInputControls.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Framework/Interface/NodeEditorInputSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Interface/NodeEditorInputSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Framework/Interface/NodeEditorInputSystem.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Interface/NodeEditorInputSystem.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Framework/Interface/NodeEditorUndoActions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Interface/NodeEditorUndoActions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Framework/Interface/NodeEditorUndoActions.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Interface/NodeEditorUndoActions.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Framework/NodeEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/NodeEditor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Framework/NodeEditor.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/NodeEditor.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Framework/SaveSystem.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/SaveSystem.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Framework/SaveSystem/ImportExportFormat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/SaveSystem/ImportExportFormat.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Framework/SaveSystem/ImportExportFormat.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/SaveSystem/ImportExportFormat.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Framework/SaveSystem/ImportExportManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/SaveSystem/ImportExportManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Framework/SaveSystem/ImportExportManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/SaveSystem/ImportExportManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Framework/SaveSystem/ImportExportStructure.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/SaveSystem/ImportExportStructure.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Framework/SaveSystem/ImportExportStructure.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/SaveSystem/ImportExportStructure.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Framework/SaveSystem/NodeCanvasSceneSave.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/SaveSystem/NodeCanvasSceneSave.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Framework/SaveSystem/NodeCanvasSceneSave.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/SaveSystem/NodeCanvasSceneSave.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Framework/SaveSystem/NodeEditorSaveManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/SaveSystem/NodeEditorSaveManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Framework/SaveSystem/NodeEditorSaveManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/SaveSystem/NodeEditorSaveManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Framework/SaveSystem/NodeEditorUserCache.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/SaveSystem/NodeEditorUserCache.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Framework/SaveSystem/NodeEditorUserCache.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/SaveSystem/NodeEditorUserCache.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Resources.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Resources.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Resources/DefaultSkin.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Resources/DefaultSkin.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Resources/DefaultSkin.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Resources/DefaultSkin.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Resources/Shader.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Resources/Shader.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Resources/Shader/LineShader.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Resources/Shader/LineShader.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Resources/Shader/LineShader.shader.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Resources/Shader/LineShader.shader.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Resources/Textures.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Resources/Textures.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Resources/Textures/AALine.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Resources/Textures/AALine.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Resources/Textures/AALine.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Resources/Textures/AALine.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Resources/Textures/Icon_Dark.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Resources/Textures/Icon_Dark.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Resources/Textures/Icon_Dark.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Resources/Textures/Icon_Dark.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Resources/Textures/Icon_Light.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Resources/Textures/Icon_Light.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Resources/Textures/Icon_Light.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Resources/Textures/Icon_Light.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Resources/Textures/In_Knob.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Resources/Textures/In_Knob.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Resources/Textures/In_Knob.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Resources/Textures/In_Knob.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Resources/Textures/NE_Box.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Resources/Textures/NE_Box.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Resources/Textures/NE_Box.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Resources/Textures/NE_Box.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Resources/Textures/NE_Button.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Resources/Textures/NE_Button.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Resources/Textures/NE_Button.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Resources/Textures/NE_Button.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Resources/Textures/NE_Button_Hover.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Resources/Textures/NE_Button_Hover.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Resources/Textures/NE_Button_Hover.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Resources/Textures/NE_Button_Hover.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Resources/Textures/NE_Button_Selected.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Resources/Textures/NE_Button_Selected.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Resources/Textures/NE_Button_Selected.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Resources/Textures/NE_Button_Selected.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Resources/Textures/NE_SelectedBG.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Resources/Textures/NE_SelectedBG.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Resources/Textures/NE_SelectedBG.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Resources/Textures/NE_SelectedBG.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Resources/Textures/NE_Toolbar.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Resources/Textures/NE_Toolbar.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Resources/Textures/NE_Toolbar.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Resources/Textures/NE_Toolbar.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Resources/Textures/NE_ToolbarButton.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Resources/Textures/NE_ToolbarButton.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Resources/Textures/NE_ToolbarButton.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Resources/Textures/NE_ToolbarButton.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Resources/Textures/NE_ToolbarLabel.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Resources/Textures/NE_ToolbarLabel.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Resources/Textures/NE_ToolbarLabel.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Resources/Textures/NE_ToolbarLabel.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Resources/Textures/Out_Knob.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Resources/Textures/Out_Knob.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Resources/Textures/Out_Knob.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Resources/Textures/Out_Knob.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Resources/Textures/background.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Resources/Textures/background.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Resources/Textures/background.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Resources/Textures/background.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Resources/Textures/expandRight.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Resources/Textures/expandRight.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Resources/Textures/expandRight.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Resources/Textures/expandRight.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Seneral.NodeEditorFramework.Runtime.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Seneral.NodeEditorFramework.Runtime.asmdef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Seneral.NodeEditorFramework.Runtime.asmdef.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Seneral.NodeEditorFramework.Runtime.asmdef.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Utilities.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Utilities.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Utilities/EditorLoadingControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Utilities/EditorLoadingControl.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Utilities/EditorLoadingControl.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Utilities/EditorLoadingControl.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Utilities/GUI.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Utilities/GUI.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Utilities/GUI/GUIScaleUtility.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Utilities/GUI/GUIScaleUtility.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Utilities/GUI/GUIScaleUtility.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Utilities/GUI/GUIScaleUtility.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Utilities/GUI/OverlayGUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Utilities/GUI/OverlayGUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Utilities/GUI/OverlayGUI.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Utilities/GUI/OverlayGUI.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Utilities/GUI/RTEditorGUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Utilities/GUI/RTEditorGUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Utilities/GUI/RTEditorGUI.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Utilities/GUI/RTEditorGUI.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Utilities/ReflectionUtility.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Utilities/ReflectionUtility.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Utilities/ReflectionUtility.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Utilities/ReflectionUtility.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Utilities/ResourceManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Utilities/ResourceManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Utilities/ResourceManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Utilities/ResourceManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Utilities/link.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Utilities/link.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Utilities/link.xml.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Utilities/link.xml.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Standard.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Standard.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Standard/CalculationBase.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Standard/CalculationBase.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Standard/CalculationBase/CalculationCanvasType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Standard/CalculationBase/CalculationCanvasType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Standard/CalculationBase/CalculationCanvasType.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Standard/CalculationBase/CalculationCanvasType.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Standard/CalculationBase/CanvasCalculator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Standard/CalculationBase/CanvasCalculator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Standard/CalculationBase/CanvasCalculator.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Standard/CalculationBase/CanvasCalculator.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Standard/IOFormats.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Standard/IOFormats.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Standard/IOFormats/XMLImportExport.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Standard/IOFormats/XMLImportExport.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Standard/IOFormats/XMLImportExport.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Standard/IOFormats/XMLImportExport.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Standard/Interface.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Standard/Interface.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Standard/Interface/NodeEditorInterface.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Standard/Interface/NodeEditorInterface.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Standard/Interface/NodeEditorInterface.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Standard/Interface/NodeEditorInterface.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Standard/Seneral.NodeEditorFramework.Standard.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Standard/Seneral.NodeEditorFramework.Standard.asmdef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Standard/Seneral.NodeEditorFramework.Standard.asmdef.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Standard/Seneral.NodeEditorFramework.Standard.asmdef.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,11 +213,56 @@
     <option name="RESET_MODE" value="MIXED" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/18a6dfdbe6dc40fe86acd7f8c3c214102d600/5d/e3e5b622/GUILayout.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/18a6dfdbe6dc40fe86acd7f8c3c214102d600/6f/a9f5aa91/GUIContent.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/18a6dfdbe6dc40fe86acd7f8c3c214102d600/e6/d9626423/Event.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/467a840a914a47078e4ae9b0b1e8779e46ac00/15/92419e74/Array.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/467a840a914a47078e4ae9b0b1e8779e46ac00/5b/a8a37691/List`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/467a840a914a47078e4ae9b0b1e8779e46ac00/9a/67bbc048/RuntimeMethodInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/55fbbbd17b724c15b6abe8c1a3e3289c175c00/42/8211da67/Object.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/55fbbbd17b724c15b6abe8c1a3e3289c175c00/72/7420c9fd/Vector2.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/55fbbbd17b724c15b6abe8c1a3e3289c175c00/fd/a1f75864/Color.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/999670adb4c84ac4bad3ce4f6391c9c9955800/20/99acc1fa/GameView.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/999670adb4c84ac4bad3ce4f6391c9c9955800/27/1977e490/ObjectNames.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/999670adb4c84ac4bad3ce4f6391c9c9955800/59/7d7e84b1/PlayModeView.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/999670adb4c84ac4bad3ce4f6391c9c9955800/5e/d779fddd/HostView.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/999670adb4c84ac4bad3ce4f6391c9c9955800/fb/4d022a05/EditorCompilationInterface.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3ea01e77be99618395f448b16bd7cc2bd4248bd9e5d8474964b2d97f39c5d74/System.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Unity/7DaysModding/Assets/NodeEditor/Examples/Runtime/RTNodeEditor.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Framework/Core/ConnectionKnob.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Framework/Core/ConnectionPort.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/NodeEditor/Node_Editor_Framework/Runtime/Framework/Interface/NodeEditorInputControls.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/ConnectionKnob.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/ConnectionPort.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Interface/NodeEditorInputControls.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.rider@3.0.31/Rider/Editor/ProjectGeneration/AssemblyNameProvider.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.rider@3.0.31/Rider/Editor/ProjectGeneration/IAssemblyNameProvider.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.rider@3.0.31/Rider/Editor/ProjectGeneration/ProjectPart.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.rider@3.0.31/Rider/Editor/RiderScriptEditor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.rider@3.0.31/Rider/Editor/Util/FileSystemUtil.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.visualstudio@2.0.22/Editor/COMIntegration/COMIntegration~/COMIntegration.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.visualstudio@2.0.22/Editor/Cli.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.visualstudio@2.0.22/Editor/Messaging/Messenger.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.visualstudio@2.0.22/Editor/ProcessRunner.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.visualstudio@2.0.22/Editor/ProjectGeneration/LegacyStyleProjectGeneration.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.visualstudio@2.0.22/Editor/ProjectGeneration/ProjectProperties.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.visualstudio@2.0.22/Editor/SimpleJSON.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.visualstudio@2.0.22/Editor/SolutionParser.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.visualstudio@2.0.22/Editor/VisualStudioForMacInstallation.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.visualstudio@2.0.22/Editor/VisualStudioForWindowsInstallation.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.visualstudio@2.0.22/Editor/VisualStudioInstallation.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.33/UnityEditor.TestRunner/Api/CallbacksDelegator.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.33/UnityEditor.TestRunner/Api/CallbacksHolder.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.33/UnityEditor.TestRunner/TestLaunchers/PlayerLauncher.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.33/UnityEditor.TestRunner/TestLaunchers/PlaymodeLauncher.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.33/UnityEditor.TestRunner/TestResultSerializer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.33/UnityEngine.TestRunner/Assertions/AllocatingGCMemoryConstraint.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.33/UnityEngine.TestRunner/NUnitExtensions/Attributes/UnityTestAttribute.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.33/UnityEngine.TestRunner/Utils/ColorEqualityComparer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.33/UnityEngine.TestRunner/Utils/QuaternionEqualityComparer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.33/UnityEngine.TestRunner/Utils/Utils.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.33/UnityEngine.TestRunner/Utils/Vector2ComparerWithEqualsOperator.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.33/UnityEngine.TestRunner/Utils/Vector2EqualityComparer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.33/UnityEngine.TestRunner/Utils/Vector3ComparerWithEqualsOperator.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.33/UnityEngine.TestRunner/Utils/Vector3EqualityComparer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.33/UnityEngine.TestRunner/Utils/Vector4ComparerWithEqualsOperator.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.33/UnityEngine.TestRunner/Utils/Vector4EqualityComparer.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
@@ -66,7 +301,7 @@
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="$PROJECT_DIR$/build/7DaysModding.exe" />
+      <option name="EXE_PATH" value="$PROJECT_DIR$/build\7DaysModding.exe" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="D:\Unity\7DaysModding\build" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -99,10 +334,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="40748">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="40748" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -127,7 +362,8 @@
       <workItem from="1722694787923" duration="170000" />
       <workItem from="1722694997725" duration="54000" />
       <workItem from="1722695067937" duration="20000" />
-      <workItem from="1722695937620" duration="811000" />
+      <workItem from="1722695937620" duration="11137000" />
+      <workItem from="1722755202642" duration="13198000" />
     </task>
     <task id="LOCAL-00001" summary="node base">
       <option name="closed" value="true" />
@@ -161,11 +397,34 @@
       <option name="project" value="LOCAL" />
       <updated>1722695978985</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="base">
+      <option name="closed" value="true" />
+      <created>1722696838928</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1722696838928</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="UnitTestsCoverage.Settings">
+    <option name="coveragePercentColumnWidth" value="150" />
+    <option name="sortOrder" value="DESCENDING" />
+    <option name="sortedColumn" value="1" />
+    <option name="symbolColumnWidth" value="130" />
+    <coverage-tree-state>
+      <expand>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 0% 6508/6508" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+      </expand>
+      <select />
+    </coverage-tree-state>
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
@@ -189,10 +448,10 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="node base" />
-    <MESSAGE value="base" />
     <MESSAGE value="new non-borked base?" />
     <MESSAGE value="new base" />
-    <option name="LAST_COMMIT_MESSAGE" value="new base" />
+    <MESSAGE value="base" />
+    <option name="LAST_COMMIT_MESSAGE" value="base" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -203,8 +462,351 @@
           <properties documentPath="D:\Unity\7DaysModding\Assets\New folder\Examples\Runtime\RTNodeEditor.cs" containingFunctionPresentation="Method 'Start'" />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/CoreExtensions/ConnectionPortStyles.cs</url>
+          <line>69</line>
+          <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Runtime\Framework\CoreExtensions\ConnectionPortStyles.cs" containingFunctionPresentation="Method 'GetPortStyle'">
+            <startOffsets>
+              <option value="2895" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2961" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/ConnectionKnob.cs</url>
+          <line>206</line>
+          <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Runtime\Framework\Core\ConnectionKnob.cs" containingFunctionPresentation="Method 'DrawConnections'">
+            <startOffsets>
+              <option value="7005" />
+            </startOffsets>
+            <endOffsets>
+              <option value="7039" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/ConnectionKnob.cs</url>
+          <line>198</line>
+          <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Runtime\Framework\Core\ConnectionKnob.cs" containingFunctionPresentation="Method 'DrawConnections'">
+            <startOffsets>
+              <option value="6761" />
+            </startOffsets>
+            <endOffsets>
+              <option value="6805" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/Node.cs</url>
+          <line>293</line>
+          <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Runtime\Framework\Core\Node.cs" containingFunctionPresentation="Method 'NodeGUI'">
+            <startOffsets>
+              <option value="9336" />
+            </startOffsets>
+            <endOffsets>
+              <option value="9381" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/Node.cs</url>
+          <line>284</line>
+          <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Runtime\Framework\Core\Node.cs" containingFunctionPresentation="Method 'NodeGUI'">
+            <startOffsets>
+              <option value="9116" />
+            </startOffsets>
+            <endOffsets>
+              <option value="9145" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Utilities/GUI/RTEditorGUI.cs</url>
+          <line>927</line>
+          <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Runtime\Utilities\GUI\RTEditorGUI.cs" containingFunctionPresentation="Method 'DrawLine'">
+            <startOffsets>
+              <option value="31983" />
+            </startOffsets>
+            <endOffsets>
+              <option value="32052" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/ConnectionPort.cs</url>
+          <line>232</line>
+          <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Runtime\Framework\Core\ConnectionPort.cs" containingFunctionPresentation="Method 'ClearConnections'">
+            <startOffsets>
+              <option value="7461" />
+            </startOffsets>
+            <endOffsets>
+              <option value="7509" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="45" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/ConnectionPort.cs</url>
+          <line>152</line>
+          <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Runtime\Framework\Core\ConnectionPort.cs" containingFunctionPresentation="Method 'TryApplyConnection'">
+            <startOffsets>
+              <option value="4594" />
+            </startOffsets>
+            <endOffsets>
+              <option value="4642" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="46" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/ConnectionPort.cs</url>
+          <line>166</line>
+          <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Runtime\Framework\Core\ConnectionPort.cs" containingFunctionPresentation="Method 'CanApplyConnection'">
+            <startOffsets>
+              <option value="5031" />
+            </startOffsets>
+            <endOffsets>
+              <option value="5079" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="47" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/ConnectionPort.cs</url>
+          <line>199</line>
+          <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Runtime\Framework\Core\ConnectionPort.cs" containingFunctionPresentation="Method 'ApplyConnection'">
+            <startOffsets>
+              <option value="6379" />
+            </startOffsets>
+            <endOffsets>
+              <option value="6427" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/ConnectionPort.cs</url>
+          <line>242</line>
+          <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Runtime\Framework\Core\ConnectionPort.cs" containingFunctionPresentation="Method 'RemoveConnection'">
+            <startOffsets>
+              <option value="7791" />
+            </startOffsets>
+            <endOffsets>
+              <option value="7839" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="49" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/Port.cs</url>
+          <line>58</line>
+          <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Runtime\Framework\Core\Port.cs" containingFunctionPresentation="Method 'SetValue'">
+            <startOffsets>
+              <option value="1770" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1792" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="58" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/Port.cs</url>
+          <line>57</line>
+          <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Runtime\Framework\Core\Port.cs" containingFunctionPresentation="Method 'SetValue'">
+            <startOffsets>
+              <option value="1674" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1746" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="60" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/Node.cs</url>
+          <line>116</line>
+          <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Runtime\Framework\Core\Node.cs" containingFunctionPresentation="Method 'ConnectToThisNode'">
+            <startOffsets>
+              <option value="3805" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3857" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="61" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Standard/CalculationBase/CanvasCalculator.cs</url>
+          <line>52</line>
+          <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Standard\CalculationBase\CanvasCalculator.cs" containingFunctionPresentation="Method 'StartCalculation'">
+            <startOffsets>
+              <option value="1326" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1352" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="62" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/Node.cs</url>
+          <line>748</line>
+          <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Runtime\Framework\Core\Node.cs" containingFunctionPresentation="Method 'ClearCalculation'">
+            <startOffsets>
+              <option value="23161" />
+            </startOffsets>
+            <endOffsets>
+              <option value="23180" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="63" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Standard/CalculationBase/CanvasCalculator.cs</url>
+          <line>35</line>
+          <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Standard\CalculationBase\CanvasCalculator.cs" containingFunctionPresentation="Method 'OnChange'">
+            <startOffsets>
+              <option value="863" />
+            </startOffsets>
+            <endOffsets>
+              <option value="914" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="64" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/Node.cs</url>
+          <line>684</line>
+          <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Runtime\Framework\Core\Node.cs" containingFunctionPresentation="Method 'getUncalculatedAncestor'">
+            <startOffsets>
+              <option value="21561" />
+            </startOffsets>
+            <endOffsets>
+              <option value="21623" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="65" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Standard/CalculationBase/CanvasCalculator.cs</url>
+          <line>58</line>
+          <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Standard\CalculationBase\CanvasCalculator.cs" containingFunctionPresentation="Method 'StartCalculation'">
+            <startOffsets>
+              <option value="1608" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1652" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="66" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Standard/CalculationBase/CanvasCalculator.cs</url>
+          <line>77</line>
+          <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Standard\CalculationBase\CanvasCalculator.cs" containingFunctionPresentation="Method 'ContinueCalculation'">
+            <startOffsets>
+              <option value="2262" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2282" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="67" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/NodeEditing/Examples/TestNodes/MyTestNode.cs</url>
+          <line>87</line>
+          <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Examples\TestNodes\MyTestNode.cs" containingFunctionPresentation="Method 'Calculate'">
+            <startOffsets>
+              <option value="2363" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2384" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="68" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/NodeEditing/Examples/FrameworkExtends/ExtendedRTNodeEditor.cs</url>
+          <line>98</line>
+          <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Examples\FrameworkExtends\ExtendedRTNodeEditor.cs" containingFunctionPresentation="Method 'OnGUI'">
+            <startOffsets>
+              <option value="2855" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2888" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="69" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/NodeEditing/Examples/FrameworkExtends/ExtendedRTNodeEditor.cs</url>
+          <line>95</line>
+          <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Examples\FrameworkExtends\ExtendedRTNodeEditor.cs" containingFunctionPresentation="Method 'OnGUI'">
+            <startOffsets>
+              <option value="2764" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2790" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="70" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/NodeEditing/Examples/Runtime/RTNodeEditor.cs</url>
+          <line>96</line>
+          <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Examples\Runtime\RTNodeEditor.cs" containingFunctionPresentation="Method 'OnGUI'">
+            <startOffsets>
+              <option value="2822" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2855" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="71" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Editor/NodeEditorWindow.cs</url>
+          <line>240</line>
+          <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Editor\NodeEditorWindow.cs" containingFunctionPresentation="Method 'OnGUI'">
+            <startOffsets>
+              <option value="9493" />
+            </startOffsets>
+            <endOffsets>
+              <option value="9520" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="72" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/NodeEditing/Examples/Runtime/RTNodeEditor.cs</url>
+          <line>64</line>
+          <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Examples\Runtime\RTNodeEditor.cs" containingFunctionPresentation="Method 'OnGUI'">
+            <startOffsets>
+              <option value="1661" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1688" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="73" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="Type#NodeEditorFramework.Port`1" memberName="Node" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
