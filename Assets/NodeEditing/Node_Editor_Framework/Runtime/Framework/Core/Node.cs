@@ -59,7 +59,7 @@ namespace NodeEditorFramework
 
     public bool ConnectPorts(IPort port)
     {
-	    foreach (var p in IncomingPorts)
+	    foreach (var p in IncomingPorts)	
 	    {
 		    if (p.IsSamePort(port))
 		    {
@@ -114,7 +114,10 @@ namespace NodeEditorFramework
 	    if (destinationPort.Direction != Direction.In)
 		    return false;
 
-	    if (sourcePort.PortType != destinationPort.PortType)
+	    if (destinationPort.Connections.Count > 0)
+		    return false; //input can only come from one source for now 
+
+	    if (!sourcePort.IsSamePort(destinationPort))
 		    return false;
 
 	    var connection = new Connection(sourcePort, destinationPort);
@@ -239,6 +242,9 @@ namespace NodeEditorFramework
 				return name;
 			#endif
 			} }
+
+		private string _shortTitle;
+		public string ShortTitle => _shortTitle ?? (_shortTitle = Title.Split("/").Last());
 
 		/// <summary>
 		/// Specifies the default size of the node when automatic resizing is turned off.
@@ -510,7 +516,7 @@ namespace NodeEditorFramework
 			GUI.color = backgroundColor;
 			GUI.Box (headerRect, GUIContent.none);
 			GUI.color = Color.white;
-			GUI.Label (headerRect, Title, GUI.skin.GetStyle (NodeEditor.curEditorState.selectedNode == this? "labelBoldCentered" : "labelCentered"));
+			GUI.Label (headerRect, ShortTitle, GUI.skin.GetStyle (NodeEditor.curEditorState.selectedNode == this? "labelBoldCentered" : "labelCentered"));
 
 			// Begin the body frame around the NodeGUI
 			Rect bodyRect = new Rect (nodeRect.x, nodeRect.y + contentOffset.y, nodeRect.width, nodeRect.height - contentOffset.y);

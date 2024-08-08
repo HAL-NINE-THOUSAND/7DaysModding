@@ -15,6 +15,7 @@ namespace NodeEditorFramework
         Type PortType { get; }
         T GetValue<T>();
         void SetValue<T>(T value);
+        void ResetValue();
 
         List<Connection> Connections { get; set; }
         bool IsSamePort(IPort port);
@@ -23,8 +24,8 @@ namespace NodeEditorFramework
         bool Connected { get; }
         ConnectionKnob Knob { get; set; }
         public void AddConnection(Connection connection);
-        public void RemoveConnection(Connection connection);
-        public void RemoveConnection(IPort port);
+        public Connection RemoveConnection(Connection connection);
+        public Connection RemoveConnection(IPort port);
         void DrawConnections();
         void DisplayLayout();
     }
@@ -35,6 +36,8 @@ namespace NodeEditorFramework
     {
         public T Value { get; set; }
 
+        public T DisconnectedValue { get; set; }
+        
         private string name;
         public string Name => name;
 
@@ -45,30 +48,39 @@ namespace NodeEditorFramework
 
         public Direction Direction { get; set; }
 
+        public void ResetValue()
+        {
+            SetValue(DisconnectedValue);
+        }
+
         public void SetValue<T1>(T1 value) 
         {
-            if (typeof(T1) != typeof(T))
+            if (!IsSamePort<T1>())
                 return;
+            
             Value = (T)(object)value; //boxing?
-
-            // if (Direction == Direction.Out)
-            // {
-            //     foreach (var conn in Connections)
-            //     {
-            //         var other = conn.SourcePort == this ? conn.TargetPort : conn.SourcePort;
-            //         other.SetValue(Value);
-            //     }
-            // }
+            
+            if (Direction == Direction.Out)
+            {
+                foreach (var conn in Connections)
+                {
+                    if (conn.SourcePort == this)
+                    {
+                        conn.TargetPort.SetValue(Value);
+                    }
+                }
+            }
+            
         }
 
         public List<Connection> Connections { get; set; } = new();
         public Type PortType => typeof(T);
         
-        public Port(string name, Direction direction, T value, Node parent)
+        public Port(string name, Direction direction, T disconnectedValue, Node parent)
         {
             this.name = name;
             this.Direction = direction;
-            Value = value;
+            Value = DisconnectedValue = disconnectedValue;
             Node = parent;
             Knob = ScriptableObject.CreateInstance<ConnectionKnob>();
             Knob.Init(this, name, direction);
@@ -96,6 +108,12 @@ namespace NodeEditorFramework
             return ret;
         }
 
+        public virtual void OnDisconnected()
+        {
+            //if (Direction == Direction.Out)
+            SetValue(DisconnectedValue);
+        }
+        
         public bool Connected => Connections.Count > 0;
         
         public bool IsSamePort(IPort port)
@@ -113,12 +131,32 @@ namespace NodeEditorFramework
             return false;
             //return port?.PortType == typeof(T);
         }
+        public bool IsSamePort<TPortType>()
+        {
+            
+            var other = typeof(TPortType);
+            if (PortType == other)
+                return true;
+
+            if (other.IsAssignableFrom(PortType))
+                return true;
+            
+            if (PortType.IsAssignableFrom(other))
+                return true;
+
+            return false;
+        }
+        
         public TValue GetValue<TValue>()
         {
-            if (typeof(TValue) != typeof(T))
+            if (!IsSamePort<TValue>())
             {
                 throw new InvalidOperationException($"Port is not of type {typeof(TValue)}.");
             }
+
+            if (Direction == Direction.In && !Connected)
+                return (TValue)(object)DisconnectedValue;
+            
             return (TValue)(object)Value;
         }
 
@@ -128,22 +166,24 @@ namespace NodeEditorFramework
         {
             Connections.Add(connection);
         }
-        public void RemoveConnection(IPort port)
+        public Connection RemoveConnection(IPort port)
         {
             var conn = Connections.FirstOrDefault(d => d.TargetPort == port || d.SourcePort == port);
             if (conn == null)
             {
                 Debug.LogError("Tried to disconnect a connection that doesn't exist. Do better next time eh?");
-                return;
+                return null;
             }
-            RemoveConnection(conn);
+            return RemoveConnection(conn);
         }
 
-        public void RemoveConnection(Connection conn)
+        public Connection RemoveConnection(Connection conn)
         {
 
             var list = Direction == Direction.In ? Node.IncomingConnections : Node.OutgoingConnections;
 
+            OnDisconnected();
+            
             Connections.Remove(conn);
             for (int x = 0; x < list.Count; x++)
             {
@@ -155,9 +195,11 @@ namespace NodeEditorFramework
                         conn.TargetPort.RemoveConnection(conn);
                     else
                         conn.SourcePort.RemoveConnection(conn);
-                    return;
+                    return conn;
                 }
             }
+
+            return null;
         }
         /// <summary>
         /// Draws the connection curves from this knob to all it's connections

@@ -51,9 +51,9 @@ namespace NodeEditorFramework
 		/// <summary>
 		/// Returns all recorded node definitions found by the system
 		/// </summary>
-		public static List<NodeTypeData> getNodeDefinitions () 
+		public static IEnumerable<NodeTypeData> getNodeDefinitions () 
 		{
-			return nodes.Values.ToList ();
+			return nodes.Values;
 		}
 
 		/// <summary>
@@ -73,7 +73,7 @@ namespace NodeEditorFramework
 		public static List<string> getCompatibleNodes (ConnectionPort port)
 		{
 			if (port == null)
-				return NodeTypes.nodes.Keys.ToList ();
+				return NodeTypes.nodes.Keys.OrderBy(d=> d).ToList ();
 			List<string> compatibleNodes = new List<string> ();
 			foreach (NodeTypeData nodeData in NodeTypes.nodes.Values)
 			{ // Iterate over all nodes to check compability of any of their connection ports
@@ -81,6 +81,8 @@ namespace NodeEditorFramework
 					(ConnectionPortDeclaration portDecl) => portDecl.portInfo.IsCompatibleWith (port)))
 					compatibleNodes.Add (nodeData.typeID);
 			}
+
+			compatibleNodes.Sort((a, b) => a.CompareTo(b));
 			return compatibleNodes;
 		}
 	}

@@ -235,7 +235,11 @@ namespace NodeEditorFramework
 						// Loose and edit existing connection from it
 						Debug.LogWarning("connectionKnob");
 						//state.connectKnob = state.focusedConnectionKnob.connection(0);
-						state.focusedConnectionKnob.Port.RemoveConnection(state.focusedConnectionKnob.Port.Connections[0]);
+						var connection = state.focusedConnectionKnob.Port.RemoveConnection(state.focusedConnectionKnob.Port.Connections[0]);
+						if (connection != null)
+						{
+							NodeEditor.curNodeCanvas.OnNodeChange (connection.TargetPort.Node);
+						}
 						//state.connectKnob.Port.Node.RemoveConnection(state.focusedConnectionKnob.Port, state.connectKnob.Port);
 						inputInfo.inputEvent.Use();
 					}

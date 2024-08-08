@@ -123,9 +123,15 @@ namespace NodeEditorFramework.Utilities
 			string path;
 			MenuItem parent = AddHierarchy (ref content, out path);
 			if (parent != null)
+			{
 				parent.subItems.Add (new MenuItem (path, content, func, userData));
+				parent.subItems.Sort((a, b) => a.path.CompareTo(b.path));
+			}
 			else
+			{
 				menuItems.Add (new MenuItem (path, content, func, userData));
+				menuItems.Sort((a, b) => a.path.CompareTo(b.path));
+			}
 		}
 		
 		public void AddItem (GUIContent content, bool on, MenuFunction func)
@@ -159,7 +165,10 @@ namespace NodeEditorFramework.Utilities
 				// top level group
 				MenuItem parent = menuItems.Find ((MenuItem item) => item.content != null && item.content.text == folderPath && item.group);
 				if (parent == null)
+				{
 					menuItems.Add (parent = new MenuItem (folderPath, new GUIContent (folderPath), true));
+					menuItems.Sort((a,b) => a.path.CompareTo(b.path) );
+				}
 				// additional level groups
 				for (int groupCnt = 1; groupCnt < subContents.Length-1; groupCnt++)
 				{
@@ -171,7 +180,10 @@ namespace NodeEditorFramework.Utilities
 						Debug.LogError ("Subitems of " + parent.content.text + " is null!");
 					MenuItem subGroup = parent.subItems.Find ((MenuItem item) => item.content != null && item.content.text == folder && item.group);
 					if (subGroup == null)
+					{
 						parent.subItems.Add (subGroup = new MenuItem (folderPath, new GUIContent (folder), true));
+						parent.subItems.Sort((a, b) => a.path.CompareTo(b.path));
+					}
 					parent = subGroup;
 				}
 				

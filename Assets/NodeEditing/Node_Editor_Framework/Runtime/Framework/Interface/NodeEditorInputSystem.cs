@@ -150,7 +150,7 @@ namespace NodeEditorFramework
 		/// </summary>
 		private static void FillContextMenu (NodeEditorInputInfo inputInfo, GenericMenu contextMenu, ContextType contextType) 
 		{
-			foreach (KeyValuePair<ContextEntryAttribute, MenuFunctionData> contextEntry in contextEntries)
+			foreach (KeyValuePair<ContextEntryAttribute, MenuFunctionData> contextEntry in contextEntries.OrderBy(d=> d.Key.contextPath))
 			{ // Add all registered menu entries for the specified type to the contextMenu
 				if (contextEntry.Key.contextType == contextType)
 					contextMenu.AddItem (new GUIContent (contextEntry.Key.contextPath), false, contextEntry.Value, inputInfo);
