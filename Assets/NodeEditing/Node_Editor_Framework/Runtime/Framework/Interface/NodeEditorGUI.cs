@@ -27,6 +27,7 @@ namespace NodeEditorFramework
 		private static GUISkin defaultSkin;
 		private static GUISkin unitySkin;
 
+		public static Dictionary<string, GUIStyle> GUIStyles = new();
 		private static Color unityTextColor, unityHoverTextColor, unityActiveTextColor, unityFocusedTextColor;
 
 
@@ -99,6 +100,9 @@ namespace NodeEditorFramework
 
 			// Label
 			defaultSkin.label.normal.textColor = NE_TextColor;
+			var boxStyle = new GUIStyle (NodeEditorGUI.nodeSkin.box);
+			boxStyle.contentOffset = new Vector2 (2, 2);
+			customStyles.Add(boxStyle);
 			customStyles.Add(new GUIStyle (defaultSkin.label) { name = "labelBold", fontStyle = FontStyle.Bold });
 			customStyles.Add(new GUIStyle (defaultSkin.label) { name = "labelCentered", alignment = TextAnchor.MiddleCenter });
 			customStyles.Add(new GUIStyle (defaultSkin.label) { name = "labelBoldCentered", alignment = TextAnchor.MiddleCenter, fontStyle = FontStyle.Bold });
@@ -181,6 +185,15 @@ namespace NodeEditorFramework
 
 
 			defaultSkin.customStyles = customStyles.ToArray();
+
+
+
+			foreach (var style in customStyles)
+			{
+				if (!GUIStyles.ContainsKey(style.name))
+					GUIStyles.Add(style.name, style);
+			}
+			
 #if UNITY_EDITOR
 			if (!ResourceManager.resourcePath.StartsWith("Packages"))
 				UnityEditor.AssetDatabase.CreateAsset(Object.Instantiate (defaultSkin), ResourceManager.resourcePath +  "DefaultSkin.asset");

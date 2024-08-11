@@ -3,7 +3,7 @@ using System;
 using System.Linq;
 using System.Reflection;
 using System.Collections.Generic;
-
+using NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits;
 using NodeEditorFramework.Utilities;
 
 namespace NodeEditorFramework 
@@ -21,31 +21,45 @@ namespace NodeEditorFramework
 		public static void FetchNodeTypes() 
 		{
 			nodes = new Dictionary<string, NodeTypeData> ();
-			foreach (Type type in ReflectionUtility.getSubTypes (typeof(Node)))	
+
+			var rules = RulesManager.GetAllTypes<IRule>();
+
+			foreach (var type in rules)
 			{
-				object[] nodeAttributes = type.GetCustomAttributes(typeof(NodeAttribute), false);
-				NodeAttribute attr = nodeAttributes.FirstOrDefault() as NodeAttribute; //[0] as NodeAttribute;
-				if(attr == null || !attr.hide)
-				{ // Only regard if it is not marked as hidden
-				  // Fetch node information
-					string ID, Title = "None";
-					FieldInfo IDField = type.GetField("ID");
-					if (IDField == null || attr == null)
-					{ // Cannot read ID from const field or need to read Title because of missing attribute -> Create sample to read from properties
-						Node sample = (Node)ScriptableObject.CreateInstance(type);
-						ID = sample.GetID;
-						Title = sample.Title;
-						UnityEngine.Object.DestroyImmediate(sample);
-					}
-					else // Can read ID directly from const field
-						ID = (string)IDField.GetValue(null);
-					// Create Data from information
-					NodeTypeData data = attr == null?  // Switch between explicit information by the attribute or node information
-						new NodeTypeData(ID, Title, type, new Type[0]) :
-						new NodeTypeData(ID, attr.contextText, type, attr.limitToCanvasTypes);
-					nodes.Add (ID, data);
-				}
+				var path = RulesManager.GetAttribute<RuleMenuAttribute>(type);
+				var titleAtt = RulesManager.GetAttribute<RuleTitleAttribute>(type);
+
+				var title = titleAtt?.Title ?? path.Path.Split("/").Last();
+				NodeTypeData nodeData = new NodeTypeData(path.Path, title, type, new Type[0]);
+				nodes.Add(path.Path, nodeData);
 			}
+
+			return;
+			// foreach (Type type in ReflectionUtility.getSubTypes (typeof(Node)))	
+			// {
+			// 	object[] nodeAttributes = type.GetCustomAttributes(typeof(NodeAttribute), false);
+			// 	NodeAttribute attr = nodeAttributes.FirstOrDefault() as NodeAttribute; //[0] as NodeAttribute;
+			// 	if(attr == null || !attr.hide)
+			// 	{ // Only regard if it is not marked as hidden
+			// 	  // Fetch node information
+			// 		string ID, Title = "None";
+			// 		FieldInfo IDField = type.GetField("ID");
+			// 		if (IDField == null || attr == null)
+			// 		{ // Cannot read ID from const field or need to read Title because of missing attribute -> Create sample to read from properties
+			// 			Node sample = (Node)ScriptableObject.CreateInstance(type);
+			// 			ID = sample.GetID;
+			// 			Title = sample.Title;
+			// 			UnityEngine.Object.DestroyImmediate(sample);
+			// 		}
+			// 		else // Can read ID directly from const field
+			// 			ID = (string)IDField.GetValue(null);
+			// 		// Create Data from information
+			// 		NodeTypeData data = attr == null?  // Switch between explicit information by the attribute or node information
+			// 			new NodeTypeData(ID, Title, type, new Type[0]) :
+			// 			new NodeTypeData(ID, attr.contextText, type, attr.limitToCanvasTypes);
+			// 		nodes.Add (ID, data);
+			// 	}
+			// }
 		}
 
 		/// <summary>

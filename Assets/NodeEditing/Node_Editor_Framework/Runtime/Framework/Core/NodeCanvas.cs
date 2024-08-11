@@ -2,6 +2,8 @@ using UnityEngine;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits;
+using NodeEditing.Node_Editor_Framework.Runtime.Framework.Core;
 
 namespace NodeEditorFramework 
 {
@@ -14,6 +16,7 @@ namespace NodeEditorFramework
 
 		public virtual bool allowSceneSaveOnly { get { return false; } }
 
+		public MessageArea Messages;
 		public virtual bool allowRecursion { get { return false; } }
 
 		public NodeCanvasTraversal Traversal;
@@ -23,6 +26,7 @@ namespace NodeEditorFramework
 		public string saveName;
 		public string savePath;
 
+		public Circuit Circuit { get; set; } 
 		public bool livesInScene = false;
 
 		public List<Node> nodes = new List<Node> ();
@@ -31,6 +35,28 @@ namespace NodeEditorFramework
 		[NonSerialized]
 		public List<ScriptableObject> SOMemoryDump = new List<ScriptableObject>();
 
+
+		public void SetCircuit(Circuit circuit)
+		{
+			Circuit = circuit;
+			Circuit.OnRun = LogRun;
+		}
+
+		private void LogRun(int totalMilliseconds)
+		{
+			AddMessage($"Circuit took {totalMilliseconds}ms");
+		}
+
+		public Node GetNodeForRule(IRule rule)
+		{
+			foreach (var node in nodes)
+			{
+				if (node.Rule == rule)
+					return node;
+			}
+			return null;
+		}
+		
 		#region Constructors
 
 		/// <summary>
@@ -120,13 +146,20 @@ namespace NodeEditorFramework
 				Traversal.OnChange (node);
 		}
 
+		public void AddMessage(string msg)
+		{
+			Messages.AddMessage(msg);
+		}
+
 		/// <summary>
 		/// Validates this canvas, checking for any broken nodes or references and cleans them.
 		/// </summary>
 		public bool Validate (bool repair = true)
 		{
+			Messages ??= new(this);
+			
 			NodeEditor.checkInit(false);
-
+			
 			// Check Groups
 			if (!CheckNodeCanvasList(ref groups, "groups", repair) && !repair) return false;
 

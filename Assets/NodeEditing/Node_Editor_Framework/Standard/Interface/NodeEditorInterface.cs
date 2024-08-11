@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits;
 using UnityEngine;
 
 using NodeEditorFramework.IO;
@@ -101,6 +103,12 @@ namespace NodeEditorFramework.Standard
 			// GUILayout.Label(new GUIContent(canvasCache.typeData.DisplayString, "Canvas Type: " + canvasCache.typeData.DisplayString), GUI.skin.GetStyle("toolbarLabel"));
 
 
+			GUILayout.Space(5);
+			if (GUILayout.Button("Run", GUI.skin.GetStyle("toolbarButton"), GUILayout.Width(100)))
+			{
+				canvasCache.nodeCanvas.nodes.FirstOrDefault()?.Rule.Circuit.Run();
+			}
+		
 			GUI.backgroundColor = new Color(1, 0.3f, 0.3f, 1);
 			/*if (GUILayout.Button("Reinit", GUI.skin.GetStyle("toolbarButton"), GUILayout.Width(100)))
 			{
@@ -145,6 +153,19 @@ namespace NodeEditorFramework.Standard
 		}
 
 		public void DrawModalPanel()
+		{
+			if (showModalPanel)
+			{
+				if (modalPanelContent == null)
+					return;
+				GUILayout.BeginArea(modalPanelRect, GUI.skin.box);
+				modalPanelContent.Invoke();
+				GUILayout.EndArea();
+			}
+		}
+		
+		
+		public void DrawMessagePanel()
 		{
 			if (showModalPanel)
 			{

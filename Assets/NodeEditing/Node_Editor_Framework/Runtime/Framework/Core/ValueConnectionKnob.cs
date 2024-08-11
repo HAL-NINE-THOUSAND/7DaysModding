@@ -2,7 +2,7 @@
 using System;
 using System.Linq;
 using System.Collections.Generic;
-
+using NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits;
 using NodeEditorFramework.Utilities;
 
 namespace NodeEditorFramework 
@@ -34,15 +34,15 @@ namespace NodeEditorFramework
 			}
 		}
 
-		public void Init (IPort port, string name, Direction dir, string type)
+		public void Init (IPort port, Node node, string name, Direction dir, string type)
 		{
-			base.Init (port, name, dir);
+			base.Init (port, node, name, dir);
 			styleID = type;
 		}
 
-		public void Init (IPort port, string name, Direction dir, string type, NodeSide nodeSide, float nodeSidePosition = 0)
+		public void Init (IPort port, Node node, string name, Direction dir, string type, NodeSide nodeSide, float nodeSidePosition = 0)
 		{
-			base.Init (port, name, dir, nodeSide, nodeSidePosition);
+			base.Init (port, node, name, dir, nodeSide, nodeSidePosition);
 			styleID = type;
 		}
 
@@ -196,10 +196,10 @@ namespace NodeEditorFramework
 			return knobType.IsAssignableFrom (valueKnob.valueType);
 		}
 
-		public override ConnectionPort CreateNew (IPort port) 
+		public override ConnectionPort CreateNew (IPort port, Node node) 
 		{
 			ValueConnectionKnob knob = ScriptableObject.CreateInstance<ValueConnectionKnob> ();
-			knob.Init (port, Name, Direction, StyleID, NodeSide, NodeSidePos);
+			knob.Init (port, node, Name, Direction, StyleID, NodeSide, NodeSidePos);
 			knob.maxConnectionCount = MaxConnectionCount;
 			return knob;
 		}

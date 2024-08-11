@@ -5,6 +5,7 @@
 using System;
 using System.IO;
 using System.Linq;
+using NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits;
 using UnityEngine;
 
 using NodeEditorFramework.Utilities;
@@ -414,6 +415,7 @@ namespace NodeEditorFramework
 			canvasType = canvasType ?? defaultNodeCanvasType ?? // Pick first canvas in alphabetical order (Calculation usually)
 				NodeCanvasManager.getCanvasDefinitions().OrderBy(c => c.DisplayString).First().CanvasType;
 			nodeCanvas = NodeCanvas.CreateCanvas (canvasType);
+			nodeCanvas.SetCircuit(new Circuit());
 			NewEditorState ();
 
 			openedCanvasPath = "";

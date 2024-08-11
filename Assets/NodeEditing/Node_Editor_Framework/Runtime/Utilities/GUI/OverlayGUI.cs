@@ -167,7 +167,7 @@ namespace NodeEditorFramework.Utilities
 				if (parent == null)
 				{
 					menuItems.Add (parent = new MenuItem (folderPath, new GUIContent (folderPath), true));
-					menuItems.Sort((a,b) => a.path.CompareTo(b.path) );
+					menuItems.Sort((a,b) => (a.path ?? "").CompareTo((b.path ?? "")) );
 				}
 				// additional level groups
 				for (int groupCnt = 1; groupCnt < subContents.Length-1; groupCnt++)

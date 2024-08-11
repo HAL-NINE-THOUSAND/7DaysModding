@@ -186,6 +186,38 @@ namespace NodeEditorFramework
 			if (curNodeCanvas == null || curEditorState == null || !curEditorState.drawing)
 				return;
 
+
+			if (Math.Abs(curEditorState.zoom - curEditorState.zoomTarget) > 0.01f)
+			{
+				var p = 1.0f - (curEditorState.zoomEnds - Time.time) / curEditorState.zoomTime;
+				curEditorState.zoom = Mathf.Lerp(curEditorState.zoomStart, curEditorState.zoomTarget, p);
+//				Debug.Log($"Zoom p: {p} | {curEditorState.zoomStart} | {curEditorState.zoomTarget} | {curEditorState.zoom}");
+			}
+			//Mathf.MoveTowards(curEditorState.zoom, curEditorState.zoomTarget, 0.008f);
+
+			//var mouseDiffFromCenter = Event.current.mousePosition - editorState.canvasRect.center;  
+			//Debug.Log($"Mouse: {mouseDiffFromCenter}| Scaled: {mouseDiffFromCenter * curEditorState.zoom}");
+			
+			if (curEditorState.isZoomingIn)
+			{
+				var zoomDiff = curEditorState.zoomTarget - curEditorState.zoomStart;
+				var currDiff = curEditorState.zoomTarget - curEditorState.zoom;
+
+				var p = 1.0f - currDiff / zoomDiff;
+				var diff = curEditorState.zoomPanOriginal + ((curEditorState.zoomMoveTarget - curEditorState.zoomPanOriginal) * p);
+//				Debug.Log($"P: {p} |  Started: {curEditorState.zoomPanOriginal} | Target {curEditorState.zoomMoveTarget}: Current: {diff}");
+				
+				if (!float.IsNaN(diff.x) && !float.IsNaN(diff.y))
+					curEditorState.panOffset = diff;
+
+			}
+			
+			if (Mathf.Approximately(curEditorState.zoomTarget, curEditorState.zoom))
+			{
+//				Debug.Log($"Zoom ended: {curEditorState.zoom}/{curEditorState.zoomTarget}");
+				curEditorState.isZoomingIn = false;
+			}
+			
 			if (Event.current.type == EventType.Repaint) 
 			{ // Draw Background when Repainting
 				// Offset from origin in tile units
@@ -242,6 +274,11 @@ namespace NodeEditorFramework
 					curNodeCanvas.nodes[nodeCnt].DrawConnections();
 			}
 
+			if (curNodeCanvas?.nodes?.Count > 0)
+			{
+				curNodeCanvas.nodes[0].Rule.Circuit.RunIfDirty();
+			}
+			
 			// Draw the nodes
 			for (int nodeCnt = 0; nodeCnt < curNodeCanvas.nodes.Count; nodeCnt++)
 			{

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System;
 using System.Collections.Generic;
+using UnityEngine.Serialization;
 
 namespace NodeEditorFramework 
 {
@@ -21,7 +22,15 @@ namespace NodeEditorFramework
 		// Navigation State
 		public Vector2 panOffset = new Vector2 (); // pan offset
 		public float zoom = 1; // zoom; Ranges in 0.2er-steps from 0.6-2.0; applied 1/zoom;
+		public float zoomTarget = 1; // zoom; Ranges in 0.2er-steps from 0.6-2.0; applied 1/zoom;
+		public float zoomEnds = 0;
+		public float zoomTime = 0.5f;
 
+		public void StopZoom()
+		{
+			zoomTarget = zoom;
+			isZoomingIn = false;
+		}
 		// Current Action
 		[NonSerialized] public ConnectionKnob connectKnob; // connection this output
 		[NonSerialized] public bool dragNode; // node dragging
@@ -38,6 +47,13 @@ namespace NodeEditorFramework
 
 		#region DragHelper
 
+		[NonSerialized] public Vector2 zoomMoveTarget; // drag start position (mouse)
+		[NonSerialized] public Vector2 zoomOutMouseStart; // drag start position (mouse)
+		[NonSerialized] public Vector2 zoomPanOriginal; // drag start position (mouse)
+		[NonSerialized] public bool isZoomingIn; // drag start position (mouse)
+		[NonSerialized] public float zoomStart; // drag start position (mouse)
+
+		
 		[NonSerialized] public string dragUserID; // dragging source
 		[NonSerialized] public Vector2 dragMouseStart; // drag start position (mouse)
 		[NonSerialized] public Vector2 dragObjectStart; // start position of the dragged object
@@ -56,6 +72,7 @@ namespace NodeEditorFramework
 			dragMouseStart = mousePos;
 			dragObjectStart = objectPos;
 			dragOffset = Vector2.zero;
+			StopZoom();
 			return true;
 
 		}

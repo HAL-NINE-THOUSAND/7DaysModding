@@ -21,7 +21,7 @@ namespace NodeEditorFramework
 			foreach (string node in nodes)
 			{ // Only add nodes to the context menu that are compatible
 				if (NodeCanvasManager.CheckCanvasCompability (node, inputInfo.editorState.canvas.GetType ()) && inputInfo.editorState.canvas.CanAddNode (node))
-					canvasContextMenu.AddItem (new GUIContent ("" + NodeTypes.getNodeData(node).adress), false, CreateNodeCallback, new NodeEditorInputInfo (node, state));
+					canvasContextMenu.AddItem (new GUIContent ("" + NodeTypes.getNodeData(node).typeID), false, CreateNodeCallback, new NodeEditorInputInfo (node, state));
 			}
 		}
 
@@ -31,10 +31,10 @@ namespace NodeEditorFramework
 			if (callback == null)
 				throw new UnityException ("Callback Object passed by context is not of type NodeEditorInputInfo!");
 
-			//var kn = callback.editorState.connectKnob;
-			Node.Create (callback.message, NodeEditor.ScreenToCanvasSpace (callback.inputPos), callback.editorState.canvas);
-			callback.editorState.connectKnob = null;
-			NodeEditor.RepaintClients ();
+			throw new UnityException ("Callback Object passed by context is not of type NodeEditorInputInfo!");
+			// Node.Create (callback.message, NodeEditor.ScreenToCanvasSpace (callback.inputPos), callback.editorState.canvas);
+			// callback.editorState.connectKnob = null;
+			// NodeEditor.RepaintClients ();
 		}
 
 		#endregion
@@ -58,7 +58,7 @@ namespace NodeEditorFramework
 			if (state.focusedNode != null && state.canvas.CanAddNode (state.focusedNode.GetID)) 
 			{ // Create new node of same type
 				Debug.LogWarning("Duplicate");
-				//Node.Create (state.focusedNode.GetID, NodeEditor.ScreenToCanvasSpace (inputInfo.inputPos), state.canvas, state.connectKnob);
+				//Node.Create(state.focusedNode.GetID, NodeEditor.ScreenToCanvasSpace (inputInfo.inputPos), state.canvas, state.connectKnob);
 				state.connectKnob = null;
 				inputInfo.inputEvent.Use ();
 			}
@@ -126,6 +126,7 @@ namespace NodeEditorFramework
 			if (inputInfo.inputEvent.button == 0 && state.focusedNode != null && state.focusedNode == state.selectedNode && state.focusedConnectionKnob == null) 
 			{ // Clicked inside the selected Node, so start dragging it
 				state.dragNode = true;
+				inputInfo.editorState.StopZoom();
 				state.StartDrag ("node", inputInfo.inputPos, state.focusedNode.rect.position);
 			}
 		}
@@ -233,13 +234,33 @@ namespace NodeEditorFramework
 					if (state.focusedConnectionKnob.connected())
 					{ 
 						// Loose and edit existing connection from it
-						Debug.LogWarning("connectionKnob");
-						//state.connectKnob = state.focusedConnectionKnob.connection(0);
-						var connection = state.focusedConnectionKnob.Port.RemoveConnection(state.focusedConnectionKnob.Port.Connections[0]);
-						if (connection != null)
+						var inputKnob = state.focusedConnectionKnob; //.connection(0);
+						var circuit = state.focusedConnectionKnob.node.Rule.Circuit;
+						var port = state.focusedConnectionKnob.Port;
+						var rule = circuit.GetConnectionRule(port);
+						var canvas = state.focusedConnectionKnob.node.canvas;
+
+						var ruleNode = canvas.GetNodeForRule(rule);
+						if (ruleNode != null)
 						{
-							NodeEditor.curNodeCanvas.OnNodeChange (connection.TargetPort.Node);
+							foreach (var outKnob in ruleNode.OutgoingKnobs)
+							{
+								if (outKnob.connectedKnobs.Contains(inputKnob))
+								{
+									outKnob.connectedKnobs.Remove(inputKnob);
+									circuit.RemoveConnection(port);
+									circuit.Run();
+								}
+							}
 						}
+						
+						// var connection = state.focusedConnectionKnob.Port.RemoveConnection(state.focusedConnectionKnob.PortLegacy.Connections[0]);
+						// if (connection != null)
+						// {
+						// 	NodeEditor.curNodeCanvas.OnNodeChange (connection.TargetPortLegacy.Node);
+						// }
+						
+						
 						//state.connectKnob.Port.Node.RemoveConnection(state.focusedConnectionKnob.Port, state.connectKnob.Port);
 						inputInfo.inputEvent.Use();
 					}
@@ -259,8 +280,29 @@ namespace NodeEditorFramework
 			if (inputInfo.inputEvent.button == 0 && state.connectKnob != null && state.focusedNode != null && state.focusedConnectionKnob != null && state.focusedConnectionKnob != state.connectKnob) 
 			{ // A connection curve was dragged and released onto a connection knob
 
-				state.focusedConnectionKnob.body.ConnectToThisNode(state.connectKnob.Port, state.focusedConnectionKnob.Port);
-				//state.focusedConnectionKnob.TryApplyConnection(state.connectKnob);
+				//state.focusedConnectionKnob.body.ConnectToThisNode(state.connectKnob.Port, state.focusedConnectionKnob.Port);
+
+				var inputKnob = state.focusedConnectionKnob;
+				var sourceInputRule = inputKnob.node.Rule;
+				var sourceInput = inputKnob.Port;
+
+
+				var outputKnob = state.connectKnob;
+				var targetRule = state.connectKnob.node.Rule;
+				if (targetRule.Circuit.RegisterConnection(sourceInput, targetRule, out string error))
+				{
+					outputKnob.connectedKnobs.Add(inputKnob);
+					targetRule.Circuit.Run();
+				}
+				else
+				{
+					outputKnob.node.canvas.AddMessage(error);
+				}
+
+				//state.focusedConnectionKnob.node.Rule.Circuit.RegisterConnection(state.connectKnob.Port.Id, state.focusedConnectionKnob.Port.Node);
+				
+				
+				
 				inputInfo.inputEvent.Use ();
 			}
 			state.connectKnob = null;
@@ -271,9 +313,29 @@ namespace NodeEditorFramework
 		#region Zoom
 
 		[EventHandlerAttribute (EventType.ScrollWheel)]
-		private static void HandleZooming (NodeEditorInputInfo inputInfo) 
+		private static void HandleZooming (NodeEditorInputInfo inputInfo)
 		{
-			inputInfo.editorState.zoom = (float)Math.Round (Math.Min (4.0, Math.Max (0.6, inputInfo.editorState.zoom + inputInfo.inputEvent.delta.y / 15)), 2);
+			var zoomAmount = inputInfo.inputEvent.delta.y < 0 ? inputInfo.inputEvent.delta.y / 3 : inputInfo.inputEvent.delta.y / 5;
+			
+			inputInfo.editorState.zoomStart = inputInfo.editorState.zoom;
+			inputInfo.editorState.zoomTarget += zoomAmount;
+			inputInfo.editorState.zoomTarget = (float)Math.Round (Math.Min (4.0, Math.Max (0.6, inputInfo.editorState.zoomTarget)), 2);
+			inputInfo.editorState.zoomEnds = Time.time + inputInfo.editorState.zoomTime;
+
+			var isZoomIn = inputInfo.inputEvent.delta.y < 0;
+			if (!isZoomIn && inputInfo.editorState.isZoomingIn)
+			{
+				inputInfo.editorState.StopZoom();
+			}
+			if (isZoomIn && !inputInfo.editorState.isZoomingIn)
+			{
+				inputInfo.editorState.isZoomingIn = true;
+				inputInfo.editorState.zoomOutMouseStart = inputInfo.inputEvent.mousePosition;
+				inputInfo.editorState.zoomPanOriginal = inputInfo.editorState.panOffset;
+				var mouseDiffFromCenter = (Event.current.mousePosition - inputInfo.editorState.canvasRect.center) * inputInfo.editorState.zoom;  
+				inputInfo.editorState.zoomMoveTarget = inputInfo.editorState.panOffset - mouseDiffFromCenter;
+
+			}
 			NodeEditor.RepaintClients ();
 		}
 
@@ -312,8 +374,9 @@ namespace NodeEditorFramework
 				NodeEditorState state = inputInfo.editorState;
 				if (state.selectedNode != null)
 				{ // Snap selected Node's position to multiples of 10
-					state.selectedNode.position.x = Mathf.Round(state.selectedNode.rect.x / 10) * 10;
-					state.selectedNode.position.y = Mathf.Round(state.selectedNode.rect.y / 10) * 10;
+
+					var pos = new Vector2(Mathf.Round(state.selectedNode.rect.x / 10) * 10, Mathf.Round(state.selectedNode.rect.y / 10) * 10);
+					state.selectedNode.position = pos;
 					NodeEditor.RepaintClients();
 				}
 				if (state.activeGroup != null)

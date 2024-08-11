@@ -194,80 +194,82 @@ namespace NodeEditorFramework.IO
 		/// </summary>
 		internal static NodeCanvas ConvertToNodeCanvas (CanvasData canvasData)
 		{
-			if (canvasData == null)
-				return null;
-			NodeCanvas nodeCanvas = NodeCanvas.CreateCanvas(canvasData.type);
-			nodeCanvas.name = nodeCanvas.saveName = canvasData.name;
-			nodeCanvas.nodes.Clear();
-			NodeEditor.BeginEditingCanvas(nodeCanvas);
+			throw new UnityException ("Disabled function!");
 
-			foreach (NodeData nodeData in canvasData.nodes.Values)
-			{ // Read all nodes
-				Node node = Node.Create (nodeData.typeID, nodeData.nodePos, nodeCanvas, null, true, false);
-				if (!string.IsNullOrEmpty(nodeData.name))
-					node.name = nodeData.name;
-				if (node == null)
-					continue;
-
-				foreach (ConnectionPortDeclaration portDecl in ConnectionPortManager.GetPortDeclarationEnumerator(node))
-				{ // Find stored ports for each node port declaration
-					PortData portData = nodeData.connectionPorts.Find((PortData data) => data.name == portDecl.portField.Name);
-					if (portData != null) // Stored port has been found, record
-						portData.port = (ConnectionPort)portDecl.portField.GetValue(node);
-				}
-
-				Debug.LogWarning("ConvertToNodeCanvas");
-				// foreach (PortData portData in nodeData.connectionPorts.Where(port => port.dynamic))
-				// { // Find stored dynamic connection ports
-				// 	if (portData.port != null) // Stored port has been recreated
-				// 	{
-				// 		portData.port.body = node;
-				// 		node.dynamicConnectionPorts.Add(portData.port);
-				// 	}
-				// }
-
-				foreach (VariableData varData in nodeData.variables)
-				{ // Restore stored variable to node
-					FieldInfo field = node.GetType().GetField(varData.name, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
-					if (field != null)
-						field.SetValue(node, varData.refObject != null ? varData.refObject.data : varData.value);
-				}
-			}
-
-			foreach (ConnectionData conData in canvasData.connections)
-			{ // Restore all connections
-				if (conData.port1.port == null || conData.port2.port == null)
-				{ // Not all ports where saved in canvasData
-					Debug.Log("Incomplete connection " + conData.port1.name + " and " + conData.port2.name + "!");
-					continue;
-				}
-				conData.port1.port.TryApplyConnection(conData.port2.port, true);
-			}
-			
-			foreach (GroupData groupData in canvasData.groups)
-			{ // Recreate groups
-				NodeGroup group = new NodeGroup();
-				group.title = groupData.name;
-				group.rect = groupData.rect;
-				group.color = groupData.color;
-				nodeCanvas.groups.Add(group);
-			}
-
-			nodeCanvas.editorStates = new NodeEditorState[canvasData.editorStates.Length];
-			for (int i = 0; i < canvasData.editorStates.Length; i++)
-			{ // Read all editorStates
-				EditorStateData stateData = canvasData.editorStates[i];
-				NodeEditorState state = ScriptableObject.CreateInstance<NodeEditorState>();
-				state.selectedNode = stateData.selectedNode == null ? null : canvasData.FindNode(stateData.selectedNode.nodeID).node;
-				state.panOffset = stateData.panOffset;
-				state.zoom = stateData.zoom;
-				state.canvas = nodeCanvas;
-				state.name = "EditorState";
-				nodeCanvas.editorStates[i] = state;
-			}
-
-			NodeEditor.EndEditingCanvas();
-			return nodeCanvas;
+			// if (canvasData == null)
+			// 	return null;
+			// NodeCanvas nodeCanvas = NodeCanvas.CreateCanvas(canvasData.type);
+			// nodeCanvas.name = nodeCanvas.saveName = canvasData.name;
+			// nodeCanvas.nodes.Clear();
+			// NodeEditor.BeginEditingCanvas(nodeCanvas);
+			//
+			// foreach (NodeData nodeData in canvasData.nodes.Values)
+			// { // Read all nodes
+			// 	Node node = Node.Create (nodeData.typeID, nodeData.nodePos, nodeCanvas, null, true, false);
+			// 	if (!string.IsNullOrEmpty(nodeData.name))
+			// 		node.name = nodeData.name;
+			// 	if (node == null)
+			// 		continue;
+			//
+			// 	foreach (ConnectionPortDeclaration portDecl in ConnectionPortManager.GetPortDeclarationEnumerator(node))
+			// 	{ // Find stored ports for each node port declaration
+			// 		PortData portData = nodeData.connectionPorts.Find((PortData data) => data.name == portDecl.portField.Name);
+			// 		if (portData != null) // Stored port has been found, record
+			// 			portData.port = (ConnectionPort)portDecl.portField.GetValue(node);
+			// 	}
+			//
+			// 	Debug.LogWarning("ConvertToNodeCanvas");
+			// 	// foreach (PortData portData in nodeData.connectionPorts.Where(port => port.dynamic))
+			// 	// { // Find stored dynamic connection ports
+			// 	// 	if (portData.port != null) // Stored port has been recreated
+			// 	// 	{
+			// 	// 		portData.port.body = node;
+			// 	// 		node.dynamicConnectionPorts.Add(portData.port);
+			// 	// 	}
+			// 	// }
+			//
+			// 	foreach (VariableData varData in nodeData.variables)
+			// 	{ // Restore stored variable to node
+			// 		FieldInfo field = node.GetType().GetField(varData.name, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
+			// 		if (field != null)
+			// 			field.SetValue(node, varData.refObject != null ? varData.refObject.data : varData.value);
+			// 	}
+			// }
+			//
+			// foreach (ConnectionData conData in canvasData.connections)
+			// { // Restore all connections
+			// 	if (conData.port1.port == null || conData.port2.port == null)
+			// 	{ // Not all ports where saved in canvasData
+			// 		Debug.Log("Incomplete connection " + conData.port1.name + " and " + conData.port2.name + "!");
+			// 		continue;
+			// 	}
+			// 	conData.port1.port.TryApplyConnection(conData.port2.port, true);
+			// }
+			//
+			// foreach (GroupData groupData in canvasData.groups)
+			// { // Recreate groups
+			// 	NodeGroup group = new NodeGroup();
+			// 	group.title = groupData.name;
+			// 	group.rect = groupData.rect;
+			// 	group.color = groupData.color;
+			// 	nodeCanvas.groups.Add(group);
+			// }
+			//
+			// nodeCanvas.editorStates = new NodeEditorState[canvasData.editorStates.Length];
+			// for (int i = 0; i < canvasData.editorStates.Length; i++)
+			// { // Read all editorStates
+			// 	EditorStateData stateData = canvasData.editorStates[i];
+			// 	NodeEditorState state = ScriptableObject.CreateInstance<NodeEditorState>();
+			// 	state.selectedNode = stateData.selectedNode == null ? null : canvasData.FindNode(stateData.selectedNode.nodeID).node;
+			// 	state.panOffset = stateData.panOffset;
+			// 	state.zoom = stateData.zoom;
+			// 	state.canvas = nodeCanvas;
+			// 	state.name = "EditorState";
+			// 	nodeCanvas.editorStates[i] = state;
+			// }
+			//
+			// NodeEditor.EndEditingCanvas();
+			// return nodeCanvas;
 		}
 
 		#endregion

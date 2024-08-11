@@ -2,8 +2,9 @@
 using System;
 using System.Linq;
 using System.Collections.Generic;
-
+using NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits;
 using NodeEditorFramework.Utilities;
+using UnityEngine.Serialization;
 
 namespace NodeEditorFramework 
 {
@@ -16,7 +17,8 @@ namespace NodeEditorFramework
 	public class ConnectionPort : ScriptableObject
 	{
 		// Properties
-		public Node body;
+		[FormerlySerializedAs("body")] public Node node;
+		public IRule rule;
 		public Direction direction = Direction.None;
 		public ConnectionCount maxConnectionCount = ConnectionCount.Multi;
 		public virtual ConnectionShape shape { get { return ConnectionShape.Line; } }
@@ -35,10 +37,11 @@ namespace NodeEditorFramework
 		// protected List<ConnectionPort> _connections = new List<ConnectionPort> ();
 		// public List<ConnectionPort> connections { get { return _connections; } }
 
-		public void Init (IPort port, string knobName)
+		public void Init (IPort port, Node node, string knobName)
 		{
 			this.Port = port;
-			body = port.Node;
+			
+			this.node = node;
 			name = knobName;
 		}
 
@@ -48,11 +51,11 @@ namespace NodeEditorFramework
 
 		public bool Validate(Node nodeBody, bool repair = true)
 		{
-			if (body == null || body != nodeBody)
+			if (node == null || node != nodeBody)
 			{
 				Debug.LogError("Port " + name + " has no node body assigned! Fixed!");
 				if (!repair) return false;
-				body = nodeBody;
+				node = nodeBody;
 			}
 			// if (_connections == null)
 			// {
@@ -104,13 +107,14 @@ namespace NodeEditorFramework
 		{
 			if (Event.current.type != EventType.Repaint)
 				return;
-			Vector2 startPos = body.rect.center;
-			for (int i = 0; i < Port.Connections.Count; i++)
-			{
-				//should this be destination?
-				Vector2 endPos = Port.Connections[i].TargetPort.Node.rect.center;
-				NodeEditorGUI.DrawConnection (startPos, endPos, ConnectionDrawMethod.StraightLine, color);
-			}
+			Vector2 startPos = node.rect.center;
+			Debug.LogWarning("draw here connections");
+			// for (int i = 0; i < Port.Connections.Count; i++)
+			// {
+			// 	//should this be destination?
+			// 	Vector2 endPos = Port.Connections[i].TargetPort.Node.rect.center;
+			// 	NodeEditorGUI.DrawConnection (startPos, endPos, ConnectionDrawMethod.StraightLine, color);
+			// }
 		}
 
 		/// <summary>
@@ -120,7 +124,7 @@ namespace NodeEditorFramework
 		{
 			if (Event.current.type != EventType.Repaint)
 				return;
-			NodeEditorGUI.DrawConnection (body.rect.center, endPos, ConnectionDrawMethod.StraightLine, color);
+			NodeEditorGUI.DrawConnection (node.rect.center, endPos, ConnectionDrawMethod.StraightLine, color);
 		}
 
 		#endregion
@@ -130,19 +134,22 @@ namespace NodeEditorFramework
 		/// <summary>
 		/// Returns whether this port is connected to any other port
 		/// </summary>
-		public bool connected () 
+		public bool connected ()
 		{
-			return Port.Connections.Count > 0;
+			var ret = node.Rule.Circuit.IsInputConnected(Port.InputId);
+			return ret;
 		}
 
 		/// <summary>
 		/// Returns the connection with the specified index or null if not existant
 		/// </summary>
-		public Connection connection (int index) 
+		public object connection (int index)
 		{
-			if (Port.Connections.Count <= index)
-				throw new IndexOutOfRangeException ("connections[" + index + "] of '" + name + "'");
-			return Port.Connections[index];
+			Debug.LogWarning("connection index");
+			return null;
+			// if (Port.Connections.Count <= index)
+			// 	throw new IndexOutOfRangeException ("connections[" + index + "] of '" + name + "'");
+			// return Port.Connections[index];
 		}
 
 		/// <summary>
@@ -326,7 +333,7 @@ namespace NodeEditorFramework
 			return true;
 		}
 
-		public virtual ConnectionPort CreateNew (IPort port)
+		public virtual ConnectionPort CreateNew (IPort port, Node node)
 		{
 			throw new NotImplementedException("Nope...");
 			// ConnectionPort port = ScriptableObject.CreateInstance<ConnectionPort> ();

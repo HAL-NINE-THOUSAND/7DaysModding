@@ -2,7 +2,7 @@
 using System;
 using System.Linq;
 using System.Collections.Generic;
-
+using NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits;
 using NodeEditorFramework.Utilities;
 
 namespace NodeEditorFramework 
@@ -32,22 +32,23 @@ namespace NodeEditorFramework
 		public float sidePosition = 0; // Position on the side, top->bottom, left->right
 		public float sideOffset = 0; // Offset from the side
 
+		public List<ConnectionKnob> connectedKnobs = new();
 		public ConnectionKnob()
 		{
 			
 		}
-		public void Init (IPort port, string name, Direction dir)
+		public void Init (IPort port, Node node, string name, Direction dir)
 		{
-			base.Init (port, name);
+			base.Init (port, node, name);
 			direction = dir;
 			maxConnectionCount = dir == Direction.In? ConnectionCount.Single : ConnectionCount.Multi; 
 			side = dir == Direction.Out? NodeSide.Right : NodeSide.Left;
 			sidePosition = 0;
 		}
 
-		public void Init (IPort port, string name, Direction dir, NodeSide nodeSide, float nodeSidePosition = 0)
+		public void Init (IPort port, Node node, string name, Direction dir, NodeSide nodeSide, float nodeSidePosition = 0)
 		{
-			base.Init (port, name);
+			base.Init (port, node, name);
 			direction = dir;
 			maxConnectionCount = dir == Direction.In? ConnectionCount.Single : ConnectionCount.Multi; 
 			side = nodeSide;
@@ -148,13 +149,13 @@ namespace NodeEditorFramework
 		private Vector2 GetKnobCenter (Vector2 knobSize) 
 		{
 			if (side == NodeSide.Left)
-				return body.rect.position + new Vector2 (-sideOffset-knobSize.x/2, sidePosition);
+				return node.rect.position + new Vector2 (-sideOffset-knobSize.x/2, sidePosition);
 			else if (side == NodeSide.Right)
-				return body.rect.position + new Vector2 ( sideOffset+knobSize.x/2 + body.rect.width, sidePosition);
+				return node.rect.position + new Vector2 ( sideOffset+knobSize.x/2 + node.rect.width, sidePosition);
 			else if (side == NodeSide.Bottom)
-				return body.rect.position + new Vector2 (sidePosition,  sideOffset+knobSize.y/2 + body.rect.height);
+				return node.rect.position + new Vector2 (sidePosition,  sideOffset+knobSize.y/2 + node.rect.height);
 			else if (side == NodeSide.Top)
-				return body.rect.position + new Vector2 (sidePosition, -sideOffset-knobSize.y/2);
+				return node.rect.position + new Vector2 (sidePosition, -sideOffset-knobSize.y/2);
 			else
 				throw new Exception ("Unspecified nodeSide of NodeKnop " + name + ": " + side.ToString ());
 		}
@@ -202,13 +203,13 @@ namespace NodeEditorFramework
 			Vector2 startDir = GetDirection();
 
 			Debug.LogWarning("Draw knobs missing");
-			for (int i = 0; i < Port.Connections.Count; i++)
-			{
-				var conKnob = Port.Connections[i];
-				Vector2 endPos = GetGUIKnob().center;
-				Vector2 endDir = GetDirection();
-				NodeEditorGUI.DrawConnection(startPos, startDir, endPos, endDir, color);
-			}
+			// for (int i = 0; i < PortLegacy.Connections.Count; i++)
+			// {
+			// 	var conKnob = PortLegacy.Connections[i];
+			// 	Vector2 endPos = GetGUIKnob().center;
+			// 	Vector2 endDir = GetDirection();
+			// 	NodeEditorGUI.DrawConnection(startPos, startDir, endPos, endDir, color);
+			// }
 		}
 
 		/// <summary>
@@ -259,9 +260,9 @@ namespace NodeEditorFramework
 		/// </summary>
 		public void SetPosition () 
 		{
-			if (Event.current.type != EventType.Repaint || body.ignoreGUIKnobPlacement)
+			if (Event.current.type != EventType.Repaint || node.ignoreGUIKnobPlacement)
 				return;
-			Vector2 pos = GUILayoutUtility.GetLastRect ().center + body.contentOffset;
+			Vector2 pos = GUILayoutUtility.GetLastRect ().center + node.contentOffset;
 			SetPosition (side == NodeSide.Bottom || side == NodeSide.Top? pos.x : pos.y);
 		}
 
@@ -270,7 +271,7 @@ namespace NodeEditorFramework
 		/// </summary>
 		public void SetPosition(float position, NodeSide nodeSide)
 		{
-			if (body.ignoreGUIKnobPlacement)
+			if (node.ignoreGUIKnobPlacement)
 				return;
 			if (side != nodeSide)
 			{
@@ -285,7 +286,7 @@ namespace NodeEditorFramework
 		/// </summary>
 		public void SetPosition(float position)
 		{
-			if (body.ignoreGUIKnobPlacement)
+			if (node.ignoreGUIKnobPlacement)
 				return;
 			sidePosition = position;
 		}
@@ -348,10 +349,10 @@ namespace NodeEditorFramework
 			NodeSidePos = nodeSidePos;
 		}
 
-		public override ConnectionPort CreateNew (IPort port) 
+		public override ConnectionPort CreateNew (IPort port, Node node) 
 		{
 			ConnectionKnob knob = ScriptableObject.CreateInstance<ConnectionKnob> ();
-			knob.Init (port, Name, Direction, NodeSide, NodeSidePos);
+			knob.Init (port, node, Name, Direction, NodeSide, NodeSidePos);
 			knob.styleID = StyleID;
 			knob.maxConnectionCount = MaxConnectionCount;
 			return knob;

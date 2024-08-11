@@ -70,7 +70,7 @@ namespace NodeEditorFramework
 				return;
 			}
 			// Workaround for undo records created in playmode that have being deleted (by Unity) after exiting
-			if (port1.body.canvas.nodes.Contains(port1.body) && port2.body.canvas.nodes.Contains(port2.body))
+			if (port1.node.canvas.nodes.Contains(port1.node) && port2.node.canvas.nodes.Contains(port2.node))
 				port1.TryApplyConnection(port2, true);
 		}
 

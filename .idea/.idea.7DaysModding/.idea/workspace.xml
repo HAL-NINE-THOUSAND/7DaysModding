@@ -1,23 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c49ce2d-759b-4202-924b-bfa87a90867a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/TestNodes/MyTestNodeAgain.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/TestNodes/MyTestNodeAgain.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/TestNodes/MyTestNodeBlah.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/TestNodes/MyTestNodeBlah.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/TestNodes/SomeTestNode.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/TestNodes/SomeTestNode.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/Rules.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/Rules/EditorRules.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/Rules/EditorRules.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Circuits/RuleAttributes.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Circuits/RuleAttributes.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/MessageArea.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/MessageArea.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/UI.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/UI.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.7DaysModding/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.7DaysModding/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Examples/Runtime/RTNodeEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/Runtime/RTNodeEditor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Examples/TestNodes/MyTestNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/TestNodes/MyTestNode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Examples/TestNodes/MyTestNodeAgain.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/TestNodes/MyTestNodeAgain.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Examples/TestNodes/MyTestNodeBlah.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/TestNodes/MyTestNodeBlah.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Examples/TestNodes/SomeTestNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/TestNodes/SomeTestNode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/Connection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/Connection.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/ConnectionKnob.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/ConnectionKnob.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/ConnectionPort.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/ConnectionPort.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/Node.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/Node.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/NodeCanvas.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/NodeCanvas.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/NodeEditorState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/NodeEditorState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/Port.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/Port.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/ValueConnectionKnob.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/ValueConnectionKnob.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/CoreExtensions/NodeTypes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/CoreExtensions/NodeTypes.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Interface/NodeEditorGUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Interface/NodeEditorGUI.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Interface/NodeEditorInputControls.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Interface/NodeEditorInputControls.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Interface/NodeEditorInputSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Interface/NodeEditorInputSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Interface/NodeEditorUndoActions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Interface/NodeEditorUndoActions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/NodeEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/NodeEditor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/SaveSystem/ImportExportManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/SaveSystem/ImportExportManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/SaveSystem/NodeEditorUserCache.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/SaveSystem/NodeEditorUserCache.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Resources/DefaultSkin.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Resources/DefaultSkin.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Utilities/GUI/OverlayGUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Utilities/GUI/OverlayGUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Utilities/GUI/RTEditorGUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Utilities/GUI/RTEditorGUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Standard/CalculationBase/CanvasCalculator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Standard/CalculationBase/CanvasCalculator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Standard/Interface/NodeEditorInterface.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Standard/Interface/NodeEditorInterface.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,20 +59,28 @@
     <option name="RESET_MODE" value="MIXED" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/18a6dfdbe6dc40fe86acd7f8c3c214102d600/25/7e9384b5/GUILayoutUtility.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/18a6dfdbe6dc40fe86acd7f8c3c214102d600/31/364f2d96/GUISkin.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/18a6dfdbe6dc40fe86acd7f8c3c214102d600/52/4f1af58b/GUI.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/18a6dfdbe6dc40fe86acd7f8c3c214102d600/5d/e3e5b622/GUILayout.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/18a6dfdbe6dc40fe86acd7f8c3c214102d600/6f/a9f5aa91/GUIContent.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/18a6dfdbe6dc40fe86acd7f8c3c214102d600/95/6380cfef/GUILayoutOption.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/18a6dfdbe6dc40fe86acd7f8c3c214102d600/e6/d9626423/Event.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/467a840a914a47078e4ae9b0b1e8779e46ac00/10/b7d903a6/MulticastDelegate.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/467a840a914a47078e4ae9b0b1e8779e46ac00/15/92419e74/Array.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/467a840a914a47078e4ae9b0b1e8779e46ac00/5b/a8a37691/List`1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/467a840a914a47078e4ae9b0b1e8779e46ac00/9a/67bbc048/RuntimeMethodInfo.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/467a840a914a47078e4ae9b0b1e8779e46ac00/ad/1d3019ee/ArraySortHelper`1.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/467a840a914a47078e4ae9b0b1e8779e46ac00/ad/1d3019ee/ArraySortHelper`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/467a840a914a47078e4ae9b0b1e8779e46ac00/af/4d56de44/String.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/467a840a914a47078e4ae9b0b1e8779e46ac00/d5/46ab2181/Delegate.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/467a840a914a47078e4ae9b0b1e8779e46ac00/e3/fb2a12cf/KeyValuePair`2.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/53d9c9e3ddfd44bba9f7bd7413478f0710fc00/28/a97e9027/EnumerableSorter`2.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/467a840a914a47078e4ae9b0b1e8779e46ac00/f7/b967abea/NullReferenceException.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/53d9c9e3ddfd44bba9f7bd7413478f0710fc00/28/a97e9027/EnumerableSorter`2.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/53d9c9e3ddfd44bba9f7bd7413478f0710fc00/bc/99e943d7/EnumerableSorter`1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/53d9c9e3ddfd44bba9f7bd7413478f0710fc00/cf/20dbacd2/OrderedEnumerable`1.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/55fbbbd17b724c15b6abe8c1a3e3289c175c00/00/cbf3e416/Mathf.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/55fbbbd17b724c15b6abe8c1a3e3289c175c00/42/8211da67/Object.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/55fbbbd17b724c15b6abe8c1a3e3289c175c00/4e/0eb481b2/ScriptableObject.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/55fbbbd17b724c15b6abe8c1a3e3289c175c00/72/7420c9fd/Vector2.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/55fbbbd17b724c15b6abe8c1a3e3289c175c00/fd/a1f75864/Color.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/999670adb4c84ac4bad3ce4f6391c9c9955800/20/99acc1fa/GameView.cs" root0="SKIP_HIGHLIGHTING" />
@@ -56,32 +89,59 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/999670adb4c84ac4bad3ce4f6391c9c9955800/5e/d779fddd/HostView.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/999670adb4c84ac4bad3ce4f6391c9c9955800/fb/4d022a05/EditorCompilationInterface.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3ea01e77be99618395f448b16bd7cc2bd4248bd9e5d8474964b2d97f39c5d74/System.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d44b17e136d09081da1e8fd0e8c83fde60e11818b9f2442d7ed8cb733fae895e/System.Collections.Generic.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Circuits/Circuit.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Circuits/Port.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Circuits/Rule.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Circuits/RulesManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/ConnectionKnob.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/ConnectionPort.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Interface/NodeEditorInputControls.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.rider@3.0.31/Rider/Editor/EditorPluginInterop.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.rider@3.0.31/Rider/Editor/PluginSettings.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.rider@3.0.31/Rider/Editor/ProjectGeneration/AssemblyNameProvider.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.rider@3.0.31/Rider/Editor/ProjectGeneration/IAssemblyNameProvider.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.rider@3.0.31/Rider/Editor/ProjectGeneration/ProjectPart.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.rider@3.0.31/Rider/Editor/RiderScriptEditor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.rider@3.0.31/Rider/Editor/RiderScriptEditorDataPersisted.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.rider@3.0.31/Rider/Editor/RiderStyles.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.rider@3.0.31/Rider/Editor/UnitTesting/CallbackInitializer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.rider@3.0.31/Rider/Editor/UnitTesting/RiderTestRunner.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.rider@3.0.31/Rider/Editor/UnitTesting/SyncTestRunCallback.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.rider@3.0.31/Rider/Editor/UnitTesting/TestsCallback.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.rider@3.0.31/Rider/Editor/Util/FileSystemUtil.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.rider@3.0.31/Rider/Editor/Util/RiderPathUtil.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.rider@3.0.31/Rider/Editor/Util/StringUtils.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.visualstudio@2.0.22/Editor/COMIntegration/COMIntegration~/COMIntegration.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.visualstudio@2.0.22/Editor/Cli.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.visualstudio@2.0.22/Editor/Image.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.visualstudio@2.0.22/Editor/Messaging/Messenger.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.visualstudio@2.0.22/Editor/ProcessRunner.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.visualstudio@2.0.22/Editor/ProjectGeneration/LegacyStyleProjectGeneration.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.visualstudio@2.0.22/Editor/ProjectGeneration/ProjectProperties.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.visualstudio@2.0.22/Editor/SimpleJSON.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.visualstudio@2.0.22/Editor/SolutionParser.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.visualstudio@2.0.22/Editor/SolutionProperties.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.visualstudio@2.0.22/Editor/Testing/TestRunnerApiListener.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.visualstudio@2.0.22/Editor/Testing/TestRunnerCallbacks.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.visualstudio@2.0.22/Editor/VisualStudioForMacInstallation.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.visualstudio@2.0.22/Editor/VisualStudioForWindowsInstallation.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.visualstudio@2.0.22/Editor/VisualStudioInstallation.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.33/UnityEditor.TestRunner/Api/Analytics/AnalyticsReporter.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.33/UnityEditor.TestRunner/Api/CallbacksDelegator.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.33/UnityEditor.TestRunner/Api/CallbacksHolder.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.33/UnityEditor.TestRunner/Api/TestRunnerApi.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.33/UnityEditor.TestRunner/GUI/Views/PlayModeTestListGUI.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.33/UnityEditor.TestRunner/GUI/Views/TestListGUIBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.33/UnityEditor.TestRunner/TestLaunchers/PlayerLauncher.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.33/UnityEditor.TestRunner/TestLaunchers/PlaymodeLauncher.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.33/UnityEditor.TestRunner/TestResultSerializer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.33/UnityEngine.TestRunner/Assertions/AllocatingGCMemoryConstraint.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.33/UnityEngine.TestRunner/Assertions/LogScope/LogEvent.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.33/UnityEngine.TestRunner/NUnitExtensions/Attributes/UnityTestAttribute.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.33/UnityEngine.TestRunner/NUnitExtensions/ConstructDelegator.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.33/UnityEngine.TestRunner/NUnitExtensions/TestExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.33/UnityEngine.TestRunner/TestRunner/Callbacks/TestResultRenderer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.33/UnityEngine.TestRunner/Utils/ColorEqualityComparer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.33/UnityEngine.TestRunner/Utils/QuaternionEqualityComparer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.33/UnityEngine.TestRunner/Utils/Utils.cs" root0="SKIP_HIGHLIGHTING" />
@@ -194,6 +254,12 @@
       <workItem from="1722755202642" duration="20753000" />
       <workItem from="1722790895682" duration="2781000" />
       <workItem from="1722876654937" duration="2114000" />
+      <workItem from="1723145011977" duration="4075000" />
+      <workItem from="1723184066013" duration="4948000" />
+      <workItem from="1723230189069" duration="2771000" />
+      <workItem from="1723277494570" duration="6774000" />
+      <workItem from="1723284398925" duration="12743000" />
+      <workItem from="1723378932223" duration="870000" />
     </task>
     <task id="LOCAL-00001" summary="node base">
       <option name="closed" value="true" />
@@ -243,7 +309,15 @@
       <option name="project" value="LOCAL" />
       <updated>1722768676104</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Working">
+      <option name="closed" value="true" />
+      <created>1723145035886</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1723145035886</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -253,7 +327,7 @@
     <option name="coveragePercentColumnWidth" value="150" />
     <option name="sortOrder" value="DESCENDING" />
     <option name="sortedColumn" value="1" />
-    <option name="symbolColumnWidth" value="172" />
+    <option name="symbolColumnWidth" value="185" />
     <coverage-tree-state>
       <expand />
       <select />
@@ -286,7 +360,8 @@
     <MESSAGE value="new base" />
     <MESSAGE value="base" />
     <MESSAGE value="Reworked" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reworked" />
+    <MESSAGE value="Working" />
+    <option name="LAST_COMMIT_MESSAGE" value="Working" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -312,237 +387,42 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/ConnectionKnob.cs</url>
-          <line>206</line>
+          <line>207</line>
           <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Runtime\Framework\Core\ConnectionKnob.cs" containingFunctionPresentation="Method 'DrawConnections'">
             <startOffsets>
-              <option value="7005" />
+              <option value="7175" />
             </startOffsets>
             <endOffsets>
-              <option value="7039" />
+              <option value="7215" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/ConnectionKnob.cs</url>
-          <line>198</line>
+          <line>199</line>
           <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Runtime\Framework\Core\ConnectionKnob.cs" containingFunctionPresentation="Method 'DrawConnections'">
             <startOffsets>
-              <option value="6761" />
+              <option value="6916" />
             </startOffsets>
             <endOffsets>
-              <option value="6805" />
+              <option value="6960" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/Node.cs</url>
-          <line>299</line>
-          <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Runtime\Framework\Core\Node.cs" containingFunctionPresentation="Method 'NodeGUI'">
-            <startOffsets>
-              <option value="9562" />
-            </startOffsets>
-            <endOffsets>
-              <option value="9607" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/Node.cs</url>
-          <line>290</line>
-          <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Runtime\Framework\Core\Node.cs" containingFunctionPresentation="Method 'NodeGUI'">
-            <startOffsets>
-              <option value="9342" />
-            </startOffsets>
-            <endOffsets>
-              <option value="9371" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Utilities/GUI/RTEditorGUI.cs</url>
-          <line>927</line>
+          <line>938</line>
           <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Runtime\Utilities\GUI\RTEditorGUI.cs" containingFunctionPresentation="Method 'DrawLine'">
             <startOffsets>
-              <option value="31983" />
+              <option value="32339" />
             </startOffsets>
             <endOffsets>
-              <option value="32052" />
+              <option value="32408" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="39" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/ConnectionPort.cs</url>
-          <line>232</line>
-          <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Runtime\Framework\Core\ConnectionPort.cs" containingFunctionPresentation="Method 'ClearConnections'">
-            <startOffsets>
-              <option value="7461" />
-            </startOffsets>
-            <endOffsets>
-              <option value="7509" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="45" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/ConnectionPort.cs</url>
-          <line>152</line>
-          <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Runtime\Framework\Core\ConnectionPort.cs" containingFunctionPresentation="Method 'TryApplyConnection'">
-            <startOffsets>
-              <option value="4594" />
-            </startOffsets>
-            <endOffsets>
-              <option value="4642" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="46" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/ConnectionPort.cs</url>
-          <line>166</line>
-          <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Runtime\Framework\Core\ConnectionPort.cs" containingFunctionPresentation="Method 'CanApplyConnection'">
-            <startOffsets>
-              <option value="5031" />
-            </startOffsets>
-            <endOffsets>
-              <option value="5079" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="47" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/ConnectionPort.cs</url>
-          <line>199</line>
-          <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Runtime\Framework\Core\ConnectionPort.cs" containingFunctionPresentation="Method 'ApplyConnection'">
-            <startOffsets>
-              <option value="6379" />
-            </startOffsets>
-            <endOffsets>
-              <option value="6427" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="48" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/ConnectionPort.cs</url>
-          <line>242</line>
-          <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Runtime\Framework\Core\ConnectionPort.cs" containingFunctionPresentation="Method 'RemoveConnection'">
-            <startOffsets>
-              <option value="7791" />
-            </startOffsets>
-            <endOffsets>
-              <option value="7839" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="49" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/Node.cs</url>
-          <line>119</line>
-          <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Runtime\Framework\Core\Node.cs" containingFunctionPresentation="Method 'ConnectToThisNode'">
-            <startOffsets>
-              <option value="3922" />
-            </startOffsets>
-            <endOffsets>
-              <option value="3966" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="61" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Standard/CalculationBase/CanvasCalculator.cs</url>
-          <line>52</line>
-          <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Standard\CalculationBase\CanvasCalculator.cs" containingFunctionPresentation="Method 'StartCalculation'">
-            <startOffsets>
-              <option value="1326" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1352" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="62" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/Node.cs</url>
-          <line>754</line>
-          <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Runtime\Framework\Core\Node.cs" containingFunctionPresentation="Method 'ClearCalculation'">
-            <startOffsets>
-              <option value="23392" />
-            </startOffsets>
-            <endOffsets>
-              <option value="23411" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="63" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Standard/CalculationBase/CanvasCalculator.cs</url>
-          <line>35</line>
-          <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Standard\CalculationBase\CanvasCalculator.cs" containingFunctionPresentation="Method 'OnChange'">
-            <startOffsets>
-              <option value="863" />
-            </startOffsets>
-            <endOffsets>
-              <option value="914" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="64" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/Node.cs</url>
-          <line>690</line>
-          <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Runtime\Framework\Core\Node.cs" containingFunctionPresentation="Method 'getUncalculatedAncestor'">
-            <startOffsets>
-              <option value="21792" />
-            </startOffsets>
-            <endOffsets>
-              <option value="21854" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="65" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Standard/CalculationBase/CanvasCalculator.cs</url>
-          <line>58</line>
-          <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Standard\CalculationBase\CanvasCalculator.cs" containingFunctionPresentation="Method 'StartCalculation'">
-            <startOffsets>
-              <option value="1608" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1652" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="66" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Standard/CalculationBase/CanvasCalculator.cs</url>
-          <line>77</line>
-          <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Standard\CalculationBase\CanvasCalculator.cs" containingFunctionPresentation="Method 'ContinueCalculation'">
-            <startOffsets>
-              <option value="2262" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2282" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="67" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/NodeEditing/Examples/TestNodes/MyTestNode.cs</url>
-          <line>87</line>
-          <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Examples\TestNodes\MyTestNode.cs" containingFunctionPresentation="Method 'Calculate'">
-            <startOffsets>
-              <option value="2363" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2384" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="68" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/NodeEditing/Examples/FrameworkExtends/ExtendedRTNodeEditor.cs</url>
@@ -585,81 +465,146 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/CoreExtensions/NodeTypes.cs</url>
-          <line>84</line>
+          <line>98</line>
           <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Runtime\Framework\CoreExtensions\NodeTypes.cs" containingFunctionPresentation="Method 'getCompatibleNodes'">
             <startOffsets>
-              <option value="2996" />
+              <option value="3566" />
             </startOffsets>
             <endOffsets>
-              <option value="3043" />
+              <option value="3613" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="81" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Interface/NodeEditorInputControls.cs</url>
-          <line>23</line>
-          <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Runtime\Framework\Interface\NodeEditorInputControls.cs" containingFunctionPresentation="Method 'FillAddNodes'">
-            <startOffsets>
-              <option value="908" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1059" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="84" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Utilities/GUI/OverlayGUI.cs</url>
-          <line>123</line>
-          <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Runtime\Utilities\GUI\OverlayGUI.cs" containingFunctionPresentation="Method 'AddItem'">
-            <startOffsets>
-              <option value="3294" />
-            </startOffsets>
-            <endOffsets>
-              <option value="3349" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="85" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Utilities/GUI/OverlayGUI.cs</url>
-          <line>169</line>
-          <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Runtime\Utilities\GUI\OverlayGUI.cs" containingFunctionPresentation="Method 'AddHierarchy'">
-            <startOffsets>
-              <option value="4765" />
-            </startOffsets>
-            <endOffsets>
-              <option value="4816" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="86" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Utilities/GUI/OverlayGUI.cs</url>
           <line>184</line>
           <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Runtime\Utilities\GUI\OverlayGUI.cs" containingFunctionPresentation="Method 'AddHierarchy'">
             <startOffsets>
-              <option value="5461" />
+              <option value="5477" />
             </startOffsets>
             <endOffsets>
-              <option value="5518" />
+              <option value="5534" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="87" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Utilities/GUI/OverlayGUI.cs</url>
-          <line>127</line>
-          <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Runtime\Utilities\GUI\OverlayGUI.cs" containingFunctionPresentation="Method 'AddItem'">
+          <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/NodeEditor.cs</url>
+          <line>247</line>
+          <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Runtime\Framework\NodeEditor.cs" containingFunctionPresentation="Method 'DrawSubCanvas'">
             <startOffsets>
-              <option value="3454" />
+              <option value="9136" />
             </startOffsets>
             <endOffsets>
-              <option value="3511" />
+              <option value="9292" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="88" />
+          <option name="timeStamp" value="97" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/Node.cs</url>
+          <line>115</line>
+          <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Runtime\Framework\Core\Node.cs" containingFunctionPresentation="Property 'Title'">
+            <startOffsets>
+              <option value="3571" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3629" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="99" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/Node.cs</url>
+          <line>125</line>
+          <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Runtime\Framework\Core\Node.cs" containingFunctionPresentation="Property 'ShortTitle'">
+            <startOffsets>
+              <option value="3747" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3750" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="100" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/SaveSystem/ImportExportManager.cs</url>
+          <line>67</line>
+          <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Runtime\Framework\SaveSystem\ImportExportManager.cs" containingFunctionPresentation="Method 'FillImportFormatMenu'">
+            <startOffsets>
+              <option value="2245" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2288" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="125" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Utilities/GUI/RTEditorGUI.cs</url>
+          <line>441</line>
+          <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Runtime\Utilities\GUI\RTEditorGUI.cs" containingFunctionPresentation="Method 'FloatField'">
+            <startOffsets>
+              <option value="15627" />
+            </startOffsets>
+            <endOffsets>
+              <option value="15638" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="128" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Utilities/GUI/RTEditorGUI.cs</url>
+          <line>474</line>
+          <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Runtime\Utilities\GUI\RTEditorGUI.cs" containingFunctionPresentation="Method 'FloatField'">
+            <startOffsets>
+              <option value="16743" />
+            </startOffsets>
+            <endOffsets>
+              <option value="16795" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="129" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Circuits/Circuit.cs</url>
+          <line>47</line>
+          <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Runtime\Framework\Circuits\Circuit.cs" containingFunctionPresentation="Method 'RegisterConnection'">
+            <startOffsets>
+              <option value="1098" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1139" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="135" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Circuits/Circuit.cs</url>
+          <line>149</line>
+          <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Runtime\Framework\Circuits\Circuit.cs" containingFunctionPresentation="Method 'IsSelfReference'">
+            <startOffsets>
+              <option value="4271" />
+            </startOffsets>
+            <endOffsets>
+              <option value="4304" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="137" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Interface/NodeEditorInputControls.cs</url>
+          <line>332</line>
+          <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Runtime\Framework\Interface\NodeEditorInputControls.cs" containingFunctionPresentation="Method 'HandleZooming'">
+            <startOffsets>
+              <option value="12005" />
+            </startOffsets>
+            <endOffsets>
+              <option value="12082" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="143" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -84,15 +84,15 @@ namespace NodeEditorFramework.Standard
 			{ // Calculation was successful
 				node.calculated = true;
 				workList.Remove (node);
-				if (node.ContinueCalculation)
-				{ // Continue with children
-					for (int i = 0; i < node.OutgoingPorts.Count; i++)
-					{
-						var outPort = node.OutgoingPorts[i];
-						for (int t = 0; t < outPort.Connections.Count; t++)
-							ContinueCalculation(outPort.Connections[t].TargetPort.Node);
-					}
-				}
+				// if (node.ContinueCalculation)
+				// { // Continue with children
+				// 	for (int i = 0; i < node.OutgoingPorts.Count; i++)
+				// 	{
+				// 		var outPort = node.OutgoingPorts[i];
+				// 		for (int t = 0; t < outPort.Connections.Count; t++)
+				// 			ContinueCalculation(outPort.Connections[t].TargetPortLegacy.Node);
+				// 	}
+				// }
 				return true;
 			}
 			else if (!workList.Contains (node)) 

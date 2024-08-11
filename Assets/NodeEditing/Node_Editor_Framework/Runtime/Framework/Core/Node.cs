@@ -2,18 +2,28 @@ using UnityEngine;
 using System;
 using System.Linq;
 using System.Collections.Generic;
+using NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits;
 
 namespace NodeEditorFramework
 {
-	public abstract partial class Node : ScriptableObject
+	public partial class Node : ScriptableObject
 	{// Host Canvas
 		public NodeCanvas canvas;
 
+		
 		public static int debugNextId;
 		public int DebugId = debugNextId++;
 		
 		// Positioning
-		public Vector2 position;
+		public Vector2 position
+		{
+			get => Rule.Position;
+			set
+			{
+				Rule.Position = value;
+			}
+		}
+
 		private Vector2 autoSize;
 		public Vector2 size { get { return AutoLayout? autoSize : DefaultSize; } }
 		public Rect rect { get { return new Rect (position, size); } }
@@ -31,185 +41,49 @@ namespace NodeEditorFramework
 		// [NonSerialized] public List<ConnectionKnob> inputKnobs = new List<ConnectionKnob> ();
 		// [NonSerialized] public List<ConnectionKnob> outputKnobs = new List<ConnectionKnob> ();
 
+		public IRule Rule;
+
+
+		public List<ConnectionKnob> IncomingKnobs = new();
+		public List<ConnectionKnob> OutgoingKnobs = new();
 		
-		public List<IPort> IncomingPorts { get; private set; }
-    public List<IPort> OutgoingPorts { get; private set; }
-    public List<Connection> IncomingConnections { get; private set; }
-    public List<Connection> OutgoingConnections { get; private set; }
+		// public List<IPortLegacy> IncomingPorts { get; private set; }
+  //   public List<IPortLegacy> OutgoingPorts { get; private set; }
+  //   public List<Connection> IncomingConnections { get; private set; }
+  //   public List<Connection> OutgoingConnections { get; private set; }
 
     public Node()
     {
-        IncomingPorts = new List<IPort>();
-        OutgoingPorts = new List<IPort>();
-        IncomingConnections = new List<Connection>();
-        OutgoingConnections = new List<Connection>();
+        // IncomingPorts = new List<IPortLegacy>();
+        // OutgoingPorts = new List<IPortLegacy>();
+        // IncomingConnections = new List<Connection>();
+        // OutgoingConnections = new List<Connection>();
     }
 
-    // Add an incoming port to the node
-    public void AddIncomingPort(IPort port)
+    public void SetupRule()
     {
-        IncomingPorts.Add(port);
-    }
 
-    // Add an outgoing port to the node
-    public void AddOutgoingPort(IPort port)
-    {
-        OutgoingPorts.Add(port);
-    }
+	    canvas.Circuit.AddRule(Rule);
 
-    public bool ConnectPorts(IPort port)
-    {
-	    foreach (var p in IncomingPorts)	
+	    for (var index = 0; index < Rule.Inputs.Count; index++)
 	    {
-		    if (p.IsSamePort(port))
-		    {
-			    return ConnectToThisNode(port, p);
-		    }
+		    var input = Rule.Inputs[index];
+		    var knob = ScriptableObject.CreateInstance<ConnectionKnob>();
+		    knob.Init(input, this, "Input " + (index+1), Direction.In);
+		    IncomingKnobs.Add(knob);
 	    }
 
-	    return false;
-    }
-    //
-    // public bool RemoveConnection(IPort sourcePort, IPort targetPort)
-    // {
-	   //  for (var index = 0; index < IncomingConnections.Count; index++)
-	   //  {
-		  //   var conn = IncomingConnections[index];
-    //
-		  //   var match = conn.SourcePort == sourcePort && conn.TargetPort == targetPort;
-		  //   var wrongWayRound = conn.SourcePort == targetPort && conn.TargetPort == sourcePort;
-    //
-		  //   if (wrongWayRound)
-		  //   {
-			 //    Debug.LogWarning("==WRONG WAY ROUND MUPPET!");
-		  //   }
-		  //   if (match)
-		  //   {
-			 //    IncomingConnections.RemoveAt(index);
-			 //    return true;
-		  //   }
-	   //  }
-	   //  for (var index = 0; index < OutgoingConnections.Count; index++)
-	   //  {
-		  //   var port = OutgoingConnections[index];
-		  //   if (port.TargetPort == sourcePort || port.SourcePort == targetPort)
-		  //   {
-			 //    OutgoingConnections.RemoveAt(index);
-			 //    return true;
-		  //   }
-	   //  }
-    //
-	   //  return false;
-    // }
-
-    public bool ConnectToThisNode(IPort sourcePort, IPort destinationPort)
-    {
-
-	    if (sourcePort.Node == destinationPort.Node)
-		    return false;
-
-	    if (sourcePort.Direction != Direction.Out)
-		    return false;
-
-	    if (destinationPort.Direction != Direction.In)
-		    return false;
-
-	    if (destinationPort.Connections.Count > 0)
-		    return false; //input can only come from one source for now 
-
-	    if (!sourcePort.IsSamePort(destinationPort))
-		    return false;
-
-	    var connection = new Connection(sourcePort, destinationPort);
-	    sourcePort.Node.OutgoingConnections.Add(connection);
-	    IncomingConnections.Add(connection);
-	    sourcePort.Connections.Add(connection);
-	    destinationPort.Connections.Add(connection);
-	    NodeEditor.curNodeCanvas.OnNodeChange(sourcePort.Node);
-	    return true;
+	    var outputType = Rule.GetOutputType();
+	    if (outputType != null)
+	    {
+		    var knob = ScriptableObject.CreateInstance<ConnectionKnob>();
+		    knob.Init(null, this, "Output", Direction.Out);
+		    OutgoingKnobs.Add(knob);
+	    }
 
     }
-
-    // // Connect this node's outgoing port to another node's incoming port if types match
-    // public bool ConnectFromOtherNode(Node otherNode, int thisPortIndex, int otherPortIndex)
-    // {
-    //     if (thisPortIndex < 0 || thisPortIndex >= OutgoingPorts.Count ||
-    //         otherPortIndex < 0 || otherPortIndex >= otherNode.IncomingPorts.Count)
-    //     {
-    //         return false;
-    //     }
-    //
-    //     var thisPort = OutgoingPorts[thisPortIndex];
-    //     var otherPort = otherNode.IncomingPorts[otherPortIndex];
-    //
-    //     if (thisPort.PortType == otherPort.PortType)
-    //     {
-    //         var connection = new Connection(thisPort, otherPort);
-    //         OutgoingConnections.Add(connection);
-    //         otherNode.IncomingConnections.Add(connection);
-    //         return true;
-    //     }
-    //
-    //     return false;
-    // }
-
-    // Get the value of a specific incoming port as its given type
-    public T GetIncomingPortValue<T>(int portIndex)
-    {
-        if (portIndex < 0 || portIndex >= IncomingPorts.Count)
-        {
-            throw new ArgumentOutOfRangeException(nameof(portIndex), "Invalid port index.");
-        }
-
-        return IncomingPorts[portIndex].GetValue<T>();
-    }
-
-    // Get the value of a specific outgoing port as its given type
-    public T GetOutgoingPortValue<T>(int portIndex)
-    {
-        if (portIndex < 0 || portIndex >= OutgoingPorts.Count)
-        {
-            throw new ArgumentOutOfRangeException(nameof(portIndex), "Invalid port index.");
-        }
-
-        return OutgoingPorts[portIndex].GetValue<T>();
-    }
-
-    // Get incoming connections of a specific incoming port
-    public IEnumerable<Connection> GetIncomingPortConnections(int portIndex)
-    {
-        if (portIndex < 0 || portIndex >= IncomingPorts.Count)
-        {
-            throw new ArgumentOutOfRangeException(nameof(portIndex), "Invalid port index.");
-        }
-
-        var port = IncomingPorts[portIndex];
-        foreach (var connection in IncomingConnections)
-        {
-            if (connection.TargetPort == port)
-            {
-                yield return connection;
-            }
-        }
-    }
-
-    // Get outgoing connections of a specific outgoing port
-    public IEnumerable<Connection> GetOutgoingPortConnections(int portIndex)
-    {
-        if (portIndex < 0 || portIndex >= OutgoingPorts.Count)
-        {
-            throw new ArgumentOutOfRangeException(nameof(portIndex), "Invalid port index.");
-        }
-
-        var port = OutgoingPorts[portIndex];
-        foreach (var connection in OutgoingConnections)
-        {
-            if (connection.SourcePort == port)
-            {
-                yield return connection;
-            }
-        }
-    }
+  
+  
 		
 		// Calculation graph
 		[HideInInspector] [NonSerialized]
@@ -230,21 +104,34 @@ namespace NodeEditorFramework
 		/// <summary>
 		/// Gets the ID of the Node
 		/// </summary>
-		public abstract string GetID { get; }
+		public string GetID { get; set; }
 
 		/// <summary>
 		/// Specifies the node title.
 		/// </summary>
-		public virtual string Title { get { 
-			#if UNITY_EDITOR
-				return UnityEditor.ObjectNames.NicifyVariableName (GetID);
-			#else
-				return name;
-			#endif
-			} }
+		public virtual string Title { get
+		{
+			return GetID;
+			// #if UNITY_EDITOR
+			// 	return UnityEditor.ObjectNames.NicifyVariableName (GetID);
+			// #else
+			// 	return name;
+			// #endif
+		} }
 
 		private string _shortTitle;
-		public string ShortTitle => _shortTitle ?? (_shortTitle = Title.Split("/").Last());
+
+		public string ShortTitle
+		{
+			get
+			{
+				return _shortTitle;
+			}
+			set
+			{
+				_shortTitle = value;
+			}
+		} // => _shortTitle ?? (_shortTitle = Title.Split("/").Last());
 
 		/// <summary>
 		/// Specifies the default size of the node when automatic resizing is turned off.
@@ -291,16 +178,22 @@ namespace NodeEditorFramework
 			GUILayout.BeginHorizontal ();
 			GUILayout.BeginVertical ();
 
-			for (int i = 0; i < IncomingPorts.Count; i++)
-				IncomingPorts[i].Knob.DisplayLayout ();
+			for (int i = 0; i < IncomingKnobs.Count; i++)
+				IncomingKnobs[i].DisplayLayout ();
 
+			Rule.DrawUI();
 			GUILayout.EndVertical ();
+			
+			
+			//GUILayout.Space(5);
+			
 			GUILayout.BeginVertical ();
 
-			for (int i = 0; i < OutgoingPorts.Count; i++)
-				OutgoingPorts[i].Knob.DisplayLayout ();
+			for (int i = 0; i < OutgoingKnobs.Count; i++)
+				OutgoingKnobs[i].DisplayLayout ();
 			
 			
+			GUILayout.Label (new GUIContent ("Output: " + Rule.GetLastValue()), NodeEditorGUI.GUIStyles["labelCentered"]);
 
 			GUILayout.EndVertical ();
 			GUILayout.EndHorizontal ();
@@ -367,81 +260,87 @@ namespace NodeEditorFramework
 
 		#region General
 
-		/// <summary>
-		/// Creates a node of the specified ID at pos on the current canvas, optionally auto-connecting the specified output to a matching input
-		/// </summary>
-		public static Node Create (string nodeID, Vector2 pos, IPort connectingPort = null, bool silent = false, bool init = true)
-		{
-			return Create (nodeID, pos, NodeEditor.curNodeCanvas, connectingPort, silent, init);
-		}
-
-		/// <summary>
-		/// Creates a node of the specified ID at pos on the specified canvas, optionally auto-connecting the specified output to a matching input
-		/// silent disables any events, init specifies whether OnCreate should be called
-		/// </summary>
-		public static Node Create (string nodeID, Vector2 pos, NodeCanvas hostCanvas, IPort connectingPort = null, bool silent = false, bool init = true)
-		{
-			if (string.IsNullOrEmpty (nodeID) || hostCanvas == null)
-				throw new ArgumentException ();
-			if (!NodeCanvasManager.CheckCanvasCompability (nodeID, hostCanvas.GetType ()))
-				throw new UnityException ("Cannot create Node with ID '" + nodeID + "' as it is not compatible with the current canavs type (" + hostCanvas.GetType ().ToString () + ")!");
-			if (!hostCanvas.CanAddNode (nodeID))
-				throw new UnityException ("Cannot create Node with ID '" + nodeID + "' on the current canvas of type (" + hostCanvas.GetType ().ToString () + ")!");
-
-			// Create node from data
-			NodeTypeData data = NodeTypes.getNodeData (nodeID);
-			Node node = (Node)CreateInstance (data.type);
-			if(node == null)
-				return null;
-
-			// Init node state
-			node.canvas = hostCanvas;
-			node.name = node.Title;
-			node.autoSize = node.DefaultSize;
-			node.position = pos;
-			ConnectionPortManager.UpdateConnectionPorts (node);
-			if (init)
-				node.OnCreate();
-			
-			if (connectingPort != null)
-			{
-				node.ConnectPorts(connectingPort);
-				// // Handle auto-connection and link the output to the first compatible input
-				// for (int i = 0; i < node.connectionPorts.Count; i++)
-				// {
-				// 	if (node.connectionPorts[i].TryApplyConnection (connectingPort, true))
-				// 		break;
-				// }
-			}
-
-			// Add node to host canvas
-			hostCanvas.nodes.Add (node);
-			if (!silent)
-			{ // Callbacks
-				hostCanvas.OnNodeChange(connectingPort != null ? connectingPort.Node : node);
-				NodeEditorCallbacks.IssueOnAddNode(node);
-				hostCanvas.Validate();
-				NodeEditor.RepaintClients();
-			}
-
-// #if UNITY_EDITOR
-// 			if (!silent)
+// 		/// <summary>
+// 		/// Creates a node of the specified ID at pos on the current canvas, optionally auto-connecting the specified output to a matching input
+// 		/// </summary>
+// 		public static Node Create (string nodeID, Vector2 pos, IPortLegacy connectingPortLegacy = null, bool silent = false, bool init = true)
+// 		{
+// 			return Create (nodeID, pos, NodeEditor.curNodeCanvas, connectingPortLegacy, silent, init);
+// 		}
+//
+// 		/// <summary>
+// 		/// Creates a node of the specified ID at pos on the specified canvas, optionally auto-connecting the specified output to a matching input
+// 		/// silent disables any events, init specifies whether OnCreate should be called
+// 		/// </summary>
+// 		public static Node Create (string nodeID, Vector2 pos, NodeCanvas hostCanvas, IPortLegacy connectingPortLegacy = null, bool silent = false, bool init = true)
+// 		{
+// 			if (string.IsNullOrEmpty (nodeID) || hostCanvas == null)
+// 				throw new ArgumentException ();
+// 			if (!NodeCanvasManager.CheckCanvasCompability (nodeID, hostCanvas.GetType ()))
+// 				throw new UnityException ("Cannot create Node with ID '" + nodeID + "' as it is not compatible with the current canavs type (" + hostCanvas.GetType ().ToString () + ")!");
+// 			if (!hostCanvas.CanAddNode (nodeID))
+// 				throw new UnityException ("Cannot create Node with ID '" + nodeID + "' on the current canvas of type (" + hostCanvas.GetType ().ToString () + ")!");
+//
+// 			// Create node from data
+// 			NodeTypeData data = NodeTypes.getNodeData (nodeID);
+// 			Node node = (Node)CreateInstance (typeof(Node)); //data.type
+// 			if(node == null)
+// 				return null;
+//
+// 			var rule = RulesManager.CreateRule(data.type);
+// 			node.Rule = rule;
+// 			// Init node state
+// 			node.canvas = hostCanvas;
+// 			node.ShortTitle = node.GetID = node.name = data.adress;
+// 			
+// 			node.autoSize = node.DefaultSize;
+// 			node.position = pos;
+// 			
+// 			node.SetupRule();
+// 			
+// 			ConnectionPortManager.UpdateConnectionPorts (node);
+// 			if (init)
+// 				node.OnCreate();
+// 			
+// 			if (connectingPortLegacy != null)
 // 			{
-// 				List<ConnectionPort> connectedPorts = new List<ConnectionPort>();
-// 				foreach (ConnectionPort port in node.connectionPorts)
-// 				{ // 'Encode' connected ports in one list (double level cannot be serialized)
-// 					foreach (ConnectionPort conn in port.connections)
-// 						connectedPorts.Add(conn);
-// 					connectedPorts.Add(null);
-// 				}
-// 				Node createdNode = node;
-// 				// Make sure the new node is in the memory dump
-// 				NodeEditorUndoActions.CompleteSOMemoryDump(hostCanvas);
+// 				node.ConnectPorts(connectingPortLegacy);
+// 				// // Handle auto-connection and link the output to the first compatible input
+// 				// for (int i = 0; i < node.connectionPorts.Count; i++)
+// 				// {
+// 				// 	if (node.connectionPorts[i].TryApplyConnection (connectingPort, true))
+// 				// 		break;
+// 				// }
 // 			}
-// #endif
-
-			return node;
-		}
+//
+// 			// Add node to host canvas
+// 			hostCanvas.nodes.Add (node);
+// 			if (!silent)
+// 			{ // Callbacks
+// 				hostCanvas.OnNodeChange(connectingPortLegacy != null ? connectingPortLegacy.Node : node);
+// 				NodeEditorCallbacks.IssueOnAddNode(node);
+// 				hostCanvas.Validate();
+// 				NodeEditor.RepaintClients();
+// 			}
+//
+// // #if UNITY_EDITOR
+// // 			if (!silent)
+// // 			{
+// // 				List<ConnectionPort> connectedPorts = new List<ConnectionPort>();
+// // 				foreach (ConnectionPort port in node.connectionPorts)
+// // 				{ // 'Encode' connected ports in one list (double level cannot be serialized)
+// // 					foreach (ConnectionPort conn in port.connections)
+// // 						connectedPorts.Add(conn);
+// // 					connectedPorts.Add(null);
+// // 				}
+// // 				Node createdNode = node;
+// // 				// Make sure the new node is in the memory dump
+// // 				NodeEditorUndoActions.CompleteSOMemoryDump(hostCanvas);
+// // 			}
+// // #endif
+//
+// 			return node;
+// 		}
 
 		/// <summary>
 		/// Deletes this Node from it's host canvas and the save file
@@ -470,16 +369,7 @@ namespace NodeEditorFramework
 // #endif
 
 			canvas.nodes.Remove(this);
-
-			foreach (var conn in IncomingConnections)
-			{
-				conn.Delete();
-			}
-			foreach (var conn in OutgoingConnections)
-			{
-				conn.Delete();
-			}
-
+			
 			if (!silent)
 				canvas.Validate ();
 		}
@@ -562,9 +452,9 @@ namespace NodeEditorFramework
 
 			// Account for potential knobs that might occupy horizontal space
 			float knobSize = 0;
-			var verticalKnobs = IncomingPorts.Select(d=> d.Knob).Where (x => x.side == NodeSide.Bottom || x.side == NodeSide.Top);
-			if (verticalKnobs.Any())
-				knobSize = verticalKnobs.Max ((ConnectionKnob knob) => knob.GetCanvasSpaceKnob ().xMax - nodeRect.xMin);
+			// var verticalKnobs = IncomingPorts.Select(d=> d.Knob).Where (x => x.side == NodeSide.Bottom || x.side == NodeSide.Top);
+			// if (verticalKnobs.Any())
+			// 	knobSize = verticalKnobs.Max ((ConnectionKnob knob) => knob.GetCanvasSpaceKnob ().xMax - nodeRect.xMin);
 			size.x = Math.Max (knobSize, Math.Max (nodeGUIHeight.x, MinSize.x));
 			
 			autoSize = size;
@@ -576,21 +466,39 @@ namespace NodeEditorFramework
 		/// </summary>
 		protected internal virtual void DrawKnobs () 
 		{
-			foreach(var p in IncomingPorts)
-				p.Knob.DrawKnob();
-			foreach(var p in OutgoingPorts)
-				p.Knob.DrawKnob();
+			foreach(var knob in IncomingKnobs)
+				knob.DrawKnob();
+
+			foreach (var knob in OutgoingKnobs)
+				knob.DrawKnob();
+			
 		}
 
 		/// <summary>
 		/// Draws the connections from this node's connectionPorts
 		/// </summary>
-		protected internal virtual void DrawConnections () 
+		protected internal virtual void DrawConnections()
 		{
 			if (Event.current.type != EventType.Repaint)
 				return;
-			for (int i = 0; i < OutgoingPorts.Count; i++)
-				OutgoingPorts[i].DrawConnections ();
+
+			for (int x = 0; x < OutgoingKnobs.Count; x++)
+			{
+				var Knob = OutgoingKnobs[x];
+				Vector2 startPos = Knob.GetGUIKnob().center;
+				Vector2 startDir = Knob.GetDirection();
+				for (int i = 0; i < Knob.connectedKnobs.Count; i++)
+				{
+//					Debug.LogWarning("draw connections port");
+					var conKnob = Knob.connectedKnobs[i];
+					Vector2 endPos = conKnob.GetGUIKnob().center;
+					Vector2 endDir = conKnob.GetDirection();
+					NodeEditorGUI.DrawConnection(startPos, startDir, endPos, endDir, conKnob.color);
+				}
+			}
+
+			// for (int i = 0; i < OutgoingPorts.Count; i++)
+			// 	OutgoingPorts[i].DrawConnections();
 		}
 
 		#endregion
@@ -608,22 +516,40 @@ namespace NodeEditorFramework
 			Vector2 dist = position - rect.center;
 			if (Math.Abs(dist.x) > size.x || Math.Abs(dist.y) > size.y)
 				return false; // Quick check if pos is within double the size
-			for (int i = 0; i < IncomingPorts.Count; i++)
+			
+			for (int i = 0; i < IncomingKnobs.Count; i++)
 			{ // Check if any nodeKnob is focused instead
-				if (IncomingPorts[i].Knob.GetCanvasSpaceKnob().Contains(position))
+				if (IncomingKnobs[i].GetCanvasSpaceKnob().Contains(position))
 				{
-					focusedKnob = IncomingPorts[i].Knob;
+					focusedKnob = IncomingKnobs[i];
 					return true;
 				}
 			}
-			for (int i = 0; i < OutgoingPorts.Count; i++)
+			for (int i = 0; i < OutgoingKnobs.Count; i++)
 			{ // Check if any nodeKnob is focused instead
-				if (OutgoingPorts[i].Knob.GetCanvasSpaceKnob().Contains(position))
+				if (OutgoingKnobs[i].GetCanvasSpaceKnob().Contains(position))
 				{
-					focusedKnob = OutgoingPorts[i].Knob;
+					focusedKnob = OutgoingKnobs[i];
 					return true;
 				}
 			}
+			
+			// for (int i = 0; i < IncomingPorts.Count; i++)
+			// { // Check if any nodeKnob is focused instead
+			// 	if (IncomingPorts[i].Knob.GetCanvasSpaceKnob().Contains(position))
+			// 	{
+			// 		focusedKnob = IncomingPorts[i].Knob;
+			// 		return true;
+			// 	}
+			// }
+			// for (int i = 0; i < OutgoingPorts.Count; i++)
+			// { // Check if any nodeKnob is focused instead
+			// 	if (OutgoingPorts[i].Knob.GetCanvasSpaceKnob().Contains(position))
+			// 	{
+			// 		focusedKnob = OutgoingPorts[i].Knob;
+			// 		return true;
+			// 	}
+			// }
 			return false;
 		}
 
@@ -661,15 +587,15 @@ namespace NodeEditorFramework
 		/// </summary>
 		public bool ancestorsCalculated () 
 		{
-			for (int i = 0; i < IncomingPorts.Count; i++)
-			{
-				var port = IncomingPorts[i];
-				for (int t = 0; t < port.Connections.Count; t++)
-				{
-					if (!port.Connections[t].SourcePort.Node.calculated)
-						return false;
-				}
-			}
+			// for (int i = 0; i < IncomingPorts.Count; i++)
+			// {
+			// 	var port = IncomingPorts[i];
+			// 	for (int t = 0; t < port.Connections.Count; t++)
+			// 	{
+			// 		if (!port.Connections[t].SourcePortLegacy.Node.calculated)
+			// 			return false;
+			// 	}
+			// }
 			return true;
 		}
 		
@@ -680,21 +606,21 @@ namespace NodeEditorFramework
 		/// </summary>
 		public Node getUncalculatedAncestor (Node original) 
 		{
-			for (int i = 0; i < IncomingPorts.Count; i++)
-			{
-				var port = IncomingPorts[i];
-				for (int t = 0; t < port.Connections.Count; t++)
-				{
-					var node = port.Connections[t].TargetPort.Node;
-					if (node == original)
-					{
-						Debug.LogWarning("We're in an getUncalculatedAncestor loop!");
-						return null;
-					}
-					if (!node.calculated)
-						return node;
-				}
-			}
+			// for (int i = 0; i < IncomingPorts.Count; i++)
+			// {
+			// 	var port = IncomingPorts[i];
+			// 	for (int t = 0; t < port.Connections.Count; t++)
+			// 	{
+			// 		var node = port.Connections[t].TargetPortLegacy.Node;
+			// 		if (node == original)
+			// 		{
+			// 			Debug.LogWarning("We're in an getUncalculatedAncestor loop!");
+			// 			return null;
+			// 		}
+			// 		if (!node.calculated)
+			// 			return node;
+			// 	}
+			// }
 			return null;
 		}
 
@@ -706,19 +632,19 @@ namespace NodeEditorFramework
 			if (otherNode == null || otherNode == this)
 				return false;
 			if (BeginRecursiveSearchLoop ()) return false;
-			for (int i = 0; i < IncomingPorts.Count; i++)
-			{
-				var port = IncomingPorts[i];
-				for (int t = 0; t < port.Connections.Count; t++)
-				{
-					Node conBody = port.Connections[t].SourcePort.Node;
-					if (conBody == otherNode || conBody.isChildOf(otherNode))
-					{
-						StopRecursiveSearchLoop();
-						return true;
-					}
-				}
-			}
+			// for (int i = 0; i < IncomingPorts.Count; i++)
+			// {
+			// 	var port = IncomingPorts[i];
+			// 	for (int t = 0; t < port.Connections.Count; t++)
+			// 	{
+			// 		Node conBody = port.Connections[t].SourcePortLegacy.Node;
+			// 		if (conBody == otherNode || conBody.isChildOf(otherNode))
+			// 		{
+			// 			StopRecursiveSearchLoop();
+			// 			return true;
+			// 		}
+			// 	}
+			// }
 			EndRecursiveSearchLoop ();
 			return false;
 		}
@@ -729,19 +655,19 @@ namespace NodeEditorFramework
 		internal bool isInLoop ()
 		{
 			if (BeginRecursiveSearchLoop ()) return false;
-			for (int i = 0; i < IncomingPorts.Count; i++)
-			{
-				var port = IncomingPorts[i];
-				for (int t = 0; t < port.Connections.Count; t++)
-				{
-					Node conBody = port.Connections[t].SourcePort.Node;
-					if (conBody == startRecursiveSearchNode || conBody.isInLoop())
-					{
-						StopRecursiveSearchLoop();
-						return true;
-					}
-				}
-			}
+			// for (int i = 0; i < IncomingPorts.Count; i++)
+			// {
+			// 	var port = IncomingPorts[i];
+			// 	for (int t = 0; t < port.Connections.Count; t++)
+			// 	{
+			// 		Node conBody = port.Connections[t].SourcePortLegacy.Node;
+			// 		if (conBody == startRecursiveSearchNode || conBody.isInLoop())
+			// 		{
+			// 			StopRecursiveSearchLoop();
+			// 			return true;
+			// 		}
+			// 	}
+			// }
 			EndRecursiveSearchLoop ();
 			return false;
 		}
@@ -754,15 +680,15 @@ namespace NodeEditorFramework
 		{
 			calculated = false;
 			if (BeginRecursiveSearchLoop ()) return;
-			for (int i = 0; i < OutgoingPorts.Count; i++)
-			{
-				var port = OutgoingPorts[i];
-				for (int t = 0; t < port.Connections.Count; t++)
-				{
-					var conPort = port.Connections[t];
-					conPort.TargetPort.Node.ClearCalculation ();
-				}
-			}
+			// for (int i = 0; i < OutgoingPorts.Count; i++)
+			// {
+			// 	var port = OutgoingPorts[i];
+			// 	for (int t = 0; t < port.Connections.Count; t++)
+			// 	{
+			// 		var conPort = port.Connections[t];
+			// 		conPort.TargetPortLegacy.Node.ClearCalculation ();
+			// 	}
+			// }
 			EndRecursiveSearchLoop ();
 		}
 

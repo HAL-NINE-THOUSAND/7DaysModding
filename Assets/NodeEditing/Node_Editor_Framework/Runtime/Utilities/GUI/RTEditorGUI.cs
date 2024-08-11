@@ -351,25 +351,25 @@ namespace NodeEditorFramework.Utilities
 		/// <summary>
 		/// Int Field for ingame purposes. Behaves exactly like UnityEditor.EditorGUILayout.IntField, besides the label slide field
 		/// </summary>
-		public static int IntField (string label, int value, params GUILayoutOption[] options)
+		public static int IntField (string label, int value, Action onChange, params GUILayoutOption[] options)
 		{
-			return (int)FloatField (new GUIContent (label), value, options);
+			return (int)FloatField (new GUIContent (label), value, onChange, options);
 		}
 
 		/// <summary>
 		/// Int Field for ingame purposes. Behaves exactly like UnityEditor.EditorGUILayout.IntField, besides the label slide field
 		/// </summary>
-		public static int IntField (GUIContent label, int value, params GUILayoutOption[] options)
+		public static int IntField (GUIContent label, int value, Action onChange, params GUILayoutOption[] options)
 		{
-			return (int)FloatField (label, value, options);
+			return (int)FloatField (label, value, onChange, options);
 		}
 
 		/// <summary>
 		/// Int Field for ingame purposes. Behaves exactly like UnityEditor.EditorGUILayout.IntField
 		/// </summary>
-		public static int IntField (int value, params GUILayoutOption[] options)
+		public static int IntField (int value, Action onChange, params GUILayoutOption[] options)
 		{
-			return (int)FloatField (value, options);
+			return (int)FloatField (value, onChange, options);
 		}
 
 		#endregion
@@ -409,7 +409,7 @@ namespace NodeEditorFramework.Utilities
 			Rect sliderFieldPos = PrefixLabel (totalPos, 0.5f, label, GUI.skin.label);
 
 			value = GUI.HorizontalSlider (GetSliderRect (sliderFieldPos), value, minValue, maxValue);
-			value = Mathf.Min (maxValue, Mathf.Max (minValue, FloatField (GetSliderFieldRect (sliderFieldPos), value)));
+			value = Mathf.Min (maxValue, Mathf.Max (minValue, FloatField (GetSliderFieldRect (sliderFieldPos), value, null)));
 			return value;
 		}
 
@@ -424,30 +424,35 @@ namespace NodeEditorFramework.Utilities
 		/// <summary>
 		/// Float Field for ingame purposes. Behaves exactly like UnityEditor.EditorGUILayout.FloatField, besides the label slide field
 		/// </summary>
-		public static float FloatField (string label, float value, params GUILayoutOption[] options)
+		public static float FloatField (string label, float value, Action onChange, params GUILayoutOption[] options)
 		{
-			return FloatField (new GUIContent (label), value, options);
+			return FloatField (new GUIContent (label), value, onChange, options);
 		}
 
 		/// <summary>
 		/// Float Field for ingame purposes. Behaves exactly like UnityEditor.EditorGUILayout.FloatField, besides the label slide field
 		/// </summary>
-		public static float FloatField (GUIContent label, float value, params GUILayoutOption[] options)
+		public static float FloatField (GUIContent label, float value, Action onChange, params GUILayoutOption[] options)
 		{
 			#if UNITY_EDITOR
 			if (!Application.isPlaying || NodeEditorFramework.NodeEditorGUI.isEditorWindow)
-				return UnityEditor.EditorGUILayout.FloatField(label, value, options);
+			{
+				var newvalue = UnityEditor.EditorGUILayout.FloatField(label, value, options);
+				if (newvalue != value)
+					onChange();
+				return newvalue;
+			}
 			#endif
 
 			Rect totalPos = GetFieldRect (label, GUI.skin.label, options);
 			Rect fieldPos = PrefixLabel (totalPos, 0.5f, label, GUI.skin.label);
-			return FloatField (fieldPos, value);
+			return FloatField (fieldPos, value, onChange);
 		}
 
 		/// <summary>
 		/// Float Field for ingame purposes. Behaves exactly like UnityEditor.EditorGUILayout.FloatField
 		/// </summary>
-		public static float FloatField (float value, params GUILayoutOption[] options)
+		public static float FloatField (float value, Action onChange, params GUILayoutOption[] options)
 		{
 			#if UNITY_EDITOR
 			if (!Application.isPlaying || NodeEditorFramework.NodeEditorGUI.isEditorWindow)
@@ -455,14 +460,16 @@ namespace NodeEditorFramework.Utilities
 			#endif
 
 			Rect pos = GetFieldRect (GUIContent.none, null, options);
-			return FloatField (pos, value);
+			return FloatField (pos, value, onChange);
 		}
 
 		/// <summary>
 		/// Float Field for ingame purposes. Behaves exactly like UnityEditor.EditorGUILayout.FloatField
 		/// </summary>
-		public static float FloatField (Rect pos, float value)
+		public static float FloatField (Rect pos, float value, Action onChange)
 		{
+
+			var originalValue = value;
 			#if UNITY_EDITOR
 			if (!Application.isPlaying || NodeEditorFramework.NodeEditorGUI.isEditorWindow)
 				return UnityEditor.EditorGUI.FloatField(pos, value);
@@ -516,6 +523,10 @@ namespace NodeEditorFramework.Utilities
 					value = strValue.ForceParse ();
 			}
 
+			if (originalValue != value)
+			{
+				onChange();
+			}
 			return value;
 		}
 
