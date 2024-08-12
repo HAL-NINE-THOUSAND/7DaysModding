@@ -33,6 +33,7 @@ namespace NodeEditorFramework
 		public float sideOffset = 0; // Offset from the side
 
 		public List<ConnectionKnob> connectedKnobs = new();
+
 		public ConnectionKnob()
 		{
 			

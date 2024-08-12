@@ -23,4 +23,25 @@ public class IntegerInputRule : Rule<int>
     }
 }
 
+
+
+[RuleMenu(Path = "Input/Float")]
+[RuleTitle(Title = "Float")]
+public class FloatInputRule : Rule<float>
+{
+    public FloatInputRule()
+    {
+        RuleType = RuleType.Processor;
+        Logic = () => { return lastValue = Target; };
+    }
+
+    public sealed override Func<float> Logic { get; set; }
+    public float Target { get; set; }
+
+    public override void DrawUI()
+    {
+        Target = RTEditorGUI.FloatField(new GUIContent("Value", "The input value of type integer"), Target, MarkCircuitAsDirty);
+    }
+}
+
 #endif

@@ -7,21 +7,25 @@ namespace NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits
 {
     public class RulesManager
     {
-        private static Dictionary<string, IRule> Rules { get; set; } = new();
+        private static Dictionary<Guid, IRule> Rules { get; set; } = new();
         private static Dictionary<Type, IRule> RuleTypes { get; set; } = new();
 
         private static bool isInitialised = false;
         
         public static void Init()
         {
+            if (isInitialised)
+                return;
+            
             Rules.Clear();
+            RuleTypes.Clear();
+
             var rules = GetInheritors<IRule>();
 
             foreach (var rule in rules)
             {
                 RuleTypes.Add(rule.GetType(), rule);
-                //var newRule = rule.CreateNew();
-                Rules.Add(rule.TypeName, rule);
+                Rules.Add(rule.RuleId, rule);
             }
 
             isInitialised = true;
@@ -29,9 +33,7 @@ namespace NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits
 
         public static IRule CreateRule(Type type)
         {
-            if (!isInitialised)
-                Init();
-            
+            Init();
             var ret = RuleTypes[type].CreateNew();
             return ret;
         }

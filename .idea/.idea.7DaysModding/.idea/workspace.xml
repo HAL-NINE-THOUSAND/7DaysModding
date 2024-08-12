@@ -8,41 +8,48 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c49ce2d-759b-4202-924b-bfa87a90867a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/Rules.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/Rules/EditorRules.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/Rules/EditorRules.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Circuits/RuleAttributes.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Circuits/RuleAttributes.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/MessageArea.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/MessageArea.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/UI.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/UI.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Gates.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Gates/AndRule.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Gates/AndRule.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Gates/NotRule.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Gates/NotRule.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Gates/OrRule.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Gates/OrRule.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Gates/XorRule.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Gates/XorRule.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Integers.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Integers/AddRule.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Integers/AddRule.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Integers/DivideRule.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Integers/DivideRule.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Integers/GreaterEqualThanRule.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Integers/GreaterEqualThanRule.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Integers/GreaterThanRule.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Integers/GreaterThanRule.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Integers/LessEqualThanRule.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Integers/LessEqualThanRule.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Integers/LessThanRule.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Integers/LessThanRule.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Integers/MinusRule.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Integers/MinusRule.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Integers/MultiplyRule.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Integers/MultiplyRule.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Integers/NotEqual.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Integers/NotEqual.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.7DaysModding/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.7DaysModding/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Examples/Runtime/RTNodeEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/Runtime/RTNodeEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Examples/TestNodes/MyTestNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/TestNodes/MyTestNode.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Examples/TestNodes/MyTestNodeAgain.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/TestNodes/MyTestNodeAgain.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Examples/TestNodes/MyTestNodeBlah.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/TestNodes/MyTestNodeBlah.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Examples/TestNodes/SomeTestNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/TestNodes/SomeTestNode.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/Connection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/Connection.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Examples/Rules/EditorRules.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/Rules/EditorRules.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Examples/Rules/GreaterThanRule.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Examples/Rules/GreaterThanRule.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Circuits/Circuit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Circuits/Circuit.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Circuits/Rule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Circuits/Rule.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Circuits/RulesManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Circuits/RulesManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/ConnectionKnob.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/ConnectionKnob.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/ConnectionPort.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/ConnectionPort.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/Node.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/Node.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/NodeCanvas.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/NodeCanvas.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/NodeEditorState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/NodeEditorState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/Port.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/Port.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/ValueConnectionKnob.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/ValueConnectionKnob.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/CoreExtensions/NodeTypes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/CoreExtensions/NodeTypes.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Interface/NodeEditorGUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Interface/NodeEditorGUI.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Interface/NodeEditorInputControls.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Interface/NodeEditorInputControls.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Interface/NodeEditorUndoActions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Interface/NodeEditorUndoActions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/NodeEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/NodeEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/SaveSystem/ImportExportManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/SaveSystem/ImportExportManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/SaveSystem/NodeEditorUserCache.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/SaveSystem/NodeEditorUserCache.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Resources/DefaultSkin.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Resources/DefaultSkin.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Utilities/GUI/OverlayGUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Utilities/GUI/OverlayGUI.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Utilities/GUI/RTEditorGUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Utilities/GUI/RTEditorGUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Standard/CalculationBase/CanvasCalculator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Standard/CalculationBase/CanvasCalculator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Standard/Interface/NodeEditorInterface.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Standard/Interface/NodeEditorInterface.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,6 +104,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/ConnectionKnob.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/ConnectionPort.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Interface/NodeEditorInputControls.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/GreaterThanRule.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.rider@3.0.31/Rider/Editor/EditorPluginInterop.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.rider@3.0.31/Rider/Editor/PluginSettings.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.rider@3.0.31/Rider/Editor/ProjectGeneration/AssemblyNameProvider.cs" root0="SKIP_HIGHLIGHTING" />
@@ -161,6 +169,9 @@
   &quot;associatedIndex&quot;: 1
 }</component>
   <component name="ProjectId" id="2k0lMDSv7YhJo7bUIHYIm8URfGF" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -222,10 +233,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="2764">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="2764" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -259,7 +270,11 @@
       <workItem from="1723230189069" duration="2771000" />
       <workItem from="1723277494570" duration="6774000" />
       <workItem from="1723284398925" duration="12743000" />
-      <workItem from="1723378932223" duration="870000" />
+      <workItem from="1723378932223" duration="1910000" />
+      <workItem from="1723401155937" duration="3070000" />
+      <workItem from="1723462285961" duration="992000" />
+      <workItem from="1723463297409" duration="1203000" />
+      <workItem from="1723466359724" duration="8530000" />
     </task>
     <task id="LOCAL-00001" summary="node base">
       <option name="closed" value="true" />
@@ -317,7 +332,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723145035886</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Conversion started">
+      <option name="closed" value="true" />
+      <created>1723379870332</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1723379870332</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -361,7 +384,8 @@
     <MESSAGE value="base" />
     <MESSAGE value="Reworked" />
     <MESSAGE value="Working" />
-    <option name="LAST_COMMIT_MESSAGE" value="Working" />
+    <MESSAGE value="Conversion started" />
+    <option name="LAST_COMMIT_MESSAGE" value="Conversion started" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -387,39 +411,39 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/ConnectionKnob.cs</url>
-          <line>207</line>
+          <line>208</line>
           <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Runtime\Framework\Core\ConnectionKnob.cs" containingFunctionPresentation="Method 'DrawConnections'">
             <startOffsets>
-              <option value="7175" />
+              <option value="7176" />
             </startOffsets>
             <endOffsets>
-              <option value="7215" />
+              <option value="7216" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/ConnectionKnob.cs</url>
-          <line>199</line>
+          <line>200</line>
           <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Runtime\Framework\Core\ConnectionKnob.cs" containingFunctionPresentation="Method 'DrawConnections'">
             <startOffsets>
-              <option value="6916" />
+              <option value="6917" />
             </startOffsets>
             <endOffsets>
-              <option value="6960" />
+              <option value="6961" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Utilities/GUI/RTEditorGUI.cs</url>
-          <line>938</line>
+          <line>1028</line>
           <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Runtime\Utilities\GUI\RTEditorGUI.cs" containingFunctionPresentation="Method 'DrawLine'">
             <startOffsets>
-              <option value="32339" />
+              <option value="35093" />
             </startOffsets>
             <endOffsets>
-              <option value="32408" />
+              <option value="35162" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="39" />
@@ -504,7 +528,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/Node.cs</url>
-          <line>115</line>
+          <line>82</line>
           <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Runtime\Framework\Core\Node.cs" containingFunctionPresentation="Property 'Title'">
             <startOffsets>
               <option value="3571" />
@@ -514,19 +538,6 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="99" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/Node.cs</url>
-          <line>125</line>
-          <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Runtime\Framework\Core\Node.cs" containingFunctionPresentation="Property 'ShortTitle'">
-            <startOffsets>
-              <option value="3747" />
-            </startOffsets>
-            <endOffsets>
-              <option value="3750" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="100" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/SaveSystem/ImportExportManager.cs</url>
@@ -543,68 +554,94 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Utilities/GUI/RTEditorGUI.cs</url>
-          <line>441</line>
+          <line>564</line>
           <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Runtime\Utilities\GUI\RTEditorGUI.cs" containingFunctionPresentation="Method 'FloatField'">
             <startOffsets>
-              <option value="15627" />
+              <option value="19497" />
             </startOffsets>
             <endOffsets>
-              <option value="15638" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="128" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Utilities/GUI/RTEditorGUI.cs</url>
-          <line>474</line>
-          <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Runtime\Utilities\GUI\RTEditorGUI.cs" containingFunctionPresentation="Method 'FloatField'">
-            <startOffsets>
-              <option value="16743" />
-            </startOffsets>
-            <endOffsets>
-              <option value="16795" />
+              <option value="19549" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="129" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Circuits/Circuit.cs</url>
-          <line>47</line>
-          <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Runtime\Framework\Circuits\Circuit.cs" containingFunctionPresentation="Method 'RegisterConnection'">
-            <startOffsets>
-              <option value="1098" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1139" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="135" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Circuits/Circuit.cs</url>
-          <line>149</line>
-          <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Runtime\Framework\Circuits\Circuit.cs" containingFunctionPresentation="Method 'IsSelfReference'">
-            <startOffsets>
-              <option value="4271" />
-            </startOffsets>
-            <endOffsets>
-              <option value="4304" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="137" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Interface/NodeEditorInputControls.cs</url>
           <line>332</line>
           <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Runtime\Framework\Interface\NodeEditorInputControls.cs" containingFunctionPresentation="Method 'HandleZooming'">
             <startOffsets>
-              <option value="12005" />
+              <option value="12068" />
             </startOffsets>
             <endOffsets>
-              <option value="12082" />
+              <option value="12145" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="143" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Circuits/Circuit.cs</url>
+          <line>75</line>
+          <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Runtime\Framework\Circuits\Circuit.cs" containingFunctionPresentation="Method 'RegisterConnection'">
+            <startOffsets>
+              <option value="2000" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2024" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="147" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Circuits/Circuit.cs</url>
+          <line>95</line>
+          <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Runtime\Framework\Circuits\Circuit.cs" containingFunctionPresentation="Method 'RemoveConnection'">
+            <startOffsets>
+              <option value="2567" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2601" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="148" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Interface/NodeEditorInputControls.cs</url>
+          <line>293</line>
+          <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Runtime\Framework\Interface\NodeEditorInputControls.cs" containingFunctionPresentation="Method 'HandleApplyConnection'">
+            <startOffsets>
+              <option value="10762" />
+            </startOffsets>
+            <endOffsets>
+              <option value="10803" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="149" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/Node.cs</url>
+          <line>497</line>
+          <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Runtime\Framework\Core\Node.cs" containingFunctionPresentation="Method 'DrawConnections'">
+            <startOffsets>
+              <option value="15821" />
+            </startOffsets>
+            <endOffsets>
+              <option value="15853" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="151" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/Node.cs</url>
+          <line>494</line>
+          <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Runtime\Framework\Core\Node.cs" containingFunctionPresentation="Method 'DrawConnections'">
+            <startOffsets>
+              <option value="15677" />
+            </startOffsets>
+            <endOffsets>
+              <option value="15758" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="154" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

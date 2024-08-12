@@ -39,6 +39,15 @@ namespace NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits
         {
             return Connections.ContainsKey(inputId);
         }
+        
+        public bool IsInputRule(Guid inputId, IRule rule)
+        {
+            if (Connections.TryGetValue(inputId, out Guid connRule))
+            {
+                return connRule == rule.RuleId;
+            }
+            return false;
+        }
         public bool RegisterConnection(IPort input, IRule rule, out string msg)
         {
             msg = string.Empty;
@@ -57,10 +66,14 @@ namespace NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits
                 return false;
             }
 
+            if (!input.Node.Accepts(rule.OutputType))
+            {
+                msg = $"This node won't accept that input";
+                return false;
+            }
             if (Connections.ContainsKey(input.InputId))
             {
-                msg = $"Input already has a connection";
-                return false;
+                RemoveConnection(input);
             }
 
             if (rule.Inputs.Any(d => d.InputId == input.InputId))

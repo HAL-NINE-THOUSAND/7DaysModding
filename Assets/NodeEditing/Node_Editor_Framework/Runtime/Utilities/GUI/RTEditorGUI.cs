@@ -434,7 +434,7 @@ namespace NodeEditorFramework.Utilities
 		/// </summary>
 		public static float FloatField (GUIContent label, float value, Action onChange, params GUILayoutOption[] options)
 		{
-			#if UNITY_EDITOR
+#if UNITY_EDITOR
 			if (!Application.isPlaying || NodeEditorFramework.NodeEditorGUI.isEditorWindow)
 			{
 				var newvalue = UnityEditor.EditorGUILayout.FloatField(label, value, options);
@@ -442,11 +442,101 @@ namespace NodeEditorFramework.Utilities
 					onChange();
 				return newvalue;
 			}
-			#endif
+#endif
 
 			Rect totalPos = GetFieldRect (label, GUI.skin.label, options);
 			Rect fieldPos = PrefixLabel (totalPos, 0.5f, label, GUI.skin.label);
 			return FloatField (fieldPos, value, onChange);
+		}
+		
+		
+
+		/// <summary>
+		/// Float Field for ingame purposes. Behaves exactly like UnityEditor.EditorGUILayout.FloatField, besides the label slide field
+		/// </summary>
+		public static float FloatFieldDynamic (GUIContent label, dynamic value, Action onChange, params GUILayoutOption[] options)
+		{
+#if UNITY_EDITOR
+			if (!Application.isPlaying || NodeEditorFramework.NodeEditorGUI.isEditorWindow)
+			{
+				var newvalue = UnityEditor.EditorGUILayout.FloatField(label, value, options);
+				if (newvalue != value)
+					onChange();
+				return newvalue;
+			}
+#endif
+
+			Rect totalPos = GetFieldRect (label, GUI.skin.label, options);
+			Rect fieldPos = PrefixLabel (totalPos, 0.5f, label, GUI.skin.label);
+			return DynamicField (fieldPos, value, onChange);
+		}
+		
+		
+		/// <summary>
+		/// Float Field for ingame purposes. Behaves exactly like UnityEditor.EditorGUILayout.FloatField
+		/// </summary>
+		public static float DynamicField (Rect pos, dynamic value, Action onChange)
+		{
+
+			var originalValue = value;
+#if UNITY_EDITOR
+			if (!Application.isPlaying || NodeEditorFramework.NodeEditorGUI.isEditorWindow)
+				return UnityEditor.EditorGUI.FloatField(pos, value);
+#endif
+
+			int floatFieldID = GUIUtility.GetControlID ("FloatField".GetHashCode (), FocusType.Keyboard, pos) + 1;
+			if (floatFieldID == 0)
+				return default;
+
+			bool recorded = activeFloatField == floatFieldID;
+			bool active = floatFieldID == GUIUtility.keyboardControl;
+
+			if (active && recorded && activeFloatFieldLastValue != value)
+			{ // Value has been modified externally
+				activeFloatFieldLastValue = value;
+				activeFloatFieldString = value.ToString ();
+			}
+
+			// Get stored string for the text field if this one is recorded
+			string str = recorded? activeFloatFieldString : value.ToString ();
+
+			// Handle custom copy-paste
+			str = HandleCopyPaste(floatFieldID) ?? str;
+
+			string strValue = GUI.TextField (pos, str);
+			if (recorded)
+				activeFloatFieldString = strValue;
+
+			// Try Parse if value got changed. If the string could not be parsed, ignore it and keep last value
+			bool parsed = true;
+			if (strValue == "")
+				value = activeFloatFieldLastValue = 0;
+			else if (strValue != value.ToString ())
+			{
+				float newValue;
+				parsed = float.TryParse (strValue, out newValue);
+				if (parsed)
+					value = activeFloatFieldLastValue = newValue;
+			}
+
+			if (active && !recorded)
+			{ // Gained focus this frame
+				activeFloatField = floatFieldID;
+				activeFloatFieldString = strValue;
+				activeFloatFieldLastValue = value;
+			}
+			else if (!active && recorded) 
+			{ // Lost focus this frame
+				activeFloatField = -1;
+				if (!parsed)
+					value = strValue.ForceParse ();
+			}
+
+			if (originalValue != value)
+			{
+				onChange();
+			}
+			return value;
 		}
 
 		/// <summary>

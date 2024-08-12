@@ -31,8 +31,8 @@ namespace NodeEditorFramework
 			if (callback == null)
 				throw new UnityException ("Callback Object passed by context is not of type NodeEditorInputInfo!");
 
-			throw new UnityException ("Callback Object passed by context is not of type NodeEditorInputInfo!");
-			// Node.Create (callback.message, NodeEditor.ScreenToCanvasSpace (callback.inputPos), callback.editorState.canvas);
+			//throw new UnityException ("Callback Object passed by context is not of type NodeEditorInputInfo!");
+			Node.Create (callback.message, NodeEditor.ScreenToCanvasSpace (callback.inputPos), callback.editorState.canvas);
 			// callback.editorState.connectKnob = null;
 			// NodeEditor.RepaintClients ();
 		}

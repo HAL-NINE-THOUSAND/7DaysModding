@@ -163,7 +163,7 @@ namespace NodeEditorFramework
 
 
 		#region Node Implementation
-
+			
 		/// <summary>
 		/// Initializes the node with Inputs/Outputs and other data if necessary.
 		/// </summary>
@@ -272,75 +272,75 @@ namespace NodeEditorFramework
 // 		/// Creates a node of the specified ID at pos on the specified canvas, optionally auto-connecting the specified output to a matching input
 // 		/// silent disables any events, init specifies whether OnCreate should be called
 // 		/// </summary>
-// 		public static Node Create (string nodeID, Vector2 pos, NodeCanvas hostCanvas, IPortLegacy connectingPortLegacy = null, bool silent = false, bool init = true)
-// 		{
-// 			if (string.IsNullOrEmpty (nodeID) || hostCanvas == null)
-// 				throw new ArgumentException ();
-// 			if (!NodeCanvasManager.CheckCanvasCompability (nodeID, hostCanvas.GetType ()))
-// 				throw new UnityException ("Cannot create Node with ID '" + nodeID + "' as it is not compatible with the current canavs type (" + hostCanvas.GetType ().ToString () + ")!");
-// 			if (!hostCanvas.CanAddNode (nodeID))
-// 				throw new UnityException ("Cannot create Node with ID '" + nodeID + "' on the current canvas of type (" + hostCanvas.GetType ().ToString () + ")!");
-//
-// 			// Create node from data
-// 			NodeTypeData data = NodeTypes.getNodeData (nodeID);
-// 			Node node = (Node)CreateInstance (typeof(Node)); //data.type
-// 			if(node == null)
-// 				return null;
-//
-// 			var rule = RulesManager.CreateRule(data.type);
-// 			node.Rule = rule;
-// 			// Init node state
-// 			node.canvas = hostCanvas;
-// 			node.ShortTitle = node.GetID = node.name = data.adress;
-// 			
-// 			node.autoSize = node.DefaultSize;
-// 			node.position = pos;
-// 			
-// 			node.SetupRule();
-// 			
-// 			ConnectionPortManager.UpdateConnectionPorts (node);
-// 			if (init)
-// 				node.OnCreate();
-// 			
-// 			if (connectingPortLegacy != null)
-// 			{
-// 				node.ConnectPorts(connectingPortLegacy);
-// 				// // Handle auto-connection and link the output to the first compatible input
-// 				// for (int i = 0; i < node.connectionPorts.Count; i++)
-// 				// {
-// 				// 	if (node.connectionPorts[i].TryApplyConnection (connectingPort, true))
-// 				// 		break;
-// 				// }
-// 			}
-//
-// 			// Add node to host canvas
-// 			hostCanvas.nodes.Add (node);
+		public static Node Create (string nodeID, Vector2 pos, NodeCanvas hostCanvas, ConnectionPort connectingPortLegacy = null, bool silent = false, bool init = true)
+		{
+			if (string.IsNullOrEmpty (nodeID) || hostCanvas == null)
+				throw new ArgumentException ();
+			if (!NodeCanvasManager.CheckCanvasCompability (nodeID, hostCanvas.GetType ()))
+				throw new UnityException ("Cannot create Node with ID '" + nodeID + "' as it is not compatible with the current canavs type (" + hostCanvas.GetType ().ToString () + ")!");
+			if (!hostCanvas.CanAddNode (nodeID))
+				throw new UnityException ("Cannot create Node with ID '" + nodeID + "' on the current canvas of type (" + hostCanvas.GetType ().ToString () + ")!");
+
+			// Create node from data
+			NodeTypeData data = NodeTypes.getNodeData (nodeID);
+			Node node = (Node)CreateInstance (typeof(Node)); //data.type
+			if(node == null)
+				return null;
+
+			var rule = RulesManager.CreateRule(data.type);
+			node.Rule = rule;
+			// Init node state
+			node.canvas = hostCanvas;
+			node.ShortTitle = node.GetID = node.name = data.adress;
+			
+			node.autoSize = node.DefaultSize;
+			node.position = pos;
+			
+			node.SetupRule();
+			
+			ConnectionPortManager.UpdateConnectionPorts (node);
+			if (init)
+				node.OnCreate();
+			
+			if (connectingPortLegacy != null)
+			{
+				//node.ConnectPorts(connectingPortLegacy);
+				// // Handle auto-connection and link the output to the first compatible input
+				// for (int i = 0; i < node.connectionPorts.Count; i++)
+				// {
+				// 	if (node.connectionPorts[i].TryApplyConnection (connectingPort, true))
+				// 		break;
+				// }
+			}
+
+			// Add node to host canvas
+			hostCanvas.nodes.Add (node);
+			if (!silent)
+			{ // Callbacks
+				hostCanvas.OnNodeChange(node);
+				NodeEditorCallbacks.IssueOnAddNode(node);
+				hostCanvas.Validate();
+				NodeEditor.RepaintClients();
+			}
+
+// #if UNITY_EDITOR
 // 			if (!silent)
-// 			{ // Callbacks
-// 				hostCanvas.OnNodeChange(connectingPortLegacy != null ? connectingPortLegacy.Node : node);
-// 				NodeEditorCallbacks.IssueOnAddNode(node);
-// 				hostCanvas.Validate();
-// 				NodeEditor.RepaintClients();
+// 			{
+// 				List<ConnectionPort> connectedPorts = new List<ConnectionPort>();
+// 				foreach (ConnectionPort port in node.connectionPorts)
+// 				{ // 'Encode' connected ports in one list (double level cannot be serialized)
+// 					foreach (ConnectionPort conn in port.connections)
+// 						connectedPorts.Add(conn);
+// 					connectedPorts.Add(null);
+// 				}
+// 				Node createdNode = node;
+// 				// Make sure the new node is in the memory dump
+// 				NodeEditorUndoActions.CompleteSOMemoryDump(hostCanvas);
 // 			}
-//
-// // #if UNITY_EDITOR
-// // 			if (!silent)
-// // 			{
-// // 				List<ConnectionPort> connectedPorts = new List<ConnectionPort>();
-// // 				foreach (ConnectionPort port in node.connectionPorts)
-// // 				{ // 'Encode' connected ports in one list (double level cannot be serialized)
-// // 					foreach (ConnectionPort conn in port.connections)
-// // 						connectedPorts.Add(conn);
-// // 					connectedPorts.Add(null);
-// // 				}
-// // 				Node createdNode = node;
-// // 				// Make sure the new node is in the memory dump
-// // 				NodeEditorUndoActions.CompleteSOMemoryDump(hostCanvas);
-// // 			}
-// // #endif
-//
-// 			return node;
-// 		}
+// #endif
+
+			return node;
+		}
 
 		/// <summary>
 		/// Deletes this Node from it's host canvas and the save file
@@ -487,10 +487,18 @@ namespace NodeEditorFramework
 				var Knob = OutgoingKnobs[x];
 				Vector2 startPos = Knob.GetGUIKnob().center;
 				Vector2 startDir = Knob.GetDirection();
-				for (int i = 0; i < Knob.connectedKnobs.Count; i++)
+				for (int i = Knob.connectedKnobs.Count - 1; i >= 0; i--)
 				{
 //					Debug.LogWarning("draw connections port");
 					var conKnob = Knob.connectedKnobs[i];
+
+					if (!conKnob.node.Rule.Circuit.IsInputRule(conKnob.Port.InputId, Knob.node.Rule))
+					{
+						//Connection has been removed, clean it up
+						Knob.connectedKnobs.RemoveAt(i);
+						continue;
+					}
+
 					Vector2 endPos = conKnob.GetGUIKnob().center;
 					Vector2 endDir = conKnob.GetDirection();
 					NodeEditorGUI.DrawConnection(startPos, startDir, endPos, endDir, conKnob.color);

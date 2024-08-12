@@ -43,8 +43,11 @@ namespace NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits
         public object GetLastValue();
 
         public bool IsCompatible(Type other);
+        public bool Accepts(Type other);
 
         public void DrawUI();
+        
+        public List<Type> AcceptedTypes { get; set; }
 
         public void MarkCircuitAsDirty();
     }
@@ -78,15 +81,25 @@ namespace NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits
             return ret;
         }
 
+
+        public void SetLastValue(T value)
+        {
+            lastValue = value;
+            RuleOutputCache<T>.Circuits[Circuit.CircuitId].TryAdd(RuleId, lastValue);
+        }
+
         public T GetLastValue()
         {
             return lastValue;
         }
 
+
         public virtual void DrawUI()
         {
             
         }
+
+        public List<Type> AcceptedTypes { get; set; } = new(0);
 
         public void MarkCircuitAsDirty()
         {
@@ -107,6 +120,12 @@ namespace NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits
             return false;
         }
 
+        public bool Accepts(Type other)
+        {
+            if (AcceptedTypes.Count > 0 && !AcceptedTypes.Contains(other))
+                return false;
+            return true;
+        }
         public void ResetValue()
         {
             Circuit.ResetValue<T>(RuleId);
