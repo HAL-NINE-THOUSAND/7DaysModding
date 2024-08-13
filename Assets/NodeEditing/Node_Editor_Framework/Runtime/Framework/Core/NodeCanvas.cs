@@ -2,6 +2,7 @@ using UnityEngine;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using NodeEditing.Node_Editor_Framework.Runtime;
 using NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits;
 using NodeEditing.Node_Editor_Framework.Runtime.Framework.Core;
 
@@ -12,6 +13,8 @@ namespace NodeEditorFramework
 	/// </summary>
 	public abstract class NodeCanvas : ScriptableObject 
 	{
+		
+		public INodeCanvasParent parent;
 		public virtual string canvasName { get { return "DEFAULT"; } }
 
 		public virtual bool allowSceneSaveOnly { get { return false; } }
@@ -36,10 +39,43 @@ namespace NodeEditorFramework
 		public List<ScriptableObject> SOMemoryDump = new List<ScriptableObject>();
 
 
-		public void SetCircuit(Circuit circuit)
+		public void SetCircuit(Circuit circuit, INodeCanvasParent parentGameObject)
+		{
+			parent = parentGameObject;
+			Circuit = circuit;
+			Circuit.OnRun = LogRun;
+		}
+
+		public void LoadCircuit(Circuit circuit)
 		{
 			Circuit = circuit;
 			Circuit.OnRun = LogRun;
+
+			nodes.Clear();
+			foreach (var rule in circuit.Rules.Values)
+			{
+				Node.Create(rule, this);
+			}
+
+			foreach (var connection in circuit.Connections)
+			{
+				
+				var outputNode = nodes.FirstOrDefault(d => d.Rule.RuleId == connection.Value);
+
+				if (outputNode == null)
+					continue;
+
+				var inputNode = nodes.FirstOrDefault(d => d.Rule.Inputs.Any(d=> d.InputId == connection.Key));
+
+				var inputKnob = inputNode.IncomingKnobs.First(d => d.InputId == connection.Key);
+				var sourceInputRule = inputKnob.node.Rule;
+				var sourceInput = inputKnob.Port;
+
+				var outputKnob = outputNode.OutgoingKnobs.First();;
+				var targetRule = outputKnob.node.Rule;
+				outputKnob.connectedKnobs.Add(inputKnob);
+			}
+			circuit.Run();
 		}
 
 		private void LogRun(int totalMilliseconds)
@@ -47,6 +83,7 @@ namespace NodeEditorFramework
 			AddMessage($"Circuit took {totalMilliseconds}ms");
 		}
 
+		
 		public Node GetNodeForRule(IRule rule)
 		{
 			foreach (var node in nodes)

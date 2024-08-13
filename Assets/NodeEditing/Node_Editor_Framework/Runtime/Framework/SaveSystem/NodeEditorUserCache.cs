@@ -5,6 +5,7 @@
 using System;
 using System.IO;
 using System.Linq;
+using NodeEditing.Node_Editor_Framework.Runtime;
 using NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits;
 using UnityEngine;
 
@@ -38,31 +39,39 @@ namespace NodeEditorFramework
 
 		#region Setup
 
-		public NodeEditorUserCache(NodeCanvas loadedCanvas)
+		public INodeCanvasParent parent;
+		public NodeEditorUserCache(NodeCanvas loadedCanvas, INodeCanvasParent parentGameObject)
 		{
+			parent = parentGameObject; 
 			SetCanvas(loadedCanvas);
 		}
 
-		public NodeEditorUserCache()
-		{ }
+		public NodeEditorUserCache(INodeCanvasParent parentGameObject)
+		{
+			parent = parentGameObject; 
 
-		public NodeEditorUserCache(string CachePath, NodeCanvas loadedCanvas)
+		}
+
+		public NodeEditorUserCache(string CachePath, NodeCanvas loadedCanvas, INodeCanvasParent parentGameObject)
 		{
 #if CACHE
 			useCache = true;
 			cachePath = CachePath;
 			SetupCacheEvents();
 #endif
+			parent = parentGameObject; 
 			SetCanvas(loadedCanvas);
 		}
 
-		public NodeEditorUserCache(string CachePath)
+		public NodeEditorUserCache(string CachePath, INodeCanvasParent parentGameObject)
 		{
 #if CACHE
 			useCache = true;
 			cachePath = CachePath;
 			SetupCacheEvents();
 #endif
+			parent = parentGameObject; 
+
 		}
 
 		/// <summary>
@@ -415,7 +424,7 @@ namespace NodeEditorFramework
 			canvasType = canvasType ?? defaultNodeCanvasType ?? // Pick first canvas in alphabetical order (Calculation usually)
 				NodeCanvasManager.getCanvasDefinitions().OrderBy(c => c.DisplayString).First().CanvasType;
 			nodeCanvas = NodeCanvas.CreateCanvas (canvasType);
-			nodeCanvas.SetCircuit(new Circuit());
+			nodeCanvas.SetCircuit(new Circuit(), parent);
 			NewEditorState ();
 
 			openedCanvasPath = "";

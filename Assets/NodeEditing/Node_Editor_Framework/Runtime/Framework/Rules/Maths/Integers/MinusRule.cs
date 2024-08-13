@@ -14,6 +14,7 @@ namespace NodeEditorFramework.Rules.Maths.Integers
 
         public MinusRule()
         {
+            RuleId = "Hal.Take";
             RuleType = RuleType.Processor;
             Logic = () =>
             {

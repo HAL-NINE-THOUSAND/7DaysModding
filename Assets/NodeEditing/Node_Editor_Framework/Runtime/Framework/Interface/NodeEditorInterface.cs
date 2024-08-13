@@ -1,13 +1,16 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
-using NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits;
-using UnityEngine;
-
+using NodeEditing.Node_Editor_Framework.Runtime.Modals;
+using NodeEditorFramework;
 using NodeEditorFramework.IO;
-
+using NodeEditorFramework.Utilities;
+using NodeEditorFramework.Utilities.Hooks;
+using UnityEngine;
 using GenericMenu = NodeEditorFramework.Utilities.GenericMenu;
+using Object = UnityEngine.Object;
 
-namespace NodeEditorFramework.Standard
+namespace NodeEditing.Node_Editor_Framework.Runtime.Framework.Interface
 {
 	public class NodeEditorInterface
 	{
@@ -46,48 +49,52 @@ namespace NodeEditorFramework.Standard
 			if (GUILayout.Button("File", GUI.skin.GetStyle("toolbarDropdown"), GUILayout.Width(50)))
 			{
 				GenericMenu menu = new GenericMenu(NodeEditorGUI.useUnityEditorToolbar && !Application.isPlaying);
-
 				// New Canvas filled with canvas types
-				NodeCanvasManager.FillCanvasTypeMenu(ref menu, NewNodeCanvas, "New Canvas/");
-				menu.AddSeparator("");
+				//NodeCanvasManager.FillCanvasTypeMenu(ref menu, NewNodeCanvas, "New Canvas/");
+				//menu.AddSeparator("");
 
+				SaveCircuitModal.HandleMenuDraw(menu, canvasCache.nodeCanvas);
+				
+				if (CircuitLoader.LoadMenuGenerator != null)
+					CircuitLoader.LoadMenuGenerator(menu, canvasCache.nodeCanvas);
+				
 				// Load / Save
-#if UNITY_EDITOR
-				menu.AddItem(new GUIContent("Load Canvas"), false, LoadCanvas);
-				menu.AddItem(new GUIContent("Reload Canvas"), false, ReloadCanvas);
-				menu.AddSeparator("");
-				if (canvasCache.nodeCanvas.allowSceneSaveOnly)
-				{
-					menu.AddDisabledItem(new GUIContent("Save Canvas"));
-					menu.AddDisabledItem(new GUIContent("Save Canvas As"));
-				}
-				else
-				{
-					menu.AddItem(new GUIContent("Save Canvas"), false, SaveCanvas);
-					menu.AddItem(new GUIContent("Save Canvas As"), false, SaveCanvasAs);
-				}
-				menu.AddSeparator("");
-#endif
+// #if UNITY_EDITOR
+// 				menu.AddItem(new GUIContent("Load Canvas"), false, LoadCanvas);
+// 				menu.AddItem(new GUIContent("Reload Canvas"), false, ReloadCanvas);
+// 				menu.AddSeparator("");
+// 				if (canvasCache.nodeCanvas.allowSceneSaveOnly)
+// 				{
+// 					menu.AddDisabledItem(new GUIContent("Save Canvas"));
+// 					menu.AddDisabledItem(new GUIContent("Save Canvas As"));
+// 				}
+// 				else
+// 				{
+// 					menu.AddItem(new GUIContent("Save Canvas"), false, SaveCanvas);
+// 					menu.AddItem(new GUIContent("Save Canvas As"), false, SaveCanvasAs);
+// 				}
+// 				menu.AddSeparator("");
+// #endif
 
 				// Import / Export filled with import/export types
-				ImportExportManager.FillImportFormatMenu(ref menu, ImportCanvasCallback, "Import/");
-				if (canvasCache.nodeCanvas.allowSceneSaveOnly)
-				{
-					menu.AddDisabledItem(new GUIContent("Export"));
-				}
-				else
-				{
-					ImportExportManager.FillExportFormatMenu(ref menu, ExportCanvasCallback, "Export/");
-				}
-				menu.AddSeparator("");
+				//ImportExportManager.FillImportFormatMenu(ref menu, ImportCanvasCallback, "Import/");
+				// if (canvasCache.nodeCanvas.allowSceneSaveOnly)
+				// {
+				// 	menu.AddDisabledItem(new GUIContent("Export"));
+				// }
+				// else
+				// {
+				// 	ImportExportManager.FillExportFormatMenu(ref menu, ExportCanvasCallback, "Export/");
+				// }
+				// menu.AddSeparator("");
 
-				// Scene Saving
-				string[] sceneSaves = NodeEditorSaveManager.GetSceneSaves();
-				if (sceneSaves.Length <= 0) // Display disabled item
-					menu.AddItem(new GUIContent("Load Canvas from Scene"), false, null);
-				else foreach (string sceneSave in sceneSaves) // Display scene saves to load
-						menu.AddItem(new GUIContent("Load Canvas from Scene/" + sceneSave), false, LoadSceneCanvasCallback, sceneSave);
-				menu.AddItem(new GUIContent("Save Canvas to Scene"), false, SaveSceneCanvasCallback);
+				// // Scene Saving
+				// string[] sceneSaves = NodeEditorSaveManager.GetSceneSaves();
+				// if (sceneSaves.Length <= 0) // Display disabled item
+				// 	menu.AddItem(new GUIContent("Load Canvas from Scene"), false, null);
+				// else foreach (string sceneSave in sceneSaves) // Display scene saves to load
+				// 		menu.AddItem(new GUIContent("Load Canvas from Scene/" + sceneSave), false, LoadSceneCanvasCallback, sceneSave);
+				// menu.AddItem(new GUIContent("Save Canvas to Scene"), false, SaveSceneCanvasCallback);
 
 				// Show dropdown
 				menu.Show(new Vector2(3, toolbarHeight+3));
@@ -107,6 +114,13 @@ namespace NodeEditorFramework.Standard
 			if (GUILayout.Button("Run", GUI.skin.GetStyle("toolbarButton"), GUILayout.Width(100)))
 			{
 				canvasCache.nodeCanvas.nodes.FirstOrDefault()?.Rule.Circuit.Run();
+			}
+
+			
+			GUILayout.Space(150);
+			if (GUILayout.Button("Close", GUI.skin.GetStyle("toolbarButton"), GUILayout.Width(100)))
+			{
+				Object.Destroy(canvasCache.nodeCanvas.parent.GameObject);
 			}
 		
 			GUI.backgroundColor = new Color(1, 0.3f, 0.3f, 1);

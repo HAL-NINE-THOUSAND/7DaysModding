@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using Newtonsoft.Json;
 using UnityEngine;
 
 namespace NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits
@@ -8,31 +10,55 @@ namespace NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits
     public class Circuit
     {
 
-        public Guid CircuitId = Guid.NewGuid();
+        public static Action<Circuit> SaveCircuit;
+        
+        public Guid CircuitId { get; set; } = Guid.NewGuid();
 
-        public Dictionary<Guid, IRule> Rules { get; set; } = new();
+        public string Name { get; set; } = "";
 
+        public string OwnerId { get; set; } = "";
 
-        public Dictionary<Guid, Guid> Connections { get; set; } = new();
+        [JsonIgnore]
+        public Dictionary<string, IRule> Rules { get; set; } = new();
+        public Dictionary<Guid, string> Connections { get; set; } = new();
 
         private bool isInitialised;
 
+        [JsonIgnore]
         public Action<int> OnRun;
 
         public Circuit()
         {
             
         }
-
+        
         public Circuit(Action<int> onRunEvent)
         {
             OnRun = onRunEvent;
         }
+
+        public void Build()
+        {
+            // foreach (var ruleId in RulesIds)
+            // {
+            //     var rule = RulesManager.CreateRule(ruleId);
+            //     rule.SetCircuit(this);
+            //     Rules.Add(ruleId, rule);
+            // }
+        }
         
         public void AddRule(IRule rule)
         {
-            Rules.Add(rule.RuleId, rule);
+            if (!Rules.ContainsKey(rule.RuleId))
+                Rules.Add(rule.RuleId, rule);
             rule.SetCircuit(this);
+            //RulesIds.Add(rule.RuleId);
+        }
+        
+        public void RemoveRule(IRule rule)
+        {
+            Rules.Remove(rule.RuleId);
+            //RulesIds.Remove(rule.RuleId);
         }
 
         public bool IsInputConnected(Guid inputId)
@@ -42,7 +68,7 @@ namespace NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits
         
         public bool IsInputRule(Guid inputId, IRule rule)
         {
-            if (Connections.TryGetValue(inputId, out Guid connRule))
+            if (Connections.TryGetValue(inputId, out string connRule))
             {
                 return connRule == rule.RuleId;
             }
@@ -62,7 +88,7 @@ namespace NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits
             
             if (!rule.IsCompatible(input.PortType))
             {
-                msg = $"Input and rule types don't match. Output type must be {input.PortType.Name}";
+                msg = $"Input and rule types don't match. Output type must be {input.PortType.Name} but you tried to use {rule.OutputType.Name}";
                 return false;
             }
 
@@ -105,13 +131,13 @@ namespace NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits
             return null;
         }
 
-        public void ResetValue<T>(Guid inputId)
+        public void ResetValue<T>(string ruleId)
         {
             if (!RuleOutputCache<T>.Circuits.ContainsKey(CircuitId))
                 RuleOutputCache<T>.Circuits.Add(CircuitId, new());
             
             var cache = RuleOutputCache<T>.Circuits[CircuitId];
-            cache.Remove(inputId);
+            cache.Remove(ruleId);
         }
         
         public bool GetValue<T>(Guid inputId, out T value)
@@ -226,5 +252,45 @@ namespace NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits
             ResetCircuit();
         }
 
+        public void Read(BinaryReader reader)
+        {
+            CircuitId = Guid.Parse(reader.ReadString());
+            Name = reader.ReadString();
+            OwnerId = reader.ReadString();
+
+            var ruleCount = reader.ReadInt32();
+            for (int x = 0; x < ruleCount; x++)
+            {
+                var ruleId = reader.ReadString();
+                var rule = RulesManager.CreateRule(ruleId);
+                rule.Read(reader);
+                AddRule(rule);
+            }
+
+            var connectionCount = reader.ReadInt32();
+            for (int x = 0; x < connectionCount; x++)
+            {
+                Connections.Add(Guid.Parse(reader.ReadString()), reader.ReadString());
+            }
+        }
+        public void Write(BinaryWriter writer)
+        {
+
+            writer.Write(CircuitId.ToString());
+            writer.Write(Name);
+            writer.Write(OwnerId);
+            writer.Write(Rules.Count);
+            foreach (var rule in Rules.Values)
+            {
+                rule.Write(writer);
+            }
+
+            writer.Write(Connections.Count);
+            foreach (var connection in Connections)
+            {
+                writer.Write(connection.Key.ToString());
+                writer.Write(connection.Value.ToString());
+            }
+        }
     }
 }

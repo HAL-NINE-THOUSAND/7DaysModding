@@ -114,7 +114,11 @@ namespace NodeEditorFramework.Utilities
 			OverlayGUI.OpenPopup (this);
 		}
 
-		public Vector2 Position { get { return position.position; } }
+		public Vector2 Position
+		{
+			get { return position.position; }
+			set { position.position = value; }
+		}
 
 #region Creation
 		
@@ -386,7 +390,10 @@ namespace NodeEditorFramework.Utilities
 #endif
 		private static PopupMenu popup;
 
-		public Vector2 Position { get { return popup.Position; } }
+		public Vector2 Position { 
+			get { return popup.Position; }
+			set { popup.Position = value; }
+		}
 		
 		public GenericMenu (bool emulateEditor = false) 
 		{

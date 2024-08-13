@@ -1,4 +1,5 @@
-﻿using NodeEditorFramework;
+﻿using NodeEditing.Node_Editor_Framework.Runtime.Framework.Interface;
+using NodeEditorFramework;
 using NodeEditorFramework.Standard;
 using NodeEditorFramework.Utilities;
 using UnityEngine;
@@ -45,7 +46,7 @@ namespace NodeEditing.Examples.FrameworkExtends
 		{
 			if (canvasCache == null)
 			{ // Create cache and load startup-canvas
-				canvasCache = new NodeEditorUserCache();
+				canvasCache = new NodeEditorUserCache(null);
 				if (assetSave != null)
 					canvasCache.SetCanvas(NodeEditorSaveManager.CreateWorkingCopy(assetSave));
 				else if (!string.IsNullOrEmpty (sceneSave))

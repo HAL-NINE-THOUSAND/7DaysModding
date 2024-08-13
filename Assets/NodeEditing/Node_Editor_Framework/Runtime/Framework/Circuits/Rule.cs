@@ -1,12 +1,13 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 namespace NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits
 {
     public static class RuleOutputCache<T>
     {
-        public static Dictionary<Guid, Dictionary<Guid, T>> Circuits { get; set; } = new();
+        public static Dictionary<Guid, Dictionary<string, T>> Circuits { get; set; } = new();
     }
 
     public enum RuleType
@@ -20,7 +21,7 @@ namespace NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits
 
     public interface IRule
     {
-        Guid RuleId { get; set; }
+        string RuleId { get; set; }
 
         Vector2 Position { get; set; }
 
@@ -50,6 +51,9 @@ namespace NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits
         public List<Type> AcceptedTypes { get; set; }
 
         public void MarkCircuitAsDirty();
+
+        public abstract void Write(BinaryWriter writer);
+        public abstract void Read(BinaryReader reader);
     }
 
     public interface IRule<out T> : IRule
@@ -64,7 +68,7 @@ namespace NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits
         protected T lastValue;
 
         public abstract Func<T> Logic { get; set; }
-        public Guid RuleId { get; set; } = Guid.NewGuid();
+        public string RuleId { get; set; } 
 
         public Vector2 Position { get; set; }
 
@@ -104,6 +108,34 @@ namespace NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits
         public void MarkCircuitAsDirty()
         {
             Circuit.MarkCircuitAsDirty();
+        }
+
+        public virtual void Write(BinaryWriter writer)
+        {
+            writer.Write(RuleId);
+            writer.Write(Position.x);
+            writer.Write(Position.y);
+            writer.Write((int)RuleType);
+            writer.Write(Inputs.Count);
+            foreach (var input in Inputs)
+            {
+                writer.Write(input.InputId.ToString());
+            }
+        }
+
+        public virtual void Read(BinaryReader reader)
+        {
+            //RuleId will be reader to instantiate this class to Read()
+            //RuleId = Guid.Parse(reader.ReadString());
+            Position = new Vector2(reader.ReadSingle(), reader.ReadSingle());
+            RuleType = (RuleType)reader.ReadInt32();
+            
+            var inputCount = reader.ReadInt32();
+            for (int x = 0; x < inputCount; x++)
+            {
+                var inputId = Guid.Parse(reader.ReadString());
+                Inputs[x].InputId = inputId;
+            }
         }
 
         public bool IsCompatible(Type other)

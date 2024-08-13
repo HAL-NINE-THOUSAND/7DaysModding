@@ -13,6 +13,7 @@ namespace NodeEditorFramework.Rules.Gates
         
         public AndRule()
         {
+            RuleId = "Hal.And";
             RuleType = RuleType.Processor;
             Logic = () =>
             {

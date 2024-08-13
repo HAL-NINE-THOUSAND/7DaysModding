@@ -70,6 +70,7 @@ namespace NodeEditorFramework
 		    var input = Rule.Inputs[index];
 		    var knob = ScriptableObject.CreateInstance<ConnectionKnob>();
 		    knob.Init(input, this, "Input " + (index+1), Direction.In);
+		    knob.InputId = input.InputId;
 		    IncomingKnobs.Add(knob);
 	    }
 
@@ -339,6 +340,42 @@ namespace NodeEditorFramework
 // 			}
 // #endif
 
+			return node;
+		}
+
+		public static Node Create (IRule rule,NodeCanvas hostCanvas)
+		{
+
+			// Create node from data
+			Node node = (Node)CreateInstance (typeof(Node)); //data.type
+			if(node == null)
+				return null;
+
+			NodeTypeData data = NodeTypes.getNodeDataByRuleId(rule.RuleId);
+			
+			node.Rule = rule;
+			// Init node state
+			node.canvas = hostCanvas;
+			node.ShortTitle = node.GetID = node.name = data.adress;
+			
+			node.autoSize = node.DefaultSize;
+			node.position = rule.Position;
+			
+			node.SetupRule();
+			
+			
+			ConnectionPortManager.UpdateConnectionPorts (node);
+			node.OnCreate();
+			
+			// Add node to host canvas
+			hostCanvas.nodes.Add (node);
+//			if (!silent)
+			{ // Callbacks
+				hostCanvas.OnNodeChange(node);
+				NodeEditorCallbacks.IssueOnAddNode(node);
+				hostCanvas.Validate();
+				NodeEditor.RepaintClients();
+			}
 			return node;
 		}
 

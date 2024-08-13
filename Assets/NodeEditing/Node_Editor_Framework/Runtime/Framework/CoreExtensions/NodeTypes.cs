@@ -14,6 +14,7 @@ namespace NodeEditorFramework
 	public static class NodeTypes
 	{
 		private static Dictionary<string, NodeTypeData> nodes;
+		private static Dictionary<string, NodeTypeData> nodesByRuleId;
 
 		/// <summary>
 		/// Fetches every Node Declaration in the script assemblies to provide the framework with custom node types
@@ -21,7 +22,8 @@ namespace NodeEditorFramework
 		public static void FetchNodeTypes() 
 		{
 			nodes = new Dictionary<string, NodeTypeData> ();
-
+			nodesByRuleId = new Dictionary<string, NodeTypeData>();
+			
 			var rules = RulesManager.GetAllTypes<IRule>();
 
 			foreach (var type in rules)
@@ -32,6 +34,8 @@ namespace NodeEditorFramework
 				var title = titleAtt?.Title ?? path.Path.Split("/").Last();
 				NodeTypeData nodeData = new NodeTypeData(path.Path, title, type, new Type[0]);
 				nodes.Add(path.Path, nodeData);
+				var ruleInstance = RulesManager.CreateRule(type);
+				nodesByRuleId.Add(ruleInstance.RuleId, nodeData);
 			}
 
 			return;
@@ -77,6 +81,16 @@ namespace NodeEditorFramework
 		{
 			NodeTypeData data;
 			nodes.TryGetValue (typeID, out data);
+			return data;
+		}
+
+		/// <summary>
+		/// Returns the NodeData for the given node type ID
+		/// </summary>
+		public static NodeTypeData getNodeDataByRuleId (string ruleId)
+		{
+			NodeTypeData data;
+			nodesByRuleId.TryGetValue (ruleId, out data);
 			return data;
 		}
 

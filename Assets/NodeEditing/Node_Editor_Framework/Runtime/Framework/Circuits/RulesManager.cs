@@ -2,12 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using UnityEngine;
 
 namespace NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits
 {
     public class RulesManager
     {
-        private static Dictionary<Guid, IRule> Rules { get; set; } = new();
+        private static Dictionary<string, IRule> Rules { get; set; } = new();
         private static Dictionary<Type, IRule> RuleTypes { get; set; } = new();
 
         private static bool isInitialised = false;
@@ -24,6 +25,18 @@ namespace NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits
 
             foreach (var rule in rules)
             {
+                
+                if (String.IsNullOrWhiteSpace(rule.RuleId))
+                {
+                    Debug.LogError($"{rule.GetType().Name} RuleId can not be empty");
+                    continue;
+                }
+                if (Rules.TryGetValue(rule.RuleId, out var existing))
+                {
+                    Debug.LogError($"Duplicate rule ID '{rule.RuleId}' for {rule.GetType().Name} and {existing.GetType().Name}");
+                    continue;
+                }
+                
                 RuleTypes.Add(rule.GetType(), rule);
                 Rules.Add(rule.RuleId, rule);
             }
@@ -35,6 +48,13 @@ namespace NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits
         {
             Init();
             var ret = RuleTypes[type].CreateNew();
+            return ret;
+        }
+
+        public static IRule CreateRule(string ruleId)
+        {
+            Init();
+            var ret = RuleTypes.Values.FirstOrDefault(d => d.RuleId == ruleId)?.CreateNew();
             return ret;
         }
 

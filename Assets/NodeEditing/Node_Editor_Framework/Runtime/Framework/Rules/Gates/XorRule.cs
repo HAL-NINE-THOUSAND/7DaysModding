@@ -13,6 +13,7 @@ namespace NodeEditorFramework.Rules.Gates
         public sealed override Func<bool> Logic { get; set; }
         public XorRule()
         {
+            RuleId = "Hal.Xor";
             RuleType = RuleType.Processor;
             Logic = () =>
             {

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System;
 using System.Collections.Generic;
-
+using NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits;
 using NodeEditorFramework.Utilities;
 
 namespace NodeEditorFramework 
@@ -36,6 +36,8 @@ namespace NodeEditorFramework
 			// callback.editorState.connectKnob = null;
 			// NodeEditor.RepaintClients ();
 		}
+		
+		
 
 		#endregion
 

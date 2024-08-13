@@ -13,6 +13,7 @@ namespace NodeEditorFramework
 		// Properties
 		public override ConnectionShape shape { get { return ConnectionShape.Bezier; } }
 
+		public Guid InputId;
 		// Connections
 		
 		//new public List<ConnectionKnob> connections { get { return _connections.OfType<ConnectionKnob> ().ToList (); } }

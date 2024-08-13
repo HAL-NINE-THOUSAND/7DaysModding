@@ -1,15 +1,21 @@
-﻿using NodeEditorFramework;
-using NodeEditorFramework.Standard;
+﻿using NodeEditing.Node_Editor_Framework.Runtime.Framework.Interface;
+using NodeEditing.Node_Editor_Framework.Runtime.Modals;
+using NodeEditorFramework;
 using NodeEditorFramework.Utilities;
 using UnityEngine;
 
-namespace NodeEditing.Examples.Runtime
+namespace NodeEditing.Node_Editor_Framework.Runtime
 {
+
+	public interface INodeCanvasParent
+	{
+		public GameObject GameObject { get; }
+	}
 	/// <summary>
 	/// Example of displaying the Node Editor at runtime including GUI
 	/// Original author: https://github.com/Seneral/Node_Editor_Framework
 	/// </summary>
-	public class RTNodeEditor : MonoBehaviour
+	public class RTNodeEditor : MonoBehaviour, INodeCanvasParent
 	{
 		// Startup-canvas, cache and interface
 		public NodeCanvas assetSave;
@@ -50,7 +56,7 @@ namespace NodeEditing.Examples.Runtime
 			if (canvasCache == null)
 			{
 				// Create cache and load startup-canvas
-				canvasCache = new NodeEditorUserCache();
+				canvasCache = new NodeEditorUserCache(this);
 				if (assetSave != null)
 					canvasCache.SetCanvas(NodeEditorSaveManager.CreateWorkingCopy(assetSave));
 				else if (!string.IsNullOrEmpty(sceneSave))
@@ -107,6 +113,7 @@ namespace NodeEditing.Examples.Runtime
 			editorInterface.DrawToolbarGUI();
 			GUILayout.EndArea();
 			editorInterface.DrawModalPanel();
+			ModalManager.DrawModalPanel();
 			canvasCache.nodeCanvas.Messages.DrawMessagePanel(canvasRect);
 			
 			// End Node Editor GUI
@@ -119,7 +126,6 @@ namespace NodeEditing.Examples.Runtime
 			OverlayGUI.EndOverlayGUI();
 		}
 
-
-	
+		public GameObject GameObject => gameObject;
 	}
 }

@@ -29,6 +29,7 @@ namespace NodeEditorFramework.IO
 		/// If true, the Import-/ExportLocationArgsGUI functions are called, else Import-/ExportLocationArgsSelection
 		/// </summary>
 		public virtual bool RequiresLocationGUI { get {
+				return true; // At runtime, use GUI to select a file in a fixed folder
 #if UNITY_EDITOR
 				return false; // In the editor, use file browser seletion
 #else
@@ -42,10 +43,8 @@ namespace NodeEditorFramework.IO
 		/// </summary>
 		public virtual string RuntimeIOPath { get { return "Files/NodeEditor/"; } }
 
-#if !UNITY_EDITOR
 		private string fileSelection = "";
 		private Rect fileSelectionMenuRect;
-#endif
 
 		/// <summary>
 		/// Called only if RequiresLocationGUI is true.
@@ -122,9 +121,9 @@ namespace NodeEditorFramework.IO
 		/// </summary>
 		public virtual bool? ExportLocationArgsGUI (string canvasName, ref object[] locationArgs)
 		{
-#if UNITY_EDITOR
-			return ExportLocationArgsSelection(canvasName, out locationArgs);
-#else
+// #if UNITY_EDITOR
+// 			return ExportLocationArgsSelection(canvasName, out locationArgs);
+// #else
 			GUILayout.Label("Export canvas to " + FormatIdentifier);
 
 			// File save field
@@ -149,7 +148,7 @@ namespace NodeEditorFramework.IO
 			GUILayout.EndHorizontal();
 
 			return null;
-#endif
+//#endif
 		}
 
 		/// <summary>
@@ -160,11 +159,11 @@ namespace NodeEditorFramework.IO
 		public virtual bool ExportLocationArgsSelection (string canvasName, out object[] locationArgs)
 		{
 			string path = null;
-#if UNITY_EDITOR
-			path = UnityEditor.EditorUtility.SaveFilePanel(
-				"Export " + FormatIdentifier + (!string.IsNullOrEmpty (FormatDescription)? (" (" + FormatDescription + ")") : ""), 
-				"Assets", canvasName, FormatExtension.ToLower ());
-#endif
+// #if UNITY_EDITOR
+// 			path = UnityEditor.EditorUtility.SaveFilePanel(
+// 				"Export " + FormatIdentifier + (!string.IsNullOrEmpty (FormatDescription)? (" (" + FormatDescription + ")") : ""), 
+// 				"Assets", canvasName, FormatExtension.ToLower ());
+// #endif
 			locationArgs = new object[] { path };
 			return !string.IsNullOrEmpty (path);
 		}

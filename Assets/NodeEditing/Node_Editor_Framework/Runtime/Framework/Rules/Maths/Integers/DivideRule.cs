@@ -14,6 +14,7 @@ namespace NodeEditorFramework.Rules.Maths.Integers
 
         public DivideRule()
         {
+            RuleId = "Hal.Div";
             RuleType = RuleType.Processor;
             Logic = () =>
             {

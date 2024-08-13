@@ -12,6 +12,7 @@ namespace NodeEditorFramework.Rules.Gates
         
         public NotRule()
         {
+            RuleId = "Hal.Not";
             RuleType = RuleType.Processor;
             Logic = () =>
             {

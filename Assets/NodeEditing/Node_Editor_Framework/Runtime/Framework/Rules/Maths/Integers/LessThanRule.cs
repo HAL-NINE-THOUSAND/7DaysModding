@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits;
 using NodeEditorFramework.Utilities;
 using UnityEngine;
@@ -17,6 +18,7 @@ namespace NodeEditorFramework.Rules.Maths.Integers
         
         public LessThanRule()
         {
+            RuleId = "Hal.LT";
             RuleType = RuleType.Processor;
             Logic = () =>
             {
@@ -26,6 +28,18 @@ namespace NodeEditorFramework.Rules.Maths.Integers
             };
             Input1 = Port<int>.Create("<", this);
             
+        }
+        
+        public override void Write(BinaryWriter writer)
+        {
+            base.Write(writer);
+            writer.Write(Target);
+        }
+
+        public override void Read(BinaryReader reader)
+        {
+            base.Read(reader);
+            Target = reader.ReadInt32();
         }
         
         public override void DrawUI()

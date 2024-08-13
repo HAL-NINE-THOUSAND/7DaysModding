@@ -14,6 +14,7 @@ namespace NodeEditorFramework.Rules.Maths.Integers
 
         public MultiplyRule()
         {
+            RuleId = "Hal.Times";
             RuleType = RuleType.Processor;
             Logic = () =>
             {

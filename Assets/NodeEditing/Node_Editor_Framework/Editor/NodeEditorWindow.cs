@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEditor;
 using System.IO;
-
+using NodeEditing.Node_Editor_Framework.Runtime.Framework.Interface;
 using NodeEditorFramework.Utilities;
 
 namespace NodeEditorFramework.Standard
@@ -225,7 +225,7 @@ DefaultImporter:
 
 			// Make sure we have a cache at that temp path with a canvas
 			if (canvasCache == null)
-				canvasCache = new NodeEditorUserCache(tempPath);
+				canvasCache = new NodeEditorUserCache(tempPath, null);
 			else
 				canvasCache.SetCachePath(tempPath);
 			canvasCache.AssureCanvas();

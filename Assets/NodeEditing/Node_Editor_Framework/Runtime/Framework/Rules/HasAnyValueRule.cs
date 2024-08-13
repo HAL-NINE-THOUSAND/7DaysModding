@@ -12,6 +12,7 @@
         
         public HasAnyValueRule()
         {
+            RuleId = "Hal.Any";
             RuleType = RuleType.Output;
             Logic = () =>
             {

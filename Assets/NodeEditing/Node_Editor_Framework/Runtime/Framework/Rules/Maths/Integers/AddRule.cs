@@ -14,6 +14,7 @@ namespace NodeEditorFramework.Rules.Maths.Integers
 
         public AddRule()
         {
+            RuleId = "Hal.Add";
             RuleType = RuleType.Processor;
             Logic = () =>
             {
