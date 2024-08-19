@@ -1,4 +1,3 @@
-using System.IO;
 using NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits;
 using NodeEditorFramework;
 using NodeEditorFramework.Utilities;
@@ -8,21 +7,20 @@ namespace NodeEditing.Node_Editor_Framework.Runtime.Modals
 {
     public class SaveCircuitModal : NodeModal
     {
+        private static NodeCanvas canvas;
 
-        public bool IsComplete = false;
-        public bool IsCancelled = false;
-        
         public string CircuitName = "";
+        public bool IsCancelled;
+
+        public bool IsComplete;
 
         private string message = "You can group circuits using / to separate nodes e.g. MyStuff/Entities/KillBob";
-
-        private static NodeCanvas canvas;
 
         public SaveCircuitModal()
         {
             ModalSize = new Rect(-1, -1, 300, 200);
         }
-        
+
         public override void OnShow()
         {
             IsComplete = false;
@@ -41,21 +39,21 @@ namespace NodeEditing.Node_Editor_Framework.Runtime.Modals
 
         public static void HandleMenuDraw(GenericMenu menu, NodeCanvas activeCanvas)
         {
-            canvas = activeCanvas; 
-            menu.AddItem(new GUIContent("  Save Circuit"), false, ShowModal);
+            canvas = activeCanvas;
+            menu.AddItem(new GUIContent("  Save Circuit"), false, () => ShowModal(canvas));
         }
 
-        public static void ShowModal()
+        public static void ShowModal(NodeCanvas activeCanvas)
         {
-            ModalManager.ShowModal(new SaveCircuitModal()
+            canvas = activeCanvas;
+            ModalManager.ShowModal(new SaveCircuitModal
             {
-                CircuitName = canvas.Circuit.Name,
+                CircuitName = canvas.Circuit.Name
             });
         }
-        
+
         public override void Draw()
         {
-            
             GUILayout.Label("Save Circuit");
 
             // File save field
@@ -74,7 +72,7 @@ namespace NodeEditing.Node_Editor_Framework.Runtime.Modals
                 ModalManager.CloseModal();
                 return;
             }
-            
+
             if (GUILayout.Button("Save"))
             {
                 if (string.IsNullOrEmpty(CircuitName))
@@ -88,15 +86,16 @@ namespace NodeEditing.Node_Editor_Framework.Runtime.Modals
                     message = "No save function set so there's not much I can do...";
                     return;
                 }
+
                 IsComplete = true;
                 ModalManager.CloseModal();
             }
+
             GUILayout.EndHorizontal();
 
             GUILayout.BeginVertical();
-            GUILayout.Label(message, GUILayout.ExpandWidth (true));
+            GUILayout.Label(message, GUILayout.ExpandWidth(true));
             GUILayout.EndVertical();
-            
         }
     }
 }

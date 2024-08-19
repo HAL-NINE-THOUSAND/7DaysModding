@@ -6,19 +6,15 @@ using UnityEngine;
 
 namespace NodeEditorFramework.Rules.Maths.Integers
 {
-
-   
-    [RuleMenu(Path = "Maths/Integer/Greater Than")]
-    [RuleTitle(Title=">")]
-    public class GreaterThanRule : Rule<bool>
+    [RuleMenu(Path = "Maths/Greater Than")]
+    [RuleTitle(Title = ">")]
+    public class GreaterThanRule : TargetRule<bool, int>
     {
-        public Port<int> Input1 { get; set; }
-        public sealed override Func<bool> Logic { get; set; }
-        public int Target { get; set; }
-        
+        public const string Identifier = "Hal.GT";
+
         public GreaterThanRule()
         {
-            RuleId = "Hal.GT";
+            RuleName = Identifier;
             RuleType = RuleType.Processor;
             Logic = () =>
             {
@@ -27,9 +23,13 @@ namespace NodeEditorFramework.Rules.Maths.Integers
                 return lastValue;
             };
             Input1 = Port<int>.Create(">", this);
-            
+
+            ConvertTypes.Add(typeof(float), FloatGreaterThanRule.Identifier);
         }
-        
+
+        public Port<int> Input1 { get; set; }
+        public sealed override Func<bool> Logic { get; set; }
+
         public override void Write(BinaryWriter writer)
         {
             base.Write(writer);
@@ -41,12 +41,10 @@ namespace NodeEditorFramework.Rules.Maths.Integers
             base.Read(reader);
             Target = reader.ReadInt32();
         }
-        
+
         public override void DrawUI()
         {
             Target = RTEditorGUI.IntField(new GUIContent("Value", "Target Value"), Target, MarkCircuitAsDirty);
         }
     }
-
-
 }

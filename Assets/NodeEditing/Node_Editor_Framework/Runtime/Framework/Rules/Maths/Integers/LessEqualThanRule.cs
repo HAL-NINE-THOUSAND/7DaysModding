@@ -6,30 +6,30 @@ using UnityEngine;
 
 namespace NodeEditorFramework.Rules.Maths.Integers
 {
-
-   
-    [RuleMenu(Path = "Maths/Integer/Less or equal")]
-    [RuleTitle(Title="<=")]
-    public class LessEqualThanRule : Rule<bool>
+    [RuleMenu(Path = "Maths/Less or equal")]
+    [RuleTitle(Title = "<=")]
+    public class LessEqualThanRule : TargetRule<bool, int>
     {
-        public Port<int> Input1 { get; set; }
-        public sealed override Func<bool> Logic { get; set; }
-        public int Target { get; set; }
-        
+        public const string Identifier = "Hal.LET";
+
         public LessEqualThanRule()
         {
-            RuleId = "Hal.LET";
+            RuleName = Identifier;
             RuleType = RuleType.Processor;
             Logic = () =>
             {
-                Circuit.GetValue(Input1, out var value);
+                Circuit.GetValue(Input1, out var value, out var fromCache);
                 SetLastValue(value <= Target);
                 return lastValue;
             };
             Input1 = Port<int>.Create("<=", this);
-            
+
+            ConvertTypes.Add(typeof(float), FloatLessEqualThanRule.Identifier);
         }
-        
+
+        public Port<int> Input1 { get; set; }
+        public sealed override Func<bool> Logic { get; set; }
+
         public override void Write(BinaryWriter writer)
         {
             base.Write(writer);
@@ -41,12 +41,10 @@ namespace NodeEditorFramework.Rules.Maths.Integers
             base.Read(reader);
             Target = reader.ReadInt32();
         }
-        
+
         public override void DrawUI()
         {
             Target = RTEditorGUI.IntField(new GUIContent("Value", "Target Value"), Target, MarkCircuitAsDirty);
         }
     }
-
-
 }

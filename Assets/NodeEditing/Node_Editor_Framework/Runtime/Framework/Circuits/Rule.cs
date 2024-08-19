@@ -1,13 +1,50 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using NodeEditorFramework;
 using UnityEngine;
 
 namespace NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits
 {
+    public enum InputPosition : byte
+    {
+        Left = 0,
+        Top = 1
+    }
+
     public static class RuleOutputCache<T>
     {
+        public static Dictionary<Guid, Dictionary<Guid, T>> Circuits { get; set; } = new();
+    }
+
+    public static class RuleInputCache<T>
+    {
         public static Dictionary<Guid, Dictionary<string, T>> Circuits { get; set; } = new();
+
+
+        public static void Add(Guid circuitId, string inputKey, T value)
+        {
+            if (!Circuits.TryGetValue(circuitId, out var dic))
+            {
+                dic = new Dictionary<string, T>();
+                Circuits.Add(circuitId, dic);
+            }
+
+            dic.Remove(inputKey);
+            dic.Add(inputKey, value);
+        }
+
+        public static bool TryGet(Guid circuitId, string inputKey, out T value)
+        {
+            if (!Circuits.TryGetValue(circuitId, out var circuit))
+            {
+                value = default;
+                return false;
+            }
+
+            return circuit.TryGetValue(inputKey, out value);
+        }
     }
 
     public enum RuleType
@@ -21,8 +58,14 @@ namespace NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits
 
     public interface IRule
     {
-        string RuleId { get; set; }
+        string RuleName { get; set; }
+        Guid RuleId { get; set; }
 
+        NodeSide InputPosition { get; set; }
+
+        NodeSide OutputPosition { get; set; }
+
+        //string InputKey { get; set; }
         Vector2 Position { get; set; }
 
         Circuit Circuit { get; set; }
@@ -47,13 +90,12 @@ namespace NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits
         public bool Accepts(Type other);
 
         public void DrawUI();
-        
-        public List<Type> AcceptedTypes { get; set; }
-
+        public bool TryConvert(Type type, out IRule rule, out string message);
         public void MarkCircuitAsDirty();
 
-        public abstract void Write(BinaryWriter writer);
-        public abstract void Read(BinaryReader reader);
+        public void Write(BinaryWriter writer);
+        public void Read(BinaryReader reader);
+        public void CopyDetailsFromRule(IRule rule);
     }
 
     public interface IRule<out T> : IRule
@@ -68,7 +110,19 @@ namespace NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits
         protected T lastValue;
 
         public abstract Func<T> Logic { get; set; }
-        public string RuleId { get; set; } 
+
+
+        //need to move this to a separate object/helper class so we're not duplicating the data everywhere
+        public Dictionary<Type, string> ConvertTypes { get; set; } = new(0);
+
+        public NodeSide InputPosition { get; set; } = NodeSide.Left;
+
+        public NodeSide OutputPosition { get; set; } = NodeSide.Right;
+        public string RuleName { get; set; }
+
+        public Guid RuleId { get; set; } = Guid.NewGuid();
+
+        //public string InputKey { get; set; } = string.Empty;
 
         public Vector2 Position { get; set; }
 
@@ -79,17 +133,85 @@ namespace NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits
 
         public RuleType RuleType { get; protected set; }
 
+        public virtual void CopyDetailsFromRule(IRule rule)
+        {
+            for (var index = 0; index < rule.Inputs.Count; index++)
+            {
+                var copyFrom = rule.Inputs[index];
+                var copyTo = Inputs[index];
+                copyTo.InputId = copyFrom.InputId;
+            }
+
+            var sourceProps = rule.GetType().GetProperties();
+            var thisProps = GetType().GetProperties();
+
+            foreach (var prop in sourceProps)
+            {
+                var thisProp = thisProps.FirstOrDefault(d => d.Name == prop.Name);
+                if (thisProp == null)
+                    continue;
+
+                if (!thisProp.PropertyType.IsPrimitive)
+                    continue;
+
+                var val = prop.GetValue(rule);
+                try
+                {
+                    var newValue = Convert.ChangeType(val, thisProp.PropertyType);
+                    thisProp.SetValue(this, newValue);
+                }
+                catch (Exception ex)
+                {
+                    Debug.Log($"Set prop failed on {thisProp.Name}: " + val);
+                }
+            }
+            Position = rule.Position;
+            RuleId = rule.RuleId;
+            InputPosition = rule.InputPosition;
+            OutputPosition = rule.OutputPosition;
+        }
+
+        public bool TryConvert(Type type, out IRule rule, out string message)
+        {
+            foreach (var input in Inputs)
+            {
+                if (Circuit.Connections.TryGetValue(input.InputId, out var connectedRule))
+                {
+                    if (Circuit.Rules[connectedRule].Inputs.Count > 1)
+                    {
+                        message = "Can not convert when inputs are connected, disconnect all inputs and try again";
+                        rule = null;
+                        return false;
+                    }
+                }
+                
+                if (Inputs.Count > 1)
+                {
+                    if (Circuit.Connections.ContainsKey(input.InputId))
+                    {
+                        message = "Can not convert when inputs are connected, disconnect all inputs and try again";
+                        rule = null;
+                        return false;
+                    }
+                }
+                
+            }
+
+            rule = null;
+            message = string.Empty;
+            if (ConvertTypes.TryGetValue(type, out var ruleName))
+            {
+                rule = RulesManager.CreateRule(ruleName);
+                return rule != null;
+            }
+
+            return false;
+        }
+
         public T GetValue()
         {
             var ret = Logic();
             return ret;
-        }
-
-
-        public void SetLastValue(T value)
-        {
-            lastValue = value;
-            RuleOutputCache<T>.Circuits[Circuit.CircuitId].TryAdd(RuleId, lastValue);
         }
 
         public T GetLastValue()
@@ -100,10 +222,8 @@ namespace NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits
 
         public virtual void DrawUI()
         {
-            
         }
 
-        public List<Type> AcceptedTypes { get; set; } = new(0);
 
         public void MarkCircuitAsDirty()
         {
@@ -112,26 +232,28 @@ namespace NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits
 
         public virtual void Write(BinaryWriter writer)
         {
-            writer.Write(RuleId);
+            writer.Write(RuleName);
+            writer.Write(RuleId.ToString());
             writer.Write(Position.x);
             writer.Write(Position.y);
+            writer.Write((byte)InputPosition);
+            writer.Write((byte)OutputPosition);
             writer.Write((int)RuleType);
             writer.Write(Inputs.Count);
-            foreach (var input in Inputs)
-            {
-                writer.Write(input.InputId.ToString());
-            }
+            foreach (var input in Inputs) writer.Write(input.InputId.ToString());
         }
 
         public virtual void Read(BinaryReader reader)
         {
-            //RuleId will be reader to instantiate this class to Read()
-            //RuleId = Guid.Parse(reader.ReadString());
+            //RuleName will be reader to instantiate this class to Read()
+            //var version = reader.ReadInt16();
+            RuleId = Guid.Parse(reader.ReadString());
             Position = new Vector2(reader.ReadSingle(), reader.ReadSingle());
+            InputPosition = (NodeSide)reader.ReadByte();
+            OutputPosition = (NodeSide)reader.ReadByte();
             RuleType = (RuleType)reader.ReadInt32();
-            
             var inputCount = reader.ReadInt32();
-            for (int x = 0; x < inputCount; x++)
+            for (var x = 0; x < inputCount; x++)
             {
                 var inputId = Guid.Parse(reader.ReadString());
                 Inputs[x].InputId = inputId;
@@ -154,10 +276,9 @@ namespace NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits
 
         public bool Accepts(Type other)
         {
-            if (AcceptedTypes.Count > 0 && !AcceptedTypes.Contains(other))
-                return false;
             return true;
         }
+
         public void ResetValue()
         {
             Circuit.ResetValue<T>(RuleId);
@@ -188,6 +309,13 @@ namespace NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits
         public IRule CreateNew()
         {
             return Activator.CreateInstance(GetType()) as IRule;
+        }
+
+
+        public void SetLastValue(T value)
+        {
+            lastValue = value;
+            RuleOutputCache<T>.Circuits[Circuit.CircuitId].TryAdd(RuleId, lastValue);
         }
     }
 }

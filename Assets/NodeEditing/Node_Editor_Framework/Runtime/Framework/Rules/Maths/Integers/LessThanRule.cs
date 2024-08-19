@@ -6,30 +6,30 @@ using UnityEngine;
 
 namespace NodeEditorFramework.Rules.Maths.Integers
 {
-
-   
-    [RuleMenu(Path = "Maths/Integer/Less Than")]
-    [RuleTitle(Title="<")]
-    public class LessThanRule : Rule<bool>
+    [RuleMenu(Path = "Maths/Less Than")]
+    [RuleTitle(Title = "<")]
+    public class LessThanRule : TargetRule<bool, int>
     {
-        public Port<int> Input1 { get; set; }
-        public sealed override Func<bool> Logic { get; set; }
-        public int Target { get; set; }
-        
+        public const string Identifier = "Hal.LT";
+
         public LessThanRule()
         {
-            RuleId = "Hal.LT";
+            RuleName = Identifier;
             RuleType = RuleType.Processor;
             Logic = () =>
             {
-                Circuit.GetValue(Input1, out var value);
+                Circuit.GetValue(Input1, out var value, out _);
                 SetLastValue(value < Target);
                 return lastValue;
             };
             Input1 = Port<int>.Create("<", this);
-            
+
+            ConvertTypes.Add(typeof(float), FloatLessThanRule.Identifier);
         }
-        
+
+        public Port<int> Input1 { get; set; }
+        public sealed override Func<bool> Logic { get; set; }
+
         public override void Write(BinaryWriter writer)
         {
             base.Write(writer);
@@ -41,12 +41,10 @@ namespace NodeEditorFramework.Rules.Maths.Integers
             base.Read(reader);
             Target = reader.ReadInt32();
         }
-        
+
         public override void DrawUI()
         {
             Target = RTEditorGUI.IntField(new GUIContent("Value", "Target Value"), Target, MarkCircuitAsDirty);
         }
     }
-
-
 }

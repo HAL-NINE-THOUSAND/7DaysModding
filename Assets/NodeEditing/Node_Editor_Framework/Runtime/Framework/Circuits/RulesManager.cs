@@ -8,16 +8,15 @@ namespace NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits
 {
     public class RulesManager
     {
-        private static Dictionary<string, IRule> Rules { get; set; } = new();
-        private static Dictionary<Type, IRule> RuleTypes { get; set; } = new();
+        private static bool isInitialised;
+        private static Dictionary<string, IRule> Rules { get; } = new();
+        private static Dictionary<Type, IRule> RuleTypes { get; } = new();
 
-        private static bool isInitialised = false;
-        
         public static void Init()
         {
             if (isInitialised)
                 return;
-            
+
             Rules.Clear();
             RuleTypes.Clear();
 
@@ -25,20 +24,20 @@ namespace NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits
 
             foreach (var rule in rules)
             {
-                
-                if (String.IsNullOrWhiteSpace(rule.RuleId))
+                if (string.IsNullOrWhiteSpace(rule.RuleName))
                 {
                     Debug.LogError($"{rule.GetType().Name} RuleId can not be empty");
                     continue;
                 }
-                if (Rules.TryGetValue(rule.RuleId, out var existing))
+
+                if (Rules.TryGetValue(rule.RuleName, out var existing))
                 {
-                    Debug.LogError($"Duplicate rule ID '{rule.RuleId}' for {rule.GetType().Name} and {existing.GetType().Name}");
+                    Debug.LogError($"Duplicate rule ID '{rule.RuleName}' for {rule.GetType().Name} and {existing.GetType().Name}");
                     continue;
                 }
-                
+
                 RuleTypes.Add(rule.GetType(), rule);
-                Rules.Add(rule.RuleId, rule);
+                Rules.Add(rule.RuleName, rule);
             }
 
             isInitialised = true;
@@ -51,10 +50,10 @@ namespace NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits
             return ret;
         }
 
-        public static IRule CreateRule(string ruleId)
+        public static IRule CreateRule(string ruleName)
         {
             Init();
-            var ret = RuleTypes.Values.FirstOrDefault(d => d.RuleId == ruleId)?.CreateNew();
+            var ret = RuleTypes.Values.FirstOrDefault(d => d.RuleName == ruleName)?.CreateNew();
             return ret;
         }
 
@@ -74,6 +73,7 @@ namespace NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits
             );
             return ret;
         }
+
         public static IEnumerable<Type> GetInheritorsByName<T>()
         {
             var ret = AppDomain.CurrentDomain.GetAssemblies().SelectMany(d => d.GetTypes().Where(d => d.GetCustomAttributes(typeof(T), false).Any()));
@@ -115,7 +115,6 @@ namespace NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits
             var ret = GetInheritors(asm, interfaceType).Select(d => Activator.CreateInstance(d) as T).ToArray();
             return ret;
             //var ret = asm.GetInheritors(interfaceType).Select(d => (Activator.CreateInstance(d.MakeGenericType(d.BaseType.GenericTypeArguments[0])))).ToArray();
-
         }
 
         public static IEnumerable<Type> GetLoadableTypes(Assembly assembly)
@@ -152,6 +151,5 @@ namespace NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits
         {
             return AppDomain.CurrentDomain.GetAssemblies().SelectMany(GetInheritors<T>);
         }
-
     }
 }

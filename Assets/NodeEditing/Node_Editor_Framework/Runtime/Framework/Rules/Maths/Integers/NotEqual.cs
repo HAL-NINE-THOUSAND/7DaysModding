@@ -6,19 +6,15 @@ using UnityEngine;
 
 namespace NodeEditorFramework.Rules.Maths.Integers
 {
-
-   
-    [RuleMenu(Path = "Maths/Integer/Not Equal")]
-    [RuleTitle(Title="!=")]
-    public class NotEqualRule : Rule<bool>
+    [RuleMenu(Path = "Maths/Not Equal")]
+    [RuleTitle(Title = "!=")]
+    public class NotEqualRule : TargetRule<bool, int>
     {
-        public Port<int> Input1 { get; set; }
-        public sealed override Func<bool> Logic { get; set; }
-        public int Target { get; set; }
-        
+        public const string Identifier = "Hal.NE";
+
         public NotEqualRule()
         {
-            RuleId = "Hal.NE";
+            RuleName = Identifier;
             RuleType = RuleType.Processor;
             Logic = () =>
             {
@@ -27,10 +23,13 @@ namespace NodeEditorFramework.Rules.Maths.Integers
                 return lastValue;
             };
             Input1 = Port<int>.Create("!=", this);
-            
+
+            ConvertTypes.Add(typeof(float), FloatNotEqualRule.Identifier);
         }
-        
-        
+
+        public Port<int> Input1 { get; set; }
+        public sealed override Func<bool> Logic { get; set; }
+
         public override void Write(BinaryWriter writer)
         {
             base.Write(writer);
@@ -42,12 +41,10 @@ namespace NodeEditorFramework.Rules.Maths.Integers
             base.Read(reader);
             Target = reader.ReadInt32();
         }
-        
+
         public override void DrawUI()
         {
             Target = RTEditorGUI.IntField(new GUIContent("Value", "Target Value"), Target, MarkCircuitAsDirty);
         }
     }
-
-
 }

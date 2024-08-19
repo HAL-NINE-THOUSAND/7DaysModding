@@ -3,18 +3,14 @@ using NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits;
 
 namespace NodeEditorFramework.Rules.Maths.Integers
 {
-
-   
-    [RuleMenu(Path = "Maths/Integer/Divide")]
+    [RuleMenu(Path = "Maths/Divide")]
     public class DivideRule : Rule<int>
     {
-        public Port<int> Input1 { get; set; }
-        public Port<int> Input2 { get; set; }
-        public sealed override Func<int> Logic { get; set; }
+        public const string Identifier = "Hal.Div";
 
         public DivideRule()
         {
-            RuleId = "Hal.Div";
+            RuleName = Identifier;
             RuleType = RuleType.Processor;
             Logic = () =>
             {
@@ -27,12 +23,12 @@ namespace NodeEditorFramework.Rules.Maths.Integers
             };
             Input1 = Port<int>.Create("Input 1", this);
             Input2 = Port<int>.Create("Input 2", this);
-            AcceptedTypes.Add(typeof(Int16));
-            AcceptedTypes.Add(typeof(Int32));
-            AcceptedTypes.Add(typeof(Int64));
-            AcceptedTypes.Add(typeof(Single));
-            AcceptedTypes.Add(typeof(Double));
-        }
-    }
 
+            ConvertTypes.Add(typeof(float), FloatDivideRule.Identifier);
+        }
+
+        public Port<int> Input1 { get; set; }
+        public Port<int> Input2 { get; set; }
+        public sealed override Func<int> Logic { get; set; }
+    }
 }

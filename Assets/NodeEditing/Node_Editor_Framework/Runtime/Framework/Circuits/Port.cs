@@ -4,26 +4,25 @@ using System.Diagnostics;
 namespace NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits
 {
     // Define a generic Port class implementing IPort
-    [DebuggerDisplay("Port: {name}: {Value}")]
+    [DebuggerDisplay("Port: {Name}: {Value}")]
     public class Port<T> : IPort
     {
+        public Port(string name, IRule parent)
+        {
+            this.Name = name;
+            Rule = parent;
+        }
+
+        public string Name { get; }
+
         public Guid InputId { get; set; } = Guid.NewGuid();
 
-        private string name;
-        public string Name => name;
-
-        public IRule Node { get; set; }
+        public IRule Rule { get; set; }
 
         public Type PortType => typeof(T);
 
-        public Port(string name, IRule parent)
-        {
-            this.name = name;
-            Node = parent;
-        }
-
         /// <summary>
-        /// Draws a label with the given GUIContent and the given style. Places the knob next to it at it's nodeSide
+        ///     Draws a label with the given GUIContent and the given style. Places the knob next to it at it's nodeSide
         /// </summary>
         public void DisplayLayout()
         {
@@ -38,7 +37,6 @@ namespace NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits
 
         public bool IsSamePort(IPort port)
         {
-
             if (PortType == port.PortType)
                 return true;
 
@@ -54,7 +52,6 @@ namespace NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits
 
         public bool IsSamePort<TPortType>()
         {
-
             var other = typeof(TPortType);
             if (PortType == other)
                 return true;
@@ -73,6 +70,6 @@ namespace NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits
     {
         Guid InputId { get; set; }
         Type PortType { get; }
-        IRule Node { get; set; }
+        IRule Rule { get; set; }
     }
 }
