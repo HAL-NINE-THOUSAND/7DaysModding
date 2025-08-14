@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Newtonsoft.Json;
+using NodeEditing.Node_Editor_Framework.Runtime.Framework.Rules.Inputs.External;
 
 namespace NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits
 {
@@ -163,6 +164,17 @@ namespace NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits
             if (Connections.TryGetValue(input.InputId, out var ruleId)) return Rules[ruleId];
             return null;
         }
+        
+        public IEnumerable<IExternalRule> GetExternalInputs()
+        {
+            var ret = new List<IExternalRule>();
+            foreach (var rule in Rules.Values)
+            {
+                if (rule is IExternalRule externalRule)
+                    ret.Add(externalRule);
+            }
+            return ret;
+        }
 
         public void ResetValue<T>(Guid ruleId)
         {
@@ -171,8 +183,28 @@ namespace NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits
 
             var cache = RuleOutputCache<T>.Circuits[CircuitId];
             cache.Remove(ruleId);
+            //var rule = Rules[ruleId];
+            //rule.ResetValue();
         }
 
+        public IRule GetFirstOutput()
+        {
+            foreach (var rule in Rules)
+            {
+                if (rule.Value.RuleType == RuleType.Output)
+                {
+                    return rule.Value;
+                }
+            }
+
+            return null;
+        } 
+        public T GetFirstOutputValue<T>(IRule rule)
+        {
+            var ret = (T)Convert.ChangeType(rule.GetLastValue(), rule.OutputType);
+            return ret;
+        } 
+        
         public bool GetValue<T>(Guid inputId, out T value, out bool fromCache)
         {
             if (Connections.TryGetValue(inputId, out var ruleId))

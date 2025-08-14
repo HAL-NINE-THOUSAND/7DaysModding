@@ -143,7 +143,9 @@ namespace NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits
 
         public static IEnumerable<T> GetInheritors<T>(Assembly asm) where T : class
         {
-            return GetInheritors(asm, typeof(T)).Select(d => Activator.CreateInstance(d) as T);
+            return GetInheritors(asm, typeof(T))
+                .Where(d=> d.IsGenericType == false)
+                .Select(d => Activator.CreateInstance(d) as T);
         }
 
 

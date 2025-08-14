@@ -3,6 +3,7 @@ using NodeEditing.Node_Editor_Framework.Runtime.Framework.Interface;
 using NodeEditing.Node_Editor_Framework.Runtime.Modals;
 using NodeEditorFramework;
 using NodeEditorFramework.Utilities;
+using NodeEditorFramework.Utilities.Hooks;
 using UnityEngine;
 
 namespace NodeEditing.Node_Editor_Framework.Runtime
@@ -19,6 +20,9 @@ namespace NodeEditing.Node_Editor_Framework.Runtime
     /// </summary>
     public class RTNodeEditor : MonoBehaviour, INodeCanvasParent
     {
+        public static RTNodeEditor Instance;
+
+        public static ICircuitManager CircuitManager;
         // Startup-canvas, cache and interface
         public NodeCanvas assetSave;
         public string sceneSave;
@@ -34,6 +38,10 @@ namespace NodeEditing.Node_Editor_Framework.Runtime
 
         private void Start()
         {
+            Instance = this;
+            // Circuit.SaveCircuit = CircuitManagerDefault.Save;
+            // CircuitLoaderDefault.LoadMenuGenerator = SaveCircuitModal.LoadMenuGenerator;
+            CircuitManager.Load();
             NormalReInit();
         }
 

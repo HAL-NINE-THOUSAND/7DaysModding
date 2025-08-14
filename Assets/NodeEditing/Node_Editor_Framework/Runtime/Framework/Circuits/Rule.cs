@@ -52,7 +52,8 @@ namespace NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits
         Unset = 0,
         Input = 1,
         Processor = 2,
-        Output = 3
+        Output = 3,
+        External = 4,
     }
 
 
@@ -103,6 +104,7 @@ namespace NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits
         public T GetValue();
 
         public new T GetLastValue();
+
     }
 
     public abstract class Rule<T> : IRule<T>
@@ -279,9 +281,10 @@ namespace NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits
             return true;
         }
 
-        public void ResetValue()
+        public virtual void ResetValue()
         {
             Circuit.ResetValue<T>(RuleId);
+            //lastValue = default;
         }
 
         public virtual Type GetOutputType()

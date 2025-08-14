@@ -34,7 +34,7 @@ namespace NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits
             parent.Inputs.Add(ret);
             return ret;
         }
-
+        
         public bool IsSamePort(IPort port)
         {
             if (PortType == port.PortType)
@@ -71,5 +71,7 @@ namespace NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits
         Guid InputId { get; set; }
         Type PortType { get; }
         IRule Rule { get; set; }
+        
+        string Name { get; }
     }
 }

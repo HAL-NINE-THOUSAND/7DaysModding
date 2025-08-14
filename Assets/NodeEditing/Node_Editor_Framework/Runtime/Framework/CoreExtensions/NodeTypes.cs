@@ -28,7 +28,10 @@ namespace NodeEditorFramework
                 var menuData = RulesManager.GetAttribute<RuleMenuAttribute>(type);
                 var titleAtt = RulesManager.GetAttribute<RuleTitleAttribute>(type);
 
-                var title = titleAtt?.Title ?? menuData.Path.Split("/").Last();
+                var title = titleAtt?.Title ?? menuData?.Path?.Split("/").Last();
+                if (title == null)
+                    continue;
+                
                 var nodeData = new NodeTypeData(menuData.Path, title, type, new Type[0], menuData.Hidden);
                 nodes.Add(menuData.Path, nodeData);
                 var ruleInstance = RulesManager.CreateRule(type);

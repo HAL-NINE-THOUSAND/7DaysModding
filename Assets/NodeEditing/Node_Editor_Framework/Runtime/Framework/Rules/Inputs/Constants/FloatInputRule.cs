@@ -4,25 +4,25 @@ using NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits;
 using NodeEditorFramework.Utilities;
 using UnityEngine;
 
-namespace NodeEditorFramework.Rules.Inputs
+namespace NodeEditing.Node_Editor_Framework.Runtime.Framework.Rules.Inputs.Constants
 {
-    [RuleMenu(Path = "Input/Integer")]
-    [RuleTitle(Title = "Int")]
-    public class IntegerInputRule : Rule<int>
+    [RuleMenu(Path = "Input/Constants/Float")]
+    [RuleTitle(Title = "Float")]
+    public class FloatInputRule : Rule<float>
     {
-        public IntegerInputRule()
+        public FloatInputRule()
         {
-            RuleName = "Hal.IntIn";
+            RuleName = "Hal.FloatIn";
             RuleType = RuleType.Processor;
             Logic = () => { return lastValue = Value; };
         }
 
-        public sealed override Func<int> Logic { get; set; }
-        public int Value { get; set; }
+        public sealed override Func<float> Logic { get; set; }
+        public float Value { get; set; }
 
         public override void DrawUI()
         {
-            Value = RTEditorGUI.IntField(new GUIContent("Value", "The input value of type integer"), Value, MarkCircuitAsDirty);
+            Value = RTEditorGUI.FloatField(new GUIContent("Value", "The input value of type integer"), Value, MarkCircuitAsDirty);
         }
 
 
@@ -35,7 +35,7 @@ namespace NodeEditorFramework.Rules.Inputs
         public override void Read(BinaryReader reader)
         {
             base.Read(reader);
-            Value = reader.ReadInt32();
+            Value = reader.ReadSingle();
         }
     }
 }

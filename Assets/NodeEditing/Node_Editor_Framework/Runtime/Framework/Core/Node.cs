@@ -69,7 +69,9 @@ namespace NodeEditorFramework
             {
                 var input = Rule.Inputs[index];
                 var knob = CreateInstance<ConnectionKnob>();
-                knob.Init(input, this, "Input " + (index + 1), Direction.In);
+
+                var portName = input.Name ?? "Input " + (index + 1); 
+                knob.Init(input, this, portName, Direction.In);
                 knob.InputId = input.InputId;
                 knob.rule = Rule;
                 IncomingKnobs.Add(knob);
@@ -145,6 +147,7 @@ namespace NodeEditorFramework
         {
         }
 
+        private static bool testToggle;
         /// <summary>
         ///     Draws the Node GUI including all controls and potentially Input/Output labels.
         ///     By default, it displays all Input/Output labels.
@@ -207,6 +210,13 @@ namespace NodeEditorFramework
                     IncomingKnobs[i].UpdateKnobTexture();
                 for (var i = 0; i < OutgoingKnobs.Count; i++)
                     OutgoingKnobs[i].UpdateKnobTexture();
+            }
+            
+            GUILayout.Space(5);
+            if (GUILayout.Button(testToggle ? "External" : "Internal", GUI.skin.GetStyle("labelLeft"), GUILayout.Width(150)))
+            {
+                testToggle = !testToggle;
+                Debug.Log("Toggled!");
             }
 
             GUILayout.EndHorizontal();

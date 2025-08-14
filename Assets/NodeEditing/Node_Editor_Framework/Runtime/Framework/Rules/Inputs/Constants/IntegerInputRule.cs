@@ -4,24 +4,25 @@ using NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits;
 using NodeEditorFramework.Utilities;
 using UnityEngine;
 
-namespace NodeEditorFramework.Rules.Inputs
+namespace NodeEditing.Node_Editor_Framework.Runtime.Framework.Rules.Inputs.Constants
 {
-    [RuleMenu(Path = "Input/Byte")]
-    public class ByteInputRule : Rule<short>
+    [RuleMenu(Path = "Input/Constants/Integer")]
+    [RuleTitle(Title = "Int")]
+    public class IntegerInputRule : Rule<int>
     {
-        public ByteInputRule()
+        public IntegerInputRule()
         {
-            RuleName = "Hal.ByteIn";
+            RuleName = "Hal.IntIn";
             RuleType = RuleType.Processor;
             Logic = () => { return lastValue = Value; };
         }
 
-        public sealed override Func<short> Logic { get; set; }
-        public byte Value { get; set; }
+        public sealed override Func<int> Logic { get; set; }
+        public int Value { get; set; }
 
         public override void DrawUI()
         {
-            Value = (byte)RTEditorGUI.IntField(new GUIContent("Value", "The input value of type integer"), Value, MarkCircuitAsDirty);
+            Value = RTEditorGUI.IntField(new GUIContent("Value", "The input value of type integer"), Value, MarkCircuitAsDirty);
         }
 
 
@@ -34,7 +35,7 @@ namespace NodeEditorFramework.Rules.Inputs
         public override void Read(BinaryReader reader)
         {
             base.Read(reader);
-            Value = reader.ReadByte();
+            Value = reader.ReadInt32();
         }
     }
 }

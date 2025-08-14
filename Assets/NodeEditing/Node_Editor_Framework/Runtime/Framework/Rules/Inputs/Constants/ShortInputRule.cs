@@ -4,25 +4,24 @@ using NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits;
 using NodeEditorFramework.Utilities;
 using UnityEngine;
 
-namespace NodeEditorFramework.Rules.Inputs
+namespace NodeEditing.Node_Editor_Framework.Runtime.Framework.Rules.Inputs.Constants
 {
-    [RuleMenu(Path = "Input/Long")]
-    public class LongInputRule : Rule<long>
+    [RuleMenu(Path = "Input/Constants/Short")]
+    public class ShortInputRule : Rule<short>
     {
-        public LongInputRule()
+        public ShortInputRule()
         {
-            RuleName = "Hal.LongIn";
+            RuleName = "Hal.ShortIn";
             RuleType = RuleType.Processor;
             Logic = () => { return lastValue = Value; };
         }
 
-        public sealed override Func<long> Logic { get; set; }
-        public long Value { get; set; }
+        public sealed override Func<short> Logic { get; set; }
+        public short Value { get; set; }
 
         public override void DrawUI()
         {
-            //will this work? 32 bit -> 64?
-            Value = (long)RTEditorGUI.FloatField(new GUIContent("Value", "The input value of type integer"), Value, MarkCircuitAsDirty);
+            Value = (short)RTEditorGUI.IntField(new GUIContent("Value", "The input value of type integer"), Value, MarkCircuitAsDirty);
         }
 
 
@@ -35,7 +34,7 @@ namespace NodeEditorFramework.Rules.Inputs
         public override void Read(BinaryReader reader)
         {
             base.Read(reader);
-            Value = reader.ReadInt64();
+            Value = reader.ReadInt16();
         }
     }
 }

@@ -340,12 +340,12 @@ namespace NodeEditorFramework
 		/// <summary>
 		/// Handles creation of the group in the editor through a context menu item
 		/// </summary>
-		[ContextEntryAttribute (ContextType.Canvas, "Create Group")]
-		private static void CreateGroup (NodeEditorInputInfo info) 
-		{
-			info.SetAsCurrentEnvironment();
-			new NodeGroup ("Group", NodeEditor.ScreenToCanvasSpace (info.inputPos));
-		}
+		// [ContextEntryAttribute (ContextType.Canvas, "Create Group")]
+		// private static void CreateGroup (NodeEditorInputInfo info) 
+		// {
+		// 	info.SetAsCurrentEnvironment();
+		// 	new NodeGroup ("Group", NodeEditor.ScreenToCanvasSpace (info.inputPos));
+		// }
 
 		/// <summary>
 		/// Handles the group context click (on the header only)

@@ -8,103 +8,58 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c49ce2d-759b-4202-924b-bfa87a90867a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Circuits/CircuitRunner.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Circuits/CircuitRunner.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Circuits/TargetRule.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Circuits/TargetRule.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/ByteInputRule.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/ByteInputRule.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/DoubleInputRule.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/DoubleInputRule.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/FloatInputRule.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/FloatInputRule.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/IntegerInputRule.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/IntegerInputRule.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/LongInputRule.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/LongInputRule.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/ShortInputRule.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/ShortInputRule.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Converters.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Converters/Float.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Converters/Float/ConvertToFloatFromByteRule.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Converters/Float/ConvertToFloatFromByteRule.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Converters/Float/ConvertToFloatFromDoubleRule.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Converters/Float/ConvertToFloatFromDoubleRule.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Converters/Float/ConvertToFloatFromIntRule.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Converters/Float/ConvertToFloatFromIntRule.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Converters/Float/ConvertToFloatFromShortRule.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Converters/Float/ConvertToFloatFromShortRule.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Converters/Integer.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Converters/Integer/ConvertToIntFromByteRule.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Converters/Integer/ConvertToIntFromByteRule.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Converters/Integer/ConvertToIntFromDoubleRule.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Converters/Integer/ConvertToIntFromDoubleRule.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Converters/Integer/ConvertToIntFromFloatRule.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Converters/Integer/ConvertToIntFromFloatRule.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Converters/Integer/ConvertToIntFromShortRule.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Converters/Integer/ConvertToIntFromShortRule.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Floats.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Floats/AddRule.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Floats/AddRule.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Floats/DivideRule.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Floats/DivideRule.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Floats/GreaterEqualThanRule.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Floats/GreaterEqualThanRule.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Floats/GreaterThanRule.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Floats/GreaterThanRule.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Floats/LessEqualThanRule.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Floats/LessEqualThanRule.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Floats/LessThanRule.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Floats/LessThanRule.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Floats/MinusRule.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Floats/MinusRule.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Floats/MultiplyRule.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Floats/MultiplyRule.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Floats/NotEqual.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Floats/NotEqual.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Circuits/SubTest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Circuits/SubTest.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/Constants.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/External.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/External/ByteInputRule.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/External/ByteInputRule.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/External/DoubleInputRule.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/External/DoubleInputRule.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/External/ExternalRuleBase.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/External/ExternalRuleBase.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/External/FloatInputRule.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/External/FloatInputRule.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/External/IntegerInputRule.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/External/IntegerInputRule.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/External/LongInputRule.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/External/LongInputRule.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/External/ShortInputRule.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/External/ShortInputRule.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/SubCircuit/SubcircuitFactory.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/SubCircuit/SubcircuitFactory.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.7DaysModding/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.7DaysModding/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Examples/Rules/EditorRules.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Examples/Rules/EditorRules.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MainScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Circuits/Circuit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Circuits/Circuit.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Circuits/Port.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Circuits/Port.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Circuits/Rule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Circuits/Rule.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Circuits/RuleAttributes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Circuits/RuleAttributes.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Circuits/RulesManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Circuits/RulesManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/ConnectionKnob.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/ConnectionKnob.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/ConnectionPort.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/ConnectionPort.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/Node.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/Node.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/NodeCanvas.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/NodeCanvas.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/NodeEditorState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/NodeEditorState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/ValueConnectionKnob.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/ValueConnectionKnob.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/NodeGroup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/NodeGroup.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/CoreExtensions/NodeTypes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/CoreExtensions/NodeTypes.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Interface/NodeEditorGUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Interface/NodeEditorGUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Interface/NodeEditorInputControls.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Interface/NodeEditorInputControls.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Interface/NodeEditorInterface.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Interface/NodeEditorInterface.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/NodeEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/NodeEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Gates/AndRule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Gates/AndRule.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Gates/NotRule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Gates/NotRule.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Gates/OrRule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Gates/OrRule.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Gates/XorRule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Gates/XorRule.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/HasAnyValueRule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/HasAnyValueRule.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Integers/AddRule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Integers/AddRule.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Integers/DivideRule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Integers/DivideRule.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Integers/GreaterEqualThanRule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Integers/GreaterEqualThanRule.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Integers/GreaterThanRule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Integers/GreaterThanRule.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Integers/LessEqualThanRule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Integers/LessEqualThanRule.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Integers/LessThanRule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Integers/LessThanRule.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Integers/MinusRule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Integers/MinusRule.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Integers/MultiplyRule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Integers/MultiplyRule.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Integers/NotEqual.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Maths/Integers/NotEqual.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/SaveSystem/NodeEditorUserCache.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/SaveSystem/NodeEditorUserCache.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/ByteInputRule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/Constants/ByteInputRule.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/ByteInputRule.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/Constants/ByteInputRule.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/DoubleInputRule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/Constants/DoubleInputRule.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/DoubleInputRule.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/Constants/DoubleInputRule.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/FloatInputRule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/Constants/FloatInputRule.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/FloatInputRule.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/Constants/FloatInputRule.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/IntegerInputRule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/Constants/IntegerInputRule.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/IntegerInputRule.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/Constants/IntegerInputRule.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/LongInputRule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/Constants/LongInputRule.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/LongInputRule.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/Constants/LongInputRule.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/ShortInputRule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/Constants/ShortInputRule.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/ShortInputRule.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/Constants/ShortInputRule.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Modals/SaveCircuitModal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Modals/SaveCircuitModal.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/RTNodeEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/RTNodeEditor.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Resources/DefaultSkin.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Resources/DefaultSkin.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Utilities/GUI/RTEditorGUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Utilities/GUI/RTEditorGUI.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DpaMonitoringSettings">
+    <option name="firstShow" value="false" />
   </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
@@ -116,42 +71,8 @@
     <option name="RESET_MODE" value="MIXED" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/18a6dfdbe6dc40fe86acd7f8c3c214102d600/25/7e9384b5/GUILayoutUtility.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/18a6dfdbe6dc40fe86acd7f8c3c214102d600/31/364f2d96/GUISkin.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/18a6dfdbe6dc40fe86acd7f8c3c214102d600/52/4f1af58b/GUI.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/18a6dfdbe6dc40fe86acd7f8c3c214102d600/5d/e3e5b622/GUILayout.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/18a6dfdbe6dc40fe86acd7f8c3c214102d600/6f/a9f5aa91/GUIContent.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/18a6dfdbe6dc40fe86acd7f8c3c214102d600/95/6380cfef/GUILayoutOption.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/18a6dfdbe6dc40fe86acd7f8c3c214102d600/e6/d9626423/Event.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/467a840a914a47078e4ae9b0b1e8779e46ac00/10/b7d903a6/MulticastDelegate.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/467a840a914a47078e4ae9b0b1e8779e46ac00/15/92419e74/Array.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/467a840a914a47078e4ae9b0b1e8779e46ac00/19/c1f3df01/InvalidCastException.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/467a840a914a47078e4ae9b0b1e8779e46ac00/5b/a8a37691/List`1.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/467a840a914a47078e4ae9b0b1e8779e46ac00/9a/67bbc048/RuntimeMethodInfo.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/467a840a914a47078e4ae9b0b1e8779e46ac00/ad/1d3019ee/ArraySortHelper`1.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/467a840a914a47078e4ae9b0b1e8779e46ac00/af/4d56de44/String.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/467a840a914a47078e4ae9b0b1e8779e46ac00/d5/46ab2181/Delegate.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/467a840a914a47078e4ae9b0b1e8779e46ac00/e3/fb2a12cf/KeyValuePair`2.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/467a840a914a47078e4ae9b0b1e8779e46ac00/f7/b967abea/NullReferenceException.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/53d9c9e3ddfd44bba9f7bd7413478f0710fc00/28/a97e9027/EnumerableSorter`2.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/53d9c9e3ddfd44bba9f7bd7413478f0710fc00/bc/99e943d7/EnumerableSorter`1.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/53d9c9e3ddfd44bba9f7bd7413478f0710fc00/cf/20dbacd2/OrderedEnumerable`1.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/55fbbbd17b724c15b6abe8c1a3e3289c175c00/00/cbf3e416/Mathf.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/55fbbbd17b724c15b6abe8c1a3e3289c175c00/42/8211da67/Object.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/55fbbbd17b724c15b6abe8c1a3e3289c175c00/4e/0eb481b2/ScriptableObject.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/55fbbbd17b724c15b6abe8c1a3e3289c175c00/52/bc9d89d6/Rect.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/55fbbbd17b724c15b6abe8c1a3e3289c175c00/72/7420c9fd/Vector2.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/55fbbbd17b724c15b6abe8c1a3e3289c175c00/fd/a1f75864/Color.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/999670adb4c84ac4bad3ce4f6391c9c9955800/20/99acc1fa/GameView.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/999670adb4c84ac4bad3ce4f6391c9c9955800/27/1977e490/ObjectNames.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/999670adb4c84ac4bad3ce4f6391c9c9955800/59/7d7e84b1/PlayModeView.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/999670adb4c84ac4bad3ce4f6391c9c9955800/5e/d779fddd/HostView.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/999670adb4c84ac4bad3ce4f6391c9c9955800/ce/094e46eb/GenericMenu.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/999670adb4c84ac4bad3ce4f6391c9c9955800/fb/4d022a05/EditorCompilationInterface.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3ea01e77be99618395f448b16bd7cc2bd4248bd9e5d8474964b2d97f39c5d74/System.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d44b17e136d09081da1e8fd0e8c83fde60e11818b9f2442d7ed8cb733fae895e/System.Collections.Generic.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ffe351aa6232372f4a3b8c3ff36a636f33de226f60e607acbfe569289d7289d/System.IO.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Circuits/Circuit.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Circuits/CircuitSaver.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Circuits/Port.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Circuits/Rule.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Circuits/RulesManager.cs" root0="FORCE_HIGHLIGHTING" />
@@ -159,22 +80,6 @@
     <setting file="file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/ConnectionPort.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Interface/NodeEditorInputControls.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/HasAnyValueRule.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.rider@3.0.31/Rider/Editor/EditorPluginInterop.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.rider@3.0.31/Rider/Editor/PluginSettings.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.rider@3.0.31/Rider/Editor/ProjectGeneration/AssemblyNameProvider.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.rider@3.0.31/Rider/Editor/ProjectGeneration/IAssemblyNameProvider.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.rider@3.0.31/Rider/Editor/ProjectGeneration/ProjectGeneration.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.rider@3.0.31/Rider/Editor/ProjectGeneration/ProjectPart.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.rider@3.0.31/Rider/Editor/RiderScriptEditor.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.rider@3.0.31/Rider/Editor/RiderScriptEditorDataPersisted.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.rider@3.0.31/Rider/Editor/RiderStyles.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.rider@3.0.31/Rider/Editor/UnitTesting/CallbackInitializer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.rider@3.0.31/Rider/Editor/UnitTesting/RiderTestRunner.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.rider@3.0.31/Rider/Editor/UnitTesting/SyncTestRunCallback.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.rider@3.0.31/Rider/Editor/UnitTesting/TestsCallback.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.rider@3.0.31/Rider/Editor/Util/FileSystemUtil.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.rider@3.0.31/Rider/Editor/Util/RiderPathUtil.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.rider@3.0.31/Rider/Editor/Util/StringUtils.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.visualstudio@2.0.22/Editor/COMIntegration/COMIntegration~/COMIntegration.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.visualstudio@2.0.22/Editor/Cli.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.visualstudio@2.0.22/Editor/Image.cs" root0="SKIP_HIGHLIGHTING" />
@@ -213,6 +118,7 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.33/UnityEngine.TestRunner/NUnitExtensions/Attributes/UnityTestAttribute.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.33/UnityEngine.TestRunner/NUnitExtensions/ConstructDelegator.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.33/UnityEngine.TestRunner/NUnitExtensions/TestExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.33/UnityEngine.TestRunner/TestRunner/Callbacks/RemoteTestResultSender.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.33/UnityEngine.TestRunner/TestRunner/Callbacks/TestResultRenderer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.33/UnityEngine.TestRunner/Utils/ColorEqualityComparer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.33/UnityEngine.TestRunner/Utils/QuaternionEqualityComparer.cs" root0="SKIP_HIGHLIGHTING" />
@@ -246,6 +152,7 @@
     &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;Attach to Unity Editor.Attach to Unity Editor.executor&quot;: &quot;Debug&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -254,13 +161,6 @@
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-  },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\D\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\D\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\D\\AppData\\Local\\Symbols\\src&quot;
-    ]
   }
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
@@ -270,22 +170,31 @@
       <option name="WORKING_DIRECTORY" value="D:\Unity\7DaysModding\build" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="PTY_MODE" value="Auto" />
       <method v="2" />
     </configuration>
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Unity\2022.3.21f1\2022.3.29f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.54f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath D:\Unity\7DaysModding -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="D:\Unity\7DaysModding" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="PTY_MODE" value="Auto" />
       <method v="2" />
     </configuration>
     <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Unity\2022.3.21f1\2022.3.29f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.54f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath D:\Unity\7DaysModding -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="D:\Unity\7DaysModding" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="PTY_MODE" value="Auto" />
       <method v="2" />
     </configuration>
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
@@ -293,21 +202,36 @@
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
       <option name="projectPathOnTarget" />
+      <option name="runtimes">
+        <list />
+      </option>
       <option name="selectedOptions">
         <list />
       </option>
+      <option name="useMixedMode" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="23260">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="23260" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
+      <option name="runtimes">
+        <list />
+      </option>
       <option name="selectedOptions">
         <list />
       </option>
+      <option name="useMixedMode" value="false" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Attach to Unity Editor.Attach to Unity Editor" />
+      <item itemvalue="Attach to Unity Editor.Attach to Unity Editor &amp; Play" />
+      <item itemvalue="Standalone Player.Standalone Player" />
+      <item itemvalue="Standalone Player.Start Unity" />
+      <item itemvalue="Standalone Player.Unit Tests (batch mode)" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -349,7 +273,14 @@
       <workItem from="1723833856812" duration="1194000" />
       <workItem from="1723880041130" duration="682000" />
       <workItem from="1723888849458" duration="17058000" />
-      <workItem from="1724081354463" duration="12451000" />
+      <workItem from="1724081354463" duration="13389000" />
+      <workItem from="1724614648243" duration="1249000" />
+      <workItem from="1724659298864" duration="6129000" />
+      <workItem from="1724774664828" duration="4474000" />
+      <workItem from="1724864742538" duration="3280000" />
+      <workItem from="1724868267457" duration="930000" />
+      <workItem from="1753469357222" duration="2123000" />
+      <workItem from="1754219860212" duration="10142000" />
     </task>
     <task id="LOCAL-00001" summary="node base">
       <option name="closed" value="true" />
@@ -447,7 +378,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723580301581</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Node converters">
+      <option name="closed" value="true" />
+      <created>1724094042229</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1724094042229</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -459,7 +398,12 @@
     <option name="sortedColumn" value="1" />
     <option name="symbolColumnWidth" value="185" />
     <coverage-tree-state>
-      <expand />
+      <expand>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 0% 8298/8298" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+      </expand>
       <select />
     </coverage-tree-state>
   </component>
@@ -495,7 +439,8 @@
     <MESSAGE value="Rules" />
     <MESSAGE value="dll" />
     <MESSAGE value="Saving and loading" />
-    <option name="LAST_COMMIT_MESSAGE" value="Saving and loading" />
+    <MESSAGE value="Node converters" />
+    <option name="LAST_COMMIT_MESSAGE" value="Node converters" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -563,10 +508,10 @@
           <line>58</line>
           <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Runtime\Framework\Core\Node.cs" containingFunctionPresentation="Property 'Title'">
             <startOffsets>
-              <option value="3655" />
+              <option value="3712" />
             </startOffsets>
             <endOffsets>
-              <option value="3713" />
+              <option value="3770" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="99" />
@@ -585,31 +530,43 @@
           <option name="timeStamp" value="125" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Circuits/Circuit.cs</url>
-          <line>107</line>
-          <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Runtime\Framework\Circuits\Circuit.cs" containingFunctionPresentation="Method 'RegisterConnection'">
+          <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/Node.cs</url>
+          <line>217</line>
+          <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Runtime\Framework\Core\Node.cs" containingFunctionPresentation="Method 'NodeGUI'">
             <startOffsets>
-              <option value="2928" />
+              <option value="8092" />
             </startOffsets>
             <endOffsets>
-              <option value="2967" />
+              <option value="8117" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="188" />
+          <option name="timeStamp" value="190" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Circuits/Rule.cs</url>
-          <line>175</line>
-          <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Runtime\Framework\Circuits\Rule.cs" containingFunctionPresentation="Method 'TryConvert'">
+          <url>file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Circuits/SubTest.cs</url>
+          <line>27</line>
+          <properties documentPath="D:\Unity\7DaysModding\Assets\NodeEditing\Node_Editor_Framework\Runtime\Framework\Circuits\SubTest.cs" containingFunctionPresentation="Method 'Update'">
             <startOffsets>
-              <option value="4940" />
+              <option value="767" />
             </startOffsets>
             <endOffsets>
-              <option value="4969" />
+              <option value="818" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="189" />
+          <option name="timeStamp" value="201" />
         </line-breakpoint>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.OperationCanceledException" breakIfHandledByOtherCode="false" displayValue="System.OperationCanceledException" />
+          <option name="timeStamp" value="202" />
+        </breakpoint>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.Threading.Tasks.TaskCanceledException" breakIfHandledByOtherCode="false" displayValue="System.Threading.Tasks.TaskCanceledException" />
+          <option name="timeStamp" value="203" />
+        </breakpoint>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
+          <option name="timeStamp" value="204" />
+        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>

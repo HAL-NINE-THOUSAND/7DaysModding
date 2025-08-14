@@ -1,6 +1,7 @@
 using NodeEditing.Node_Editor_Framework.Runtime.Framework.Circuits;
 using NodeEditorFramework;
 using NodeEditorFramework.Utilities;
+using NodeEditorFramework.Utilities.Hooks;
 using UnityEngine;
 
 namespace NodeEditing.Node_Editor_Framework.Runtime.Modals
@@ -19,6 +20,25 @@ namespace NodeEditing.Node_Editor_Framework.Runtime.Modals
         public SaveCircuitModal()
         {
             ModalSize = new Rect(-1, -1, 300, 200);
+        }
+
+        public static void LoadMenuGenerator(GenericMenu menu, NodeCanvas canvas)
+        {
+
+            var circuits = RTNodeEditor.CircuitManager.AllCircuits.Values;
+            foreach (var c in circuits)
+            {
+                menu.AddItem(new GUIContent($"  Load/{c.Name}"), true, (circuit) =>
+                {
+                    var clone = RTNodeEditor.CircuitManager.LoadCircuit(((Circuit)circuit).CircuitId);
+                    if (clone == null)
+                    {
+                        canvas.Messages.AddMessage("Failed to load node");
+                        return;
+                    }
+                    canvas.LoadCircuit(clone);
+                }, c);
+            }
         }
 
         public override void OnShow()
