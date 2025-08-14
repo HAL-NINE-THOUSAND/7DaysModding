@@ -59,8 +59,8 @@ namespace NodeEditing.Node_Editor_Framework.Runtime.Framework.Interface
 
                 SaveCircuitModal.HandleMenuDraw(menu, canvasCache.nodeCanvas);
 
-                if (CircuitLoader.LoadMenuGenerator != null)
-                    CircuitLoader.LoadMenuGenerator(menu, canvasCache.nodeCanvas);
+                if (CircuitLoaderDefault.LoadMenuGenerator != null)
+                    CircuitLoaderDefault.LoadMenuGenerator(menu, canvasCache.nodeCanvas);
 
                 // Load / Save
 // #if UNITY_EDITOR

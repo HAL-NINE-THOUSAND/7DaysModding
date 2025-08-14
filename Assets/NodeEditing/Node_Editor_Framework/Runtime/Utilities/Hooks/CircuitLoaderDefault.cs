@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace NodeEditorFramework.Utilities.Hooks
 {
-    public class CircuitLoader
+    public class CircuitLoaderDefault
     {
         public static Action<NodeEditorFramework.Utilities.GenericMenu, NodeCanvas> LoadMenuGenerator;
 

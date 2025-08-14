@@ -8,50 +8,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c49ce2d-759b-4202-924b-bfa87a90867a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Circuits/SubTest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Circuits/SubTest.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/Constants.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/External.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/External/ByteInputRule.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/External/ByteInputRule.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/External/DoubleInputRule.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/External/DoubleInputRule.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/External/ExternalRuleBase.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/External/ExternalRuleBase.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/External/FloatInputRule.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/External/FloatInputRule.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/External/IntegerInputRule.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/External/IntegerInputRule.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/External/LongInputRule.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/External/LongInputRule.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/External/ShortInputRule.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/External/ShortInputRule.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/SubCircuit/SubcircuitFactory.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/SubCircuit/SubcircuitFactory.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.7DaysModding/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.7DaysModding/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MainScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Circuits/Circuit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Circuits/Circuit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Circuits/Port.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Circuits/Port.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Circuits/Rule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Circuits/Rule.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Circuits/RulesManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Circuits/RulesManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/Node.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/Node.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/NodeGroup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/NodeGroup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/CoreExtensions/NodeTypes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/CoreExtensions/NodeTypes.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/ByteInputRule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/Constants/ByteInputRule.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/ByteInputRule.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/Constants/ByteInputRule.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/DoubleInputRule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/Constants/DoubleInputRule.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/DoubleInputRule.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/Constants/DoubleInputRule.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/FloatInputRule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/Constants/FloatInputRule.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/FloatInputRule.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/Constants/FloatInputRule.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/IntegerInputRule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/Constants/IntegerInputRule.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/IntegerInputRule.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/Constants/IntegerInputRule.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/LongInputRule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/Constants/LongInputRule.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/LongInputRule.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/Constants/LongInputRule.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/ShortInputRule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/Constants/ShortInputRule.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/ShortInputRule.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/Constants/ShortInputRule.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Modals/SaveCircuitModal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Modals/SaveCircuitModal.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/RTNodeEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/RTNodeEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Resources/DefaultSkin.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Resources/DefaultSkin.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.7DaysModding/.idea/projectSettingsUpdater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.7DaysModding/.idea/projectSettingsUpdater.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Interface/NodeEditorInterface.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Interface/NodeEditorInterface.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Utilities/Hooks/CircuitLoader.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Utilities/Hooks/CircuitLoader.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +33,18 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="MIXED" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "HAL-NINE-THOUSAND"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/HAL-NINE-THOUSAND/7DaysModding",
+    "accountId": "6f3eb8c6-ceab-47e9-9994-d86768740c45"
+  }
+}]]></component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Circuits/Circuit.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Circuits/CircuitSaver.cs" root0="FORCE_HIGHLIGHTING" />
@@ -80,6 +55,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Core/ConnectionPort.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Interface/NodeEditorInputControls.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/HasAnyValueRule.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/NodeEditing/Node_Editor_Framework/Runtime/Framework/Rules/Inputs/SubCircuit/SubcircuitRule.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.visualstudio@2.0.22/Editor/COMIntegration/COMIntegration~/COMIntegration.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.visualstudio@2.0.22/Editor/Cli.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.visualstudio@2.0.22/Editor/Image.cs" root0="SKIP_HIGHLIGHTING" />
@@ -281,6 +257,7 @@
       <workItem from="1724868267457" duration="930000" />
       <workItem from="1753469357222" duration="2123000" />
       <workItem from="1754219860212" duration="10142000" />
+      <workItem from="1755197874806" duration="364000" />
     </task>
     <task id="LOCAL-00001" summary="node base">
       <option name="closed" value="true" />
@@ -386,7 +363,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724094042229</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Baseline rules">
+      <option name="closed" value="true" />
+      <created>1755198124298</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1755198124298</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -440,7 +425,8 @@
     <MESSAGE value="dll" />
     <MESSAGE value="Saving and loading" />
     <MESSAGE value="Node converters" />
-    <option name="LAST_COMMIT_MESSAGE" value="Node converters" />
+    <MESSAGE value="Baseline rules" />
+    <option name="LAST_COMMIT_MESSAGE" value="Baseline rules" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
